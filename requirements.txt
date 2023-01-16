@@ -1,0 +1,23 @@
+# curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
+# python -m pip install pip --upgrade
+# python -m pip install -r requirements.txt
+
+# yaml: YAML parser and emitter
+# python - pip install PyYAML --upgrade
+PyYAML
+
+# pandas
+# python - pip install pandas --upgrade
+pandas
+
+# regex: re ex
+# python - pip install regex --upgrade
+regex
+
+# tqdm: show progress
+# python - pip install tqdm --upgrade
+tqdm
+
+# datetime ex
+# python - pip install python-dateutil --upgrade
+python-dateutil

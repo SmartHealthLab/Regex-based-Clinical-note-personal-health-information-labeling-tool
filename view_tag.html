@@ -1,0 +1,84 @@
+<html>
+<head>
+    <style>
+        #fileinfo {width: 100%; height: 80px;}
+        #filetext {width: 100%; height: 600px; overflow-y: scroll; border-style: solid;}
+        #tooltip {
+            z-index: 1;
+            position: absolute;
+            visibility: hidden;
+            background-color: rgba(0,0,0,0.5); color:#fff000; text-align: center; border-radius: 6px; padding: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        const deidtags = ['deid',
+            'PERIOD', 'DATETIME', 'DATE', 'TIME', 'IDENTIFICATION_NUMBER', 'KONOS_ID', 'SURGICAL_ID', 'NAME',
+            'NATIONALITY', 'ADDRESS', 'MARRIAGE', 'GENDER', 'AGE', 'OTHER_HOSPITAL',
+            'DISEASE_SEXUAL', 'DISEASE_AIDS', 'DISEASE_ABUSE', 'DISEASE_ABORTION', 'DISEASE_MENTAL', 'DISEASE_RARE'
+            ];
+
+        let timer = null;
+        function read_file(evt) {
+            if (evt.target.files.length < 1)
+                return;
+                
+            document.body.style.cursor = 'wait';
+
+            let f = evt.target.files[0];            
+            document.getElementById('fileinfo').innerText = 'name: ' + f.name
+                + '\ntype: ' + f.type
+                + '\nsize: ' + f.size + ' bytes'
+                + '\nlast modified: ' + f.lastModifiedDate;
+
+            let txt = '';
+            let reader = new FileReader();
+            reader.onload = function() {
+                txt += reader.result.replaceAll('<s/p', '&lt;s/p').replaceAll('\n', '<br/>').replaceAll('  ', '&nbsp; ').replaceAll('\t', '&nbsp; &nbsp; ');
+            }
+            reader.onloadend = function() {
+                document.getElementById('filetext').innerHTML = txt;
+                document.querySelectorAll('*').forEach(function(el) {
+                    el.setAttribute('tagName', el.tagName);
+                });
+                deidtags.forEach(function(deidtag) {
+                    document.querySelectorAll('#filetext [tagName^="'+deidtag+'"]').forEach(function(el) {
+                        el.style.color = '#ff0000';
+                        el.addEventListener('mouseover', function(evt) {
+                            clearTimeout(timer);
+                            let tt = document.getElementById('tooltip');
+                            let ttext = ''
+                            if (evt.target.tagName.toLowerCase() == 'deid')
+                                ttext = evt.target.getAttribute('item')
+                            else
+                                ttext = evt.target.tagName;
+                            tt.innerText = ttext + ' / ' + evt.target.getAttribute('format') + '\n['+evt.target.innerText+']';
+                            tt.style.visibility = 'visible';
+                            tt.style.left = evt.pageX;
+                            tt.style.top = evt.pageY;
+                        });
+                        el.addEventListener('mouseout', function(evt) {
+                            timer = setTimeout(() => {
+                                document.getElementById('tooltip').style.visibility = 'hidden';
+                            }, 1000);
+                        });
+                    });
+                });
+                
+                document.body.style.cursor = 'default';
+            }
+            reader.readAsText(f, 'utf8');
+        }
+
+        window.onload = function() {
+            document.getElementById('infile').addEventListener('change', read_file, false);
+        }
+    </script>
+</head>
+<body>
+    <!-- <input type="file" id="infile" multiple /> -->
+    <input id="infile" type="file" />
+    <div id="fileinfo"></div>
+    <div id="filetext"></div>
+    <span id="tooltip"></span>
+</body>
+</html>

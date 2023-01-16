@@ -1,0 +1,101 @@
+ 
+###########################################
+설명의 설명
+    소스 위치(<src>): c:/ws/smc.label
+        변경 시 config/smc.yml 설정 변경해야 함
+    데이터 파일 루트디렉토리
+        <src>/data
+    실행문 앞에 ">" 있으면 cli(터미널, 명령프롬프트 등)에서 실행하는 것을 의미
+    
+###########################################
+준비
+    설치
+        python 3.10 or 3.11
+    실행
+        > cd <src>
+        > python -m pip install pip --upgrade
+        > python -m pip install -r requirements.txt
+
+###########################################
+라벨링(태깅)
+    참고
+        https://yaml.org/spec/1.2.2/
+    실행
+        > python fns/label.py <config>... --findlog <true/false>
+            <config>: yaml 파일. 긴 경우는 여러 개 파일로 분리해서 사용
+            --findlog: 태그 기록 남길지 여부. config 설정의 data/root 아래에 _findlog/<column>.log 로 생성
+            결과: config 내 data로 지정한 root/out 파일
+    실행 예
+        > python fns/label.py config/disease_kcd.yml config/smc.yml --findlog false
+    findlog 구성
+        <데이터행번호>: <태그명>.<패턴명>: <검출텍스트>
+            [<태그붙은텍스트행번호>]: <태그붙은텍스트행>
+
+###########################################
+라벨링(태깅) 결과 파일에서 라벨(태그) 보기
+    실행
+        view_tag.html 더블클릭
+        (웹브라우저(chrome, edge)에서 view_tag.html 열기)
+            [파일 선택] -> 태그csv 또는 컬럼추출파일
+    태그 확인
+        태그 붙은 값을 붉은색으로 표시
+        붉은색 문자열에 마우스 가져가면 태그 표시
+            태그/패턴명        (디버그 태깅한 경우에만 패턴명이 null이 아님)
+            [태그한문자열]
+
+###########################################
+텍스트 파일에서 정규표현식으로 문자열 찾기
+    참고
+        https://docs.python.org/ko/3/howto/regex.html
+    실행
+        > python fns/grep.py "<regexp>" <file>
+            <regexp>: 반드시 ""로 감싸야 함. escape character는 \\ 사용
+            <file>: 대상 텍스트 파일. csv, txt 등
+            결과: stdout 출력
+    실행 예
+        > python fns/grep.py "\\D+(\\d{2}|\\d{4})[-./년]\\s*(0?[1-9]|1[012])\\s*[-./월]\\s*(0?[1-9]|[12]\\d|3[01])\\D*" "data/tag.SMC_5000-6100.csv"
+        > grep.cmd (for windows)
+        > grep.sh (for linux)
+
+###########################################
+csv에서 특정 컬럼 추출
+    실행
+        > python fns/column2txt.py -i <csv file> -c <column name> -n <row count per each file> -o <save file>
+            -i: csv 파일
+            -c: 추출할 컬럼명
+            -n: 1개 파일에 저장할 최대 라인 수
+            -o: 추출한 컬럼을 저장할 파일
+            결과: -o로 지정한 파일명에 일련번호 붙은 파일. 현병력.txt -> 현병력.01.txt, 현병력.02.txt, ...
+    실행 예
+        > python fns/column2txt.py -i "data/SMC_5000-6100.csv" -c "현병력-Free Text#13" -n 1000 -o "./data/org/현병력.txt"
+        > extract_column.cmd (for windows)
+        > extract_column.sh (for linux)
+
+###########################################
+파일 비교
+    실행
+        > python fns/compare.py <after file> <before file>
+            <after file>: 비교 기준 파일
+            <before file>: 비교 대상 파일
+            결과: after file 디텍토리에 "diff_<after file name>.diff" 파일
+        실행 중 아무 메시지 안 나옴. 끝날 때까지 기다려야 함
+    실행 예
+        > python fns/compare.py "data/tag/현병력.01.txt" "data/org/현병력.01.txt"
+        > compare.cmd (for windows)
+        > compare.sh (for linux)
+    diff 파일 구성
+        ** (line:x) 는 설명을 위해 추가한 것으로 diff 파일에는 없습니다
+
+        --- <A:after file>
+        +++ <B:before file>
+        @@ -<A:start line no>,<A:diff line count> +<B:start line no>,<B:diff line count> @@
+        (line1:)-------------------------------
+        (line2:)    1
+        (line3:)-------------------------------
+        (line4:)-F/12yr                 (-) before file에만 존재
+        (line4:)+F/<AGE>12yr</AGE>      (+) after file에만 존재
+        (line5:)
+        (line6:)
+        (line7:)
+        @@ -<A:start line no>,<A:diff line count> +<B:start line no>,<B:diff line count> @@
+ 
