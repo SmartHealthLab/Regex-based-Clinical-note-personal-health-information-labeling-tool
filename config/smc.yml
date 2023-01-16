@@ -1,0 +1,623 @@
+#
+# file encoding: MUST UTF-8
+#
+
+# 삼성병원 스마트큐레이션
+
+#
+# indent: 2 spaces
+#
+
+# company 설정에 따라 전용 tag 사용하므로 변경 불가
+company: SMC
+
+# format: on => tag에 디버그용 속성 추가
+format: off
+
+# csv 파일 설정
+data:
+  # 파일 디렉토리
+#   root: &root /home/timecandy/data/삼성병원.스마트큐레이션
+  root: &root c:/ws/smc.label/data
+#   out: tag.ER_DataCuration_1.csv
+#   in: ER_DataCuration_1.csv
+  # tagging해서 저장할 파일명
+  out: tag.SMC_5000-6100.csv
+  # 원본 파일명
+  in: SMC_5000-6100.csv
+  # csv 헤더 라인 index: 0(첫줄)
+  header: 0
+  # csv 파일 인코딩
+  encoding: utf-8
+
+# 정규표현식 변수
+# alias/items 설정에서 ${alias} 형태로 사용
+# !!주의!!: alias loop 발생하지 않아야 함. (loop: alias_A -> alias_B -> alias_A)
+alias:
+  c_yy: "((19)?9\\d|(20)?[012]\\d)"
+  c_m:  "(1[012]|0?[1-9])"
+  c_d:  "(3[01]|[12]\\d|0?[1-9])"
+  c_H:  "(2[0-3]|[01]?\\d)"
+  c_M:  "[0-5]?\\d(?!')"
+  c_qm: "[초중말]"
+  c_qd: "([초중말]|[초중하]순)"
+  c_k:  "([ap]m|오[전후]|아침|점심|저녁|새벽|낮|밤)"
+  c_p:  "[ap]m?"
+
+  cx_ymd: "'?${c_yy}\\s{,2}[-./년',],?\\s{,2}${c_m}\\s{,2}[-./월]+\\s{,2}${c_d}(\\s{,2}일)?"
+  c_ymd:  "${c_yy}\\s{,2}[-./년]+\\s{,2}${c_m}\\s{,2}[-./월]+\\s{,2}${c_d}(\\s{,2}일)?"
+  c_ym:   "${c_yy}\\s{,2}[./년]+\\s{,2}${c_m}(\\s{,2}월)?"
+  c_md:   "${c_m}\\s{,2}[./월]+\\s{,2}${c_d}(\\s{,2}일)?"
+  c_HM:   "${c_H}\\s{,2}[:시]\\s{,2}${c_M}(\\s{,2}분)?"
+  c_HK:   "${c_H}\\s{,2}시\\s{,2}반"
+  c_kHMp: "(${c_k}\\s{,2})?${c_HM}(\\s{,2}${c_p})?"
+  c_kHKp: "(${c_k}\\s{,2})?${c_HK}(\\s{,2}${c_p})?"
+  c_kHp:  "(${c_k}\\s{,2}${c_H}(\\s{,2}시)?\\s{,2}${c_p}|(${c_k}\\s{,2})?${c_H}\\s{,2}시(?!간)|${c_H}(\\s{,2}시)?\\s{,2}${c_p})"
+
+  c_ymdkHp: "${c_ymd}\\s+(${c_k}\\s{,2})?${c_H}(\\s{,2}시)?(\\s{,2}${c_p})?"
+  c_mdkHp:  "${c_md}\\s+(${c_k}\\s{,2})?${c_H}(\\s{,2}시)?(\\s{,2}${c_p})?"
+  c_dkHp:   "${c_d}\\s{,2}일\\s+(${c_k}\\s{,2})?${c_H}(\\s{,2}시)?(\\s{,2}${c_p})?"
+
+  #
+  # 예외처리용 alias
+  #
+  # 날짜 뒤에 붙음
+  dt_tail: "(\\b|[경로에쯤]|부터|까지|[입퇴]원)"
+  # 수치 값 뒤에 붙음
+  no_tail: "(;|-?>|bid|\\(#\\d+\\)|미만|초과|이[상하]|에서)"
+  # 수치 단위
+  unit:    "(\\.\\d+|\\s*[×x\\*]\\s*\\d+|-\\s*\\d+k|\\s*-?(%|\\(AP\\)|'c|cc|cmn?|cores|Gy|㎐|\\(L\\)|㎃|mg|m?l|mm|m?sec|V|T|ng/㎖|㎍/g|㎲))"
+  # 수치 앞에 붙음
+  no_head: "(#|\\+|<-?|>|\\] -|\\(-|\\)[-/]|/-|%/|\\d+\\s*[×x\\*]|[대비]해|min|max|(number|size)\\s*:|total|upper)"
+  # 수면시간 앞에 붙음
+  sleep:   "(sleep|수면).+"
+  # 수치 앞에 붙음: 약 관련
+  drug:    "(경구섭취량|알부민|인슐린|alb|anamia|atropine|Avil|Aza|bilirubin|cortisol|cisplatin|epi|hypoglycemia\
+            |iCa|Gorselerin|lactic|lora|myometrijm|propa|sildenafil|Sosm)(#\\d\\()?"
+  # 수치 앞에 붙음: 이것저것
+  measure: "(A1C|AB(GA)?|ACTH|ADA|Adeno,?|AFP|ALP|ALT|APOE|area의?|A/S|AST|BA|Bb|Bil|BMD|BPM|BRCA|CEA|CNE|CRP?|cuff|DDD|E/A|EE|E-S|F|FENa|FN|FVC|Fx\
+            |GP|grade|HLA|ICE|INR|LDPC|liver|LK(UP)?|LMP?|LVIDd/s|MNC|Motor|MR|neck|NRS|offTg|PO?D|pH|PRL|PT|PU|pupil|PW|reflex|RK|RPL|RT|RVR\
+            |SAAG|sCr|SDP|severity|smoker|Stage|strata|TL?|TNC|tobi|TSH|TTT|Tube|UICC|XFESU|Z\
+            |\\d+DNG|(\\d+)?K|CA(\\-\\d+)?|CCG(\\s*321P2)?|CD\\d+|C\\-pep|FEV\\d*|freeT\\d+|FT\\d+|G\\-C|GCS(\\s*\\d+/)?\
+            |Hb\\s*(A1c|\\d+\\.\\d+-)*|HFNC(\\s*\\d+\\.)?|Kg\\*|L\\d+|LNs?|LN\\(\\w+\\)|i?PSA|RBC\\*?|S\\d+/?|T[-\\.]?B(il)?|T\\-score|TW\\d+\
+            |US(\\s*(\\(${c_ymd}\\))?:\\d+\\.\\d+)?|\\(${c_ymd}\\)|\\d+\\+\\d+\
+            )(\\s*((\\d+(\\.\\d+)?/)*\\d+(\\.\\d+)?)?[.:=#/>])?(\\s*-)?"
+
+#
+# 태그 설정
+#
+# 정규식은 반드시 큰따옴표("")로 묶어서 써야 함
+#   1줄로 썼다 여러 줄로 썼다하면 \, \\ 실수할 여지가 매우 높다
+#   무조건 큰따옴표로 묶어서 쓰면 실수를 줄일 수 있다
+#   작은따옴표는 사용하면 안된다
+#     \를 \\로 바꾸지 않아도 되어서 편리할 수 있으나
+#     여러 줄로 나눈 문자열이 빈칸없이 1줄이 아닌 줄마다 빈칸 1개가 들어간 문자열로 인식한다
+#     따라서 정규식 사이에 의도치 않은 빈칸 1개를 요구하는 상황이 되어 문제 발생함
+#
+# 대소문자 구분없이 비교함
+#
+# 정규식 내 (?P<name>)에서 name은 !!반드시!! __로 시작해야 함
+#   __로 시작해야 조건 처리용으로 인식
+#
+# item key, format key에 아래 문자 금지
+#   .: 정규식 라이브러리에서 불허
+#   __: 구분자로 사용
+#
+# 검출 대상의 길이가 긴 정규식 또는 명확한 특징이 있는 것을 위쪽으로 위치 -> 먼저 비교
+#   기간 -> 일시 -> 날짜 -> 시간
+#   성별나이 -> 성별 -> 나이  (성별과 나이는 구성이 다르므로 순서에 상관없음)
+#
+# 검출 시 의도치 않게 중간까지만 검출하는 것에 주의
+#   숫자의 경우 연속하는 것이 잘리지 않도록 뒤에 \\D*를 붙이도록 한다
+#     2022.12.31의 경우
+#       31일 부분을 (0{0,1}[1-9]|[12][0-9]|3[01])로 검출하면 2022.12.3 까지를 검출할 수 있음
+#       (3[01]|[12][0-9]|0{0,1}[1-9])과 같이 순서를 바꾸거나
+#       (권장)(0{0,1}[1-9]|[12][0-9]|3[01]) 뒤에 상황에 따라 \\b 또는 \\D+를 붙여서 숫자가 있는 끝까지 검출해야 함
+#       2022의 경우도 앞에 \\b를 붙이면 12342022/12/31 등과 같이 유사 날짜를 걸러낼 수 있음
+######################################################################################################
+# 설정 형태
+# indent 주의
+# - tag   => 태그 파일에 추가할 태그
+#     - regexp name   => 로직 내에서 사용. format: on 한 경우 tag 속성으로 추가
+#         pattern: "<정규표현식>". ${alias} 사용 가능
+#         exception: "<정규표현식>". pattern으로 검출했지만 검출 대상이 아닌 것을 걸러냄
+#
+# regexp name 약어
+#   y:연, m:월, d:일
+#   H:시, K:반(30분), M:분, S:초
+#   k:am/pm/오전/오후/아침/점심/저녁/새벽/낮/밤. 시간 앞
+#   p:am/pm. 시간 뒤
+#
+#   k/p: 정규식에 있어도 실제 값에는 없는 것을 허용하도록 alias 구성한 상태
+#     kHMp의 경우 실제 값 구성은 kHMp, kHM, HMp, HM 형태임
+#     alias 구성을 바꾸거나 별도로 사용하는 경우
+#       xxxx_KHMP 태그의 regexp를 kHMp, kHM, HMp, HM을 구분하여 구성할 수 있음
+######################################################################################################
+items:
+  - PERIOD_YMDKHMP2KHMP:
+      - ymdkHMp2kHMp:
+          pattern: "${c_ymd}\\s+${c_kHMp}\\s*[-~]\\s*${c_kHMp}"
+
+  - PERIOD_YMDKHMP2KHP:
+      - ymdkHMp2kHp:
+          pattern: "${c_ymd}\\s+${c_kHMp}\\s*[-~]\\s*${c_kHp}"
+
+  - PERIOD_YMDKHP2KHP:
+      - ymdkHp2kHp:
+          pattern: "${c_ymdkHp}\\s*[-~]\\s*${c_kHp}(?=${dt_tail})"
+          
+  ######################################################################################################
+  - PERIOD_MDKHP2MDKHP:
+      - mdkHp2mdkHp:
+          pattern: "${c_mdkHp}\\s*[-~]\\s*${c_mdkHp}"
+          
+  - PERIOD_MDKHP2KHP:
+      - mdkHp2kHp:
+          pattern: "(?<![\\d\\.])${c_mdkHp}\\s*[-~]\\s*${c_kHp}(?=${dt_tail})"
+          
+  ######################################################################################################
+  - PERIOD_KHMP2KHMP:
+      - kHMp2kHMp:
+          pattern: "(?<!\\d\\s*)${c_kHMp}\\s*[-~]\\s*${c_kHMp}"
+          
+  # - PERIOD_KHMP2KHP:
+  #     # 없음: 수면시간은 예외 처리
+  #     - kHMp2kHp:
+  #         pattern: "(?<!${c_ymd}\\s+|${sleep})${c_kHMp}\\s*[-~]\\s*${c_kHp}"
+          
+  # - PERIOD_KHKP2KHP:
+  #     # 없음: 수면시간은 예외 처리
+  #     - kHKp2kHp:
+  #         pattern: "(?<!${sleep})${c_kHKp}\\s*[-~]\\s*${c_kHp}"
+          
+  ######################################################################################################
+  - PERIOD_KHP2KHMP:
+      - kHp2kHMp:
+          pattern: "\\b(?<![-:])${c_kHp}\\s*[-~]\\s*${c_kHMp}\\b"
+          
+  - PERIOD_KHP2KHKP:
+      - kHp2kHKp:
+          pattern: "${c_kHp}\\s*[-~]\\s*${c_kHKp}"
+          
+  - PERIOD_KHP2KHP:
+      - kHp2kHp:
+          pattern: "(?<!${c_ymd}[:\\d\\s]*(${c_k}\\s*)?|${sleep})${c_kHp}\\s*[-~]\\s*${c_kHp}(?!\\s*반)"
+          
+  ######################################################################################################
+  - PERIOD_YMD2YMD:
+      - ymd2ymd:
+          pattern: "${cx_ymd}\\s*[-~]\\s*${cx_ymd}"
+          
+  - PERIOD_YMD2MD:
+      - ymd2md:
+          pattern: "${cx_ymd}\\s*[-~]\\s*${c_md}"
+          
+  - PERIOD_YMD2D:
+      - ymd2d:
+          pattern: "\\b(?<!(인슐린|${c_yy}\\s*[-./년])\\s*)${cx_ymd}\\s*[-~]\\s*${c_d}(\\s*일)?(?!\\s*[-./]\\s*\\d+)(?=${dt_tail})"
+          
+  - PERIOD_MD2MD:
+      - md2md:
+          pattern: "\\b(?<!(${drug}|${measure}|${c_yy}\\s*[-./년])\\s*)${c_md}\\s*[-~]\\s*${c_md}(?!${unit}|${no_tail})(?=${dt_tail})"
+          
+  - PERIOD_MD2D:
+      - md2d:
+          pattern: "\\b(?<!(${drug}|${measure}|${c_yy}\\s*[-./년])\\s*)${c_md}\\s*[-~]\\s*${c_d}(\\s*일)?(?!\\s*[-./]${c_d}(\\s*일)?)(?=${dt_tail})"
+  
+  # - PERIOD_D2D:
+  #      # 없음 (모두 기간을 뜻함)
+  #     - d2d:
+  #         pattern: "\\b(?<!\\d+[-./~년월일]\\s*)${c_d}(\\s*일)?\\s*[-~]\\s*${c_d}\\s*일"
+          
+  ######################################################################################################
+  - DATETIME_YMDKHMP:
+      - ymdkHMp:
+          pattern: "${c_ymd}\\.?\\s+${c_kHMp}(?=${dt_tail})"
+          
+  - DATETIME_YMDKHKP:
+      - ymdkHKp:
+          pattern: "${c_ymd}\\s+${c_kHKp}"
+          
+  - DATETIME_YMDKHP:
+      - ymdkHp:
+          pattern: "${c_ymd}\\.?\\s+${c_kHp}(?=${dt_tail})(?!\\s*(${c_M}|[-~]\\s*${c_kHp}))"
+          
+  - DATETIME_MDKHMP:
+      - mdkHMp:
+          pattern: "\\b(?<!${c_yy}\\s*[-./]\\s*)${c_md}\\s+${c_kHMp}(?=${dt_tail})"
+          
+  - DATETIME_MDKHKP:
+      - mdkHKp:
+          pattern: "\\b(?<!${c_yy}\\s*[-./]\\s*)${c_md}\\s+${c_kHKp}"
+          
+  - DATETIME_MDKHP:
+      - mdkHp:
+          pattern: "\\b(?<!\\d+\\s*[-./]\\s*)${c_md}\\s+${c_kHp}(?=${dt_tail})(?!\\s*(반|\\d+\\s*분))"
+          
+  - DATETIME_DKHP:
+      - dkHp:
+          pattern: "\\b(?<!\\d+\\s*[-./]\\s*)${c_d}\\s{,2}일\\s+${c_kHp}"
+          
+  ######################################################################################################
+  - DATE_YMD:
+      - ymd:
+          pattern: "\\b(?<!(\\d\\s*[-./~]|cr)\\s*)${cx_ymd}(?!\\.\\d|\\s*([-~/]\\s*\\d|${c_kHMp}|${c_kHKp}|${c_kHp}))\\b"
+          
+  - DATE_MDY:
+      - mdy:
+          pattern: "\\b${c_m}\\s*/\\s*${c_d}\\s*/\\s*(19|20)\\d{2}"
+          
+  - DATE_MD:
+      - md:
+          pattern: "\\b(?<!(\\d+([-./년월일]|\\.?\\s*[-~])|${no_head}|${drug}|${measure})\\s*)\
+                  ${c_md}(?!\\s*([-./~]\\s*\\d+\\b|${c_kHMp}|${c_kHp}|${unit}|${no_tail}))(?=${dt_tail})"
+          
+  - DATE_YM:
+      - ym:
+          pattern: "\\b(?<!(\\d+([-./년월일]|\\.?\\s*[-~])|${no_head}|${drug}|${measure})\\s*)\
+                  ${c_ym}(?!\\s*([-./~]\\s*\\d+\\b|${c_kHMp}|${c_kHp}|${unit}|${no_tail}))(?=${dt_tail})"
+          
+  # - DATE_D:
+  #      # 없음 (모두 기간을 뜻함)
+  #     - d:
+  #         pattern: "${c_d}\\s{,2}일"
+          
+  ######################################################################################################
+  - TIME_KHMP:
+      - kHMp:
+          pattern: "\\b(?<!(${c_ymd}|${c_ym}|${c_md}|${c_k}|${c_kHMp}|${c_kHp}|\\d+)\\.?(\\s*[-~])?\\s*)${c_kHMp}(?!\\s*[-~]\\s*(${c_k}\\s*)?\\d+)(?=${dt_tail})"
+          
+  - TIME_KHKP:
+      - kHKp:
+          pattern: "\\b(?<!(${c_ymd}|${c_ym}|${c_md}|${c_k}|${c_kHMp}|${c_kHp}|\\d+)\\.?(\\s*[-~])?\\s*)${c_kHKp}(?!\\s*[-~]\\s*(${c_k}\\s*)?\\d+)(?=${dt_tail})"
+          
+  - TIME_KHP:
+      - kHp:
+          pattern: "\\b(?<!(${no_head}|${drug}|${measure}[\\s\\d\\(\\+/,ps]*|(${c_ymd}|${c_ym}|${c_md}|${c_k}|${c_kHMp}|${c_kHp}|\\d+)\\.?(\\s*[-~:])?)\\s*)\
+                  ${c_kHp}(?!\\s*(방향|del|[-~\\s]*\\d+))(?=${dt_tail})"
+          
+  ######################################################################################################
+  # ID
+  - IDENTIFICATION_NUMBER:
+      # 환자 ID
+      - patient_id:
+          pattern: "\\b\\d{8}\\b"
+
+  # KONOS ID
+  - KONOS_ID:
+      - konos:
+          pattern: "\\b[a-z] ?\\d{8}\\b"
+
+  # 수술 번호
+  - SURGICAL_ID:
+      - surgical:
+          pattern: "\\b[a-z] ?\\d{7}\\b"
+        
+  ######################################################################################################
+  # 이름
+  - NAME:
+      # pf/prof <이름>
+      - pf_name:
+          pattern: "\\b(?<=\\b(pf|prof)\\.? ?)[ㄱ-ㅣ가-힣]{1,3}"
+      # <이름> 교수님. "담당 교수" 등 예외처리
+      # 띄어쓰기한 교수 1분 추가
+      - name_pf:
+          pattern: "(엄 상원|[ㄱ-ㅣ가-힣]{2,3})(?= ?((?<=i)pf(?!t)|교수))"
+          exception: "담당|본원|진료과"
+      # <이름> 선생님/펠로우. "간호사 선생님" 등 예외처리
+      - name_teacher:
+          pattern: "[ㄱ-ㅣ가-힣]{2,3}(?= ?(펠로우|선생))"
+          exception: "간호사|사원|린이집|인턴|전공의|전임의|펠로우"
+      # 성 무관. 이름만 지정
+      - name_A:
+          pattern: "\\b[ㄱ-ㅣ가-힣](기익|동희|상국|선희|세준|수[향현]|승철|양진|은란|재[명준]|종한|주용|준수|진국|표원|한용|혜민|희[연진])"
+      # 가운데 마스킹 처리된 이름
+      - name_B:
+          pattern: "\\b[ㄱ-ㅣ가-힣][o0][ㄱ-ㅣ가-힣]"
+      # 이름 지정
+      - name_C:
+          pattern: "서준|신정경|이승은"
+        
+  ######################################################################################################
+  # # 국가/민족 제외
+  # - NATIONALITY:
+  #     - nation_A:
+  #         pattern: "\\b\\w+(?= ?국적)"
+  #     - nation_B:
+  #         pattern: "\\b[\\w\\(\\)]+(?= ?출신)"
+  #         # pattern: "((미국|필리핀|일본) ?(?=국적)|쿡아일랜드\\(뉴질랜드\\) ?(?=출신))"
+  #     - ethnic:
+  #         pattern: "조선족"
+
+  ######################################################################################################
+  # 주소: 동 이하를 알 수 있는 경우에만 지정
+  - ADDRESS:
+      - dong_A:
+          pattern: "광장동|마장동|상도동|세곡동|역삼동|일원동|자곡동"
+      - dong_B:
+          pattern: "노블카운티( 요양원)?(?= 거주)|하남 미사지구"
+          
+  ######################################################################################################
+  # # 혼인 여부 제외
+  # - MARRIAGE:
+  #     - marriage:
+  #         pattern: "\\b([미기이]혼|사별)"
+
+  ######################################################################################################
+  # # 성별 제외
+  # - GENDER:
+  #     - gender_age_md:
+  #         pattern: "\\b[FM](?= ?/ ?([1234]\\d|[1-9]) ?(개월|m(o(n(th)?)?)?)( ?(3[01]|[12][0-9]|[1-9])d(ay)?)?\\b)"
+  #     - gender_age_ym:
+  #         pattern: "\\b[FM](?= ?/ ?[1-9][0-9]{,2}(?!\\.)( ?([살세]|yrs|yr|y))?( ?(1[012]|[1-9]) ?(개월|m(o(n(th)?)?)?))?)(?!\\.)\\b"
+  #     - gender_age_y_noslash:
+  #         pattern: "(?<=^\\s*)[FM](?= ?[1-9][0-9]{,2}( ?(yrs|yr|y)?)\\b)"
+  #     - age_gender:
+  #         pattern: "(?<=^\\s*[1-9][0-9]{,2}( ?([살세]|yr?))? ?/? ?)([남여]자|[FM])\\b"
+  #     - gender:
+  #         pattern: "\\b((fe)?male|[남여]자)\\b"
+
+  ######################################################################################################
+  # 나이
+  #   문맥을 모르는 상태에서 "나이"인지 "기간"인지 구분 안 됨
+  #   "나이"가 아닌 "어느 시점(=상대적 날짜)"을 지칭하는 경우 많다
+  #   나이가 명확한 경우에만 지정
+  #     진료시점에서 환자의 현재 나이는 "성별나이" 항목
+  #     진료시점에서 타인의 현재 나이는 "가족"의 나이
+  - AGE:
+      # 성별/나이(월령, 월일령)
+      - gender_age_md:
+          pattern: "(?<=\\b[FM] ?/ ?)([1234]\\d|[1-9]) ?(개월|m(o(n(th)?)?)?)( ?(3[01]|[12][0-9]|[1-9])d(ay)?)?\\b"
+      # 성별/나이(연령, 연월령)
+      - gender_age_ym:
+          pattern: "(?<=\\b[FM] ?/ ?)[1-9][0-9]{,2}( ?(세|yrs|yr|y))?( ?(1[012]|[1-9]) ?(개월|m(o(n(th)?)?)?))?(?!\\.)\\b"
+      # 성별 나이(연령)
+      - gender_age_y_noslash:
+          pattern: "(?<=^\\s*[FM] ?)[1-9][0-9]{,2}( ?(yrs|yr|y))?\\b"
+      # 연령 성별
+      - age_gender:
+          pattern: "(?<=^\\s*)[1-9][0-9]{,2}( ?([살세]|yr?))?(?= ?/? ?([남여]자|[FM])\\b)"
+      # 가족+나이(연령,월령)
+      - family_age:
+          pattern: "(?<=(언니|누나|오빠|형|동생)( ?\\d명|1,2(,3)?)? ?\\( ?(\\+, ?)?)([ ,]|[1-9]\\d?|yr?|mo?)*(\\b|[살세]|yr?|m(on?)?)(?= ?\\))"
+      # 나이+가족(연령)
+      - age_family:
+          pattern: "\\b[1-9]\\d? ?[살세](?= (언니|누나|오빠|형|동생))"
+      # 나이(연령)
+      - age_A:
+          pattern: "(?<=Age.*)(?<![-≥])\\b[1-9]\\d{,2} years\\b"
+      # 나이(연령), 초중고 학년
+      - age_B:
+          pattern: "(?<=\\( ?)((만 ?)?\\d+ ?[살세]|[초중고] ?\\d)(?= ?\\))"
+      # 나이(연령, 연월령)
+      - age_C:
+          pattern: "(?<=\\( ?)\\d+ ?(yr?|mo?)( ?\\d+ ?mo?)(?= ?\\))"
+
+  ######################################################################################################
+  # 타병원: 지정. 병원이름이 아닌 경우 예외처리
+  - OTHER_HOSPITAL:
+      - hospital_A:
+          pattern: "\\b(\
+            (local |로컬|연고지|요양|타)병?원\\([ ㄱ-ㅣ가-힣]+병원\\)
+            |(거주|연고)지 [ㄱ-ㅣ가-힣]+ ?병원\
+            |강동 경희대\
+            |고대 (구로|안산)\
+            |광저우 대학\
+            |국군 수도\
+            |경기 강\
+            |경기도 참 ?좋은\
+            |경기도이천 연고지\
+            |김해 진영\
+            |남양주 (국민|현대)\
+            |대구 (경북대|곽|카톨릭 ?대(학교)?)\
+            |동탄 한림대\
+            |로컬 (신경정신과|척추)\
+            |목포 한국\
+            |미얀마 현지병원\
+            |본 플러스 분당\
+            |부산 (대동|센텀)\
+            |분당 ([재제]생|서울대)\
+            |서울(시립)? 어린이\
+            |서울 신라\
+            |성남시 연세제일\
+            |수원 (늘봄|정)\
+            |순천 성 ?가롤로\
+            |순천향대? (구미|부천|천안)|천안 순천향\
+            |안양 (메트로|지샘|한림대)\
+            |양산 부산대학교\
+            |에이치플러스 양지\
+            |외부 다보스\
+            |원주세브란스 기독\
+            |이대 목동\
+            |인천 (대찬|세종)\
+            |제주 한마음\
+            |중곡동 무척나은\
+            |중앙 보훈\
+            |진주 경상대\
+            |창원 (삼성|파티마)\
+            |청주 (한국|효성)\
+            |파주 시티\
+            |한국 오산|(?<=문의시)오산한국\
+            |화순 전남대\
+            |(가천대|인천) 길\
+            |(상계|서울|의정부|일산|해운대) 백\
+            |(강남|서울|안산|안성|여의도|의정부|청주|평택) 성모\
+            |(동탄|인덕원|춘천|평촌( 한림대)?|한림대( 동탄)?|함양) 성심\
+            |(신촌|연세대) 세브란스\
+            |(강릉|서울) 아산\
+            |(안산|전주) 예수\
+            |(드림|큰사랑) 요양\
+            |(경남 진주|중국 텐진|청담) 제일\
+            |(서산|성남) 중앙\
+            |(구미) 차\
+            |(검단|미금역) 탑\
+            ) ?병원\
+            |양산부산대
+            |한림대 춘천성심\
+            |local [ㄱ-ㅣ가-힣]+과\
+            |(이에 대해|입원해있\\s+던) 병원\
+            "
+          exception: "^(이에 대해|입원해있\\s+던) 병원"
+      - hospital_B:
+          pattern: "\\b[a-zㄱ-ㅣ가-힣]+ ?병원(?!BP|식당)"
+          exception: "^(\
+            [123]차|같은|개인|그|근처|기존|다른|당시|대학|대형|(다른)?동네|로컬|local|본원 [_\\w]+|상[기급](종합)?\
+            |[수시]술한?|여러|연고지|외부|이전|인근|일반|입원|전원간|재활|전|큰( 대학)?|타|해당|현지\
+            |당시|미포함|오늘|가능한|특별히\
+            |(부모|환자)가\
+            |[a-zㄱ-ㅣ가-힣]*(하(였?[고던]|[는던여])|으[나로며]|[워져]서|받[은던]|했던|[있없]어|었고)\
+            |[a-zㄱ-ㅣ가-힣]*(타고|같아|감기로|중인|위해)\
+            ) ?병원"
+
+  ######################################################################################################
+  # 성매개감염병
+  - DISEASE_SEXUAL:
+      # 병명
+      - word:
+          pattern: "(\
+            매독|편평콘딜로마|곤지름|베젤|뇨베라|임[균질]|클라미디아|비둘기병|앵무새[병열]|파라트라코마|연성하감|무른궤양\
+            |헤르페스|항문생식기의\\(성병성\\) 사마귀\
+            |\\b(\
+            syphilis|condyloma|hpv|Bejel|Njovera|Gonococcal|Chlamydial|Ornithosis|Psittacosis|Parrot fever\
+            |Paratrachoma|Chancroid|herpes|Anogenital\\(venereal\\) warts\
+            )\\b)"
+
+  ######################################################################################################
+  # 면역결핍
+  - DISEASE_AIDS:
+      # 병명
+      - word:
+          pattern: "(에이즈|면역결핍|\\b(aids|hiv)\\b)"
+
+  ######################################################################################################
+  # 낙태
+  - DISEASE_ABORTION:
+      # 질병코드
+      # - kcd:
+      #     pattern: "\\bo0[47](\\.?\\d)?"
+      # 병명
+      - word:
+          pattern: "(낙태|의학적 유산|\\b(Medical abortion)\\b)"
+
+  ######################################################################################################
+  # 학대
+  - DISEASE_ABUSE:
+      # 질병코드
+      # - kcd:
+      #     pattern: "\\b(t74|y0[57])(\\.?\\d)?\\b"
+      # 병명
+      - word:
+          pattern: "(학대|\\b(Maltreatment|abuse|Battered|rape|sodomy|Sexual assault|Torture|Mental cruelty)\\b)"
+  
+  ######################################################################################################
+  # 정신병/약
+  - DISEASE_MENTAL:
+      # 질병코드
+      # - kcd:
+      #     pattern: "\\bf\\d{2}(\\.?\\d)\\b"
+      # 약품명
+      - drug:
+          # amilsulpride : 조현병 치료제인 비정형 항정신병약
+          # aripiprazole : 조현병 치료제
+          # clonazepam : 발작, 공황 장애, 정좌불능증이라고 불리는 운동장애에 처방하는 벤조디아제핀계통의 향정신성의약품
+          # donepezil|donapezil : 치매 치료제
+          # escitalopram : 항우울제
+          # Etizolam : 신경안정제
+          # lithium : 조증·조울증의 치료 및 예방적 유지치료용
+          # lorazepam : 강력한 항불안제, 잠재적 높은 중독성
+          # methylphenidate : 주의력결핍 과다행동장애와 기면증의 치료제로써 승인된 중추신경계 각성제
+          # olanzapine : 조현병, 조울증에 사용되는 비정형적 항정신병제제
+          # quetiapine : 조현병 치료제. 비정형적 항정신병제제
+          # risperidone : 조현병, 양극성 장애, 그리고 파괴적 행동과 파탄적 행동장애의 치료에 사용되는 비정형 조현병 치료제
+          # ropinirole : 파킨슨병과 하지불안 증후군을 치료
+          # Sertraline : 항우울제
+          # Benzodiazepine : 불안완화, 불면증, 흥분, 발작, 경련, 알콜 중독과 의학적 혹은 치과에서 마취를 하기 전에 사용
+          pattern: "(\
+            항우울제\
+            |\\b(\
+            amilsulpride\
+            |aripiprazole\
+            |clonazepam\
+            |donepezil|donapezil\
+            |escitalopram\
+            |Etizolam\
+            |lithium\
+            |lorazepam\
+            |methylphenidate\
+            |olanzapine\
+            |quetiapine\
+            |risperidone\
+            |ropinirole\
+            |Sertraline\
+            |Benzodiazepine\
+            )\\b)"
+      # 병명
+      - word:
+          pattern: "(\
+            (뇌병변|뇌전증|언어)( ?장애)?( ?\\d급)\
+            \
+            |((전두측두|전두엽) ?)?치매|((Subcortical )?vascular )?dementia\
+            |알츠하이머|(Dementia in )?Alzheimer( dz|'s disease)?\
+            \
+            |간질(?!환[^자])|epilepsy|epileptic syndromes\
+            |강박 ?장애|Obsessive-compulsive disorder\
+            |경계성 ?성격\
+            |(특발성 불면증 )?공황 ?장애|(Idiopathic insomnia ?)?Panic disorder\
+            |(감정 ?조절|기분) ?장애|Mood disorder\
+            |뇌전증|(구조적 ?)?뇌병변|(structural )?brain lesion\
+            |망상 ?장애|Delusional disorder|편집증적 망상|paranoid delusion\
+            |(비유기성 )?불면증|(nonorganic )?insomnia\
+            |발달 ?(장애|지연)|developmental (disorders|delay)\
+            |범?불안 ?장애|(Generalized )?anxiety disorder\
+            |(급성 ?)섬망|(acute )Delirium\
+            |수면 ?장애|sleep disorder|Disorder of initiating and maintaining sleep\
+            |신경 ?장애|neurologic disorder\
+            |신체형 ?장애|somatoform disorder\
+            |양극성 ?(I형 )?장애|조울증|Bipolar (I )?(dz|disorder)\
+            |(수용 ?)?언어 ?장애|(Receptive )?language disorder\
+            |우울(장애|증)|((Atypical|Mild|Persistent) )?Depression|depressive disorder\
+            |우울증? ?에피소드|((Moderate|severe major) )?depressive episode\
+            |(경계성 )?[인성]격장애|(Borderline )?personality disorder\
+            |(신경)인지 ?장애|(Neuro)cognitive disorder\
+            |출혈 ?후 ?인지 ?장애|Post-hemorrhagic cognitive impairment\
+            |자폐((성 ?)?장애)?|autism spectrum( disorder)?\
+            |적응 ?장애|adjustment deisorder(,? w(/|ith) anxiety)?\
+            |((분열|양극성) ?)정동 ?장애|(Schizo|Bipolar )?affective disorder\
+            |정신장애|mental disorder\
+            |정신지체|mental retardation\
+            |(?<!전)조증\
+            |(편집증적 )?조현병|정신분열병|(Paranoid )?schizophrenia( spectrum)?\
+            |해리 ?장애|dissociative disorder\
+            |행동 ?장애|behavioral disorders\
+            |환각|visual hallucination\
+            |환청|auditory halucination\
+            \
+            |섬망-치매 ?콤플렉스|Delirum-dementia complex\
+            |정신 및 행동장애|Mental and behavioral disorders\
+            |기타 정신병적 장애|other psychotic disorder\
+            |알(콜|코올) ?중독|heavy alcoholics\
+            |알(콜|코올) ?관련 ?장애|Alcohol-related disorder\
+            |알(콜|코올) ?사용 ?장애|Alcohol use disorder\
+            |알(콜|코올) ?의존 ?증후군|alcohol dependence syndrome\
+            |주의력 ?결핍 ?과잉 ?행동 ?장애|Attention deficit hyperactivity disorder, combined presentation\
+            |Mixed anxiety and depressive disorder\
+            |Other (specified )?mental disorder due to brain damage and dysfunction and to physical( disease)?\
+            |(?<=current )episode (manic with psychotic symptoms|mixed|(mild|moderate)( depression)?|posterio lead depressiong)\
+            |(?<=w(/|ith) )severe major depressive episode\
+            )"
+
+  ######################################################################################################
+  # 희귀질환
+  - DISEASE_RARE:
+      # 질병코드
+      - kcd:
+          pattern: *sdz_rare_kcd
+
+      # 병명
+      - name:
+          pattern: "\\b(\
+            비정형마이코박테륨증|Atypical mycobacteriosis\
+            |크로이츠펠트.?야콥병|Creutzfeldt.Jakob( disease)?|아급성 해면모양뇌병증|Subacute spongiform encephalopathy\
+            |가족샘종폴립증|Familial adenomatous polyposis\
+            |G6PD결핍빈혈|G6PD deficiency anaemia|잠두중독|Favism\
+          )\\b"

@@ -1,0 +1,2607 @@
+#
+# file encoding: MUST UTF-8
+#
+
+# 민감상병
+
+# 성매개감염병
+SDZ_SEXUAL_NAME: &sdz_sexual_name "(\
+    (?#A50|)선천매독|Congenital syphilis\
+    |(?#A50.0|)증상성 조기선천매독|Early congenital syphilis, symptomatic\
+    |(?#A50.0|)조기 선천매독성 골연골병증|Early congenital syphilitic osteochondropathy\
+    |(?#A50.0|)조기 선천매독성 눈병증|Early congenital syphilitic oculopathy\
+    |(?#A50.0|)조기 선천매독성 비염|Early congenital syphilitic rhinitis\
+    |(?#A50.0|)조기 선천매독성 인두염|Early congenital syphilitic pharyngitis\
+    |(?#A50.0|)조기 선천매독성 폐렴|Early congenital syphilitic pneumonia\
+    |(?#A50.0|)조기 선천매독성 후두염|Early congenital syphilitic laryngitis\
+    |(?#A50.0|)조기선천매독 내장|Early congenital syphilis, visceral\
+    |(?#A50.0|)조기선천매독 점막피부|Early congenital syphilis, mucocutaneous\
+    |(?#A50.0|)조기선천매독 피부|Early congenital syphilis, cutaneous\
+    |(?#A50.1|)잠복성 조기선천매독|Early congenital syphilis, latent\
+    |(?#A50.2|)상세불명의 조기선천매독|Early congenital syphilis, unspecified\
+    |(?#A50.2|)출생후 2년 이내의 선천매독 NOS\\.|Congenital syphilis NOS less than two years after birth\\.\
+    |(?#A50.3|)만기 선천매독성 눈병증|Late congenital syphilitic oculopathy\
+    |(?#A50.3|)달리 분류되지 않은 만기 선천매독성 눈병증\\(H58\\.8\\*\\)|Late congenital syphilitic oculopathy NEC\\(H58\\.8\\*\\)\
+    |(?#A50.3|)만기 선천매독성 간질각막염\\(H19\\.2\\*\\)|Late congenital syphilitic interstitial keratitis\\(H19\\.2\\*\\)\
+    |(?#A50.4|)만기 선천성 신경매독\\[연소성 신경매독\\]|Late congenital neurosyphilis \\[juvenile neurosyphilis\\]\
+    |(?#A50.4|)만기 선천매독성 뇌염\\(G05\\.0\\*\\)|Late congenital syphilitic encephalitis\\(G05\\.0\\*\\)\
+    |(?#A50.4|)만기 선천매독성 다발신경병증\\(G63\\.0\\*\\)|Late congenital syphilitic polyneuropathy\\(G63\\.0\\*\\)\
+    |(?#A50.4|)만기 선천매독성 수막염\\(G01\\*\\)|Late congenital syphilitic meningitis\\(G01\\*\\)\
+    |(?#A50.4|)연소성 마비성 치매|Dementia paralytica juvenilis\
+    |(?#A50.4|)연소성 진행마비|Juvenile general paresis\
+    |(?#A50.4|)연소성 척수매독|Juvenile tabes dorsalis\
+    |(?#A50.4|)연소성 척수매독불완전마비성 신경매독|Juvenile taboparetic neurosyphilis\
+    |(?#A50.5|)기타 증상성 만기선천매독|Other late congenital syphilis, symptomatic\
+    |(?#A50.5|)만기 선천매독성 골연골병증\\(M90\\.2\\*\\)|Late congenital syphilitic osteochondropathy\\(M90\\.2\\*\\)\
+    |(?#A50.5|)만기 선천매독성 관절병증\\(M03\\.1\\*\\)|Late congenital syphilitic arthropathy\\(M03\\.1\\*\\)\
+    |(?#A50.5|)만기 선천성 심혈관매독\\(I98\\.0\\*\\)|Late congenital cardiovascular syphilis\\(I98\\.0\\*\\)\
+    |(?#A50.5|)매독성 안장코|Syphilitic saddle nose\
+    |(?#A50.5|)클러톤관절\\(M03\\.1\\*\\)|Clutton’s joints\\(M03\\.1\\*\\)\
+    |(?#A50.5|)허친슨세증후|Hutchinson’s triad\
+    |(?#A50.5|)허친슨치아|Hutchinson’s teeth\
+    |(?#A50.6|)잠복성 만기선천매독|Late congenital syphilis, latent\
+    |(?#A50.7|)상세불명의 만기선천매독|Late congenital syphilis, unspecified\
+    |(?#A50.7|)출생후 2년 이상의 선천매독 NOS\\.|Congenital syphilis NOS two years or more after birth\\.\
+    |(?#A50.9|)상세불명의 선천매독|Congenital syphilis, unspecified\
+    |(?#A51|)조기매독|Early syphilis\
+    |(?#A5.0|)생식기의 일차매독|Primary genital syphilis\
+    |(?#A5.0|)매독성 굳은궤양 NOS|Syphilitic chancre NOS\
+    |(?#A5.1|)항문의 일차매독|Primary anal syphilis\
+    |(?#A5.2|)기타 부위의 일차매독|Primary syphilis of other sites\
+    |(?#A5.3|)피부 및 점막의 이차매독|Secondary syphilis of skin and mucous membranes\
+    |(?#A5.3|)매독성 백반\\(L99\\.8\\*\\)|Syphilitic leukoderma\\(L99\\.8\\*\\)\
+    |(?#A5.3|)매독성 점막반|Syphilitic mucous patch\
+    |(?#A5.3|)매독성 탈모\\(L99\\.8\\*\\)|Syphilitic alopecia\\(L99\\.8\\*\\)\
+    |(?#A5.3|)편평콘딜로마|Condyloma latum\
+    |(?#A5.4|)기타 이차매독|Other secondary syphilis\
+    |(?#A5.4|)이차매독성 골막염\\(M90\\.1\\*\\)|Secondary syphilitic periostitis\\(M90\\.1\\*\\)\
+    |(?#A5.4|)이차매독성 근염\\(M63\\.0\\*\\)|Secondary syphilitic myositis\\(M63\\.0\\*\\)\
+    |(?#A5.4|)이차매독성 달리 분류되지 않은 눈병증\\(H58\\.8\\*\\)|Secondary syphilitic oculopathy NEC\\(H58\\.8\\*\\)\
+    |(?#A5.4|)이차매독성 림프선병증|Secondary syphilitic lymphadenopathy\
+    |(?#A5.4|)이차매독성 수막염\\(G01\\*\\)|Secondary syphilitic meningitis\\(G01\\*\\)\
+    |(?#A5.4|)이차매독성 여성골반염증질환\\(N74\\.2\\*\\)|Secondary syphilitic female pelvic inflammatory disease\\(N74\\.2\\*\\)\
+    |(?#A5.4|)이차매독성 홍채섬모체염\\(H22\\.0\\*\\)|Secondary syphilitic iridocyclitis\\(H22\\.0\\*\\)\
+    |(?#A5.5|)잠복성 조기매독|Early syphilis, latent\
+    |(?#A5.9|)상세불명의 조기매독|Early syphilis, unspecified\
+    |(?#A52|)만기매독|Late syphilis\
+    |(?#A52.0|)심혈관매독|Cardiovascular syphilis\
+    |(?#A52.0|)심혈관매독 NOS\\(I98\\.0\\*\\)|Cardiovascular syphilis NOS\\(I98\\.0\\*\\)\
+    |(?#A52.0|)매독성 대뇌동맥염\\(I68\\.1\\*\\)|Syphilitic arteritis, cerebral\\(I68\\.1\\*\\)\
+    |(?#A52.0|)매독성 대동맥류\\(I79\\.0\\*\\)|Syphilitic aneurysm of aorta\\(I79\\.0\\*\\)\
+    |(?#A52.0|)매독성 대동맥염\\(I79\\.1\\*\\)|Syphilitic aortitis\\(I79\\.1\\*\\)\
+    |(?#A52.0|)매독성 대동맥판기능부전\\(I39\\.1\\*\\)|Syphilitic aortic incompetence\\(I39\\.1\\*\\)\
+    |(?#A52.0|)매독성 심근염\\(I41\\.0\\*\\)|Syphilitic myocarditis\\(I41\\.0\\*\\)\
+    |(?#A52.0|)매독성 심내막염 NOS\\(I39\\.8\\*\\)|Syphilitic endocarditis NOS\\(I39\\.8\\*\\)\
+    |(?#A52.0|)매독성 심장막염\\(I32\\.0\\*\\)|Syphilitic pericarditis\\(I32\\.0\\*\\)\
+    |(?#A52.0|)매독성 폐동맥판역류\\(I39\\.3\\*\\)|Syphilitic pulmonary regurgitation\\(I39\\.3\\*\\)\
+    |(?#A52.1|)증상성 신경매독|Symptomatic neurosyphilis\
+    |(?#A52.1|)만기매독성 뇌염\\(G05\\.0\\*\\)|Late syphilitic encephalitis\\(G05\\.0\\*\\)\
+    |(?#A52.1|)만기매독성 다발신경병증\\(G63\\.0\\*\\)|Late syphilitic polyneuropathy\\(G63\\.0\\*\\)\
+    |(?#A52.1|)만기매독성 수막염\\(G01\\*\\)|Late syphilitic meningitis\\(G01\\*\\)\
+    |(?#A52.1|)만기매독성 시신경위축\\(H48\\.0\\*\\)|Late syphilitic optic atrophy\\(H48\\.0\\*\\)\
+    |(?#A52.1|)만기매독성 안구후시신경염\\(H48\\.1\\*\\)|Late syphilitic retrobulbar neuritis\\(H48\\.1\\*\\)\
+    |(?#A52.1|)만기매독성 청신경염\\(H94\\.0\\*\\)|Late syphilitic acoustic neuritis\\(H94\\.0\\*\\)\
+    |(?#A52.1|)매독성 \\(척수로\\) 관절병증\\(M14\\.6\\*\\)|Syphilitic \\(tabetic\\) arthropathy\\(M14\\.6\\*\\)\
+    |(?#A52.1|)매독성 파킨슨증\\(G22\\*\\)|Syphilitic parkinsonism\\(G22\\*\\)\
+    |(?#A52.1|)척수매독|Tabes dorsalis\
+    |(?#A52.2|)무증상신경매독|Asymptomatic neurosyphilis\
+    |(?#A52.3|)상세불명의 신경매독|Neurosyphilis, unspecified\
+    |(?#A52.3|)중추신경계통의 고무종\\(매독\\) NOS|Gumma\\(syphilis\\) NOS of central nervous system \
+    |(?#A52.3|)중추신경계통의 매독\\(만기\\) NOS|Syphilis\\(late\\) NOS of central nervous system \
+    |(?#A52.3|)중추신경계통의 매독종 NOS|Syphiloma NOS of central nervous system \
+    |(?#A52.7|)기타 증상성 만기매독|Other symptomatic late syphilis\
+    |(?#A52.7|)매독에서의 사구체질환\\(N08\\.0\\*\\)|Glomerular disease in syphilis\\(N08\\.0\\*\\)\
+    |(?#A52.7|)간의 매독\\[상세불명의 단계\\]\\(K77\\.0\\*\\)|Syphilis \\[stage unspecified\\] of liver\\(K77\\.0\\*\\)\
+    |(?#A52.7|)골의 매독\\[상세불명의 단계\\]\\(M90\\.2\\*\\)|Syphilis \\[stage unspecified\\] of bone\\(M90\\.2\\*\\)\
+    |(?#A52.7|)근육의 매독\\[상세불명의 단계\\]\\(M63\\.0\\*\\)|Syphilis \\[stage unspecified\\] of muscle\\(M63\\.0\\*\\)\
+    |(?#A52.7|)만기매독성 달리 분류되지 않은 눈병증\\(H58\\.8\\*\\)|Late syphilitic oculopathy NEC\\(H58\\.8\\*\\)\
+    |(?#A52.7|)만기매독성 맥락망막염\\(H32\\.0\\*\\)|Late syphilitic chorioretinitis\\(H32\\.0\\*\\)\
+    |(?#A52.7|)만기매독성 백피증\\(L99\\.8\\*\\)|Late syphilitic leukoderma\\(L99\\.8\\*\\)\
+    |(?#A52.7|)만기매독성 복막염\\(K67\\.2\\*\\)|Late syphilitic peritonitis\\(K67\\.2\\*\\)\
+    |(?#A52.7|)만기매독성 상공막염\\(H19\\.0\\*\\)|Late syphilitic episcleritis\\(H19\\.0\\*\\)\
+    |(?#A52.7|)만기매독성 여성골반염증질환\\(N74\\.2\\*\\)|Late syphilitic female pelvic inflammatory disease\\(N74\\.2\\*\\)\
+    |(?#A52.7|)만기매독성 윤활낭염\\(M73\\.1\\*\\)|Late syphilitic bursitis\\(M73\\.1\\*\\)\
+    |(?#A52.7|)윤활막의 매독\\[상세불명의 단계\\]\\(M68\\.0\\*\\)|Syphilis \\[stage unspecified\\] of synovium\\(M68\\.0\\*\\)\
+    |(?#A52.7|)폐의 매독\\[상세불명의 단계\\]\\(J99\\.8\\*\\)|Syphilis \\[stage unspecified\\] of lung\\(J99\\.8\\*\\)\
+    |(?#A52.8|)잠복성 만기매독|Late syphilis, latent\
+    |(?#A52.9|)상세불명의 만기매독|Late syphilis, unspecified\
+    |(?#A53|)기타 및 상세불명의 매독|Other and unspecified syphilis\
+    |(?#A53.0|)조기인지 만기인지 상세불명의 잠복매독|Latent syphilis, unspecified as early or late\
+    |(?#A53.0|)매독혈청반응 양성|Positive serological reaction for syphilis\
+    |(?#A53.0|)잠복매독 NOS|Latent syphilis NOS\
+    |(?#A53.9|)상세불명의 매독|Syphilis, unspecified\
+    |(?#A53.9|)매독균에 의한 감염 NOS|Infection due to Treponema pallidum NOS\
+    |(?#A53.9|)매독\\(후천\\) NOS|Syphilis\\(acquired\\) NOS\
+    |(?#A54|)임균감염|Gonococcal infection\
+    |(?#A54.0|)요도주위 또는 부속선에 농양이 없는 하부 비뇨생식관의 임균감염|Gonococcal infection of lower genitourinary tract without periurethral or accessory gland abscess\
+    |(?#A54.0|)임균성 방광염 NOS|Gonococcal cystitis NOS\
+    |(?#A54.0|)임균성 외음질염 NOS|Gonococcal vulvovaginitis NOS\
+    |(?#A54.0|)임균성 요도염 NOS|Gonococcal urethritis NOS\
+    |(?#A54.0|)임균성 자궁경부염 NOS|Gonococcal cervicitis NOS\
+    |(?#A54.1|)요도주위 및 부속선에 농양이 있는 하부 비뇨생식관의 임균감염|Gonococcal infection of lower genitourinary tract with periurethral and accessory gland abscess\
+    |(?#A54.1|)임균성 바르톨린선농양|Gonococcal Bartholin’s gland abscess\
+    |(?#A54.2|)임균성 골반복막염 및 기타 임균성 비뇨생식기감염|Gonococcal pelviperitonitis and other gonococcal genitourinary infections\
+    |(?#A54.2|)임균성 고환염\\(N51\\.1\\*\\)|Gonococcal orchitis\\(N51\\.1\\*\\)\
+    |(?#A54.2|)임균성 부고환염\\(N51\\.1\\*\\)|Gonococcal epididymitis\\(N51\\.1\\*\\)\
+    |(?#A54.2|)임균성 여성골반염증질환\\(N74\\.3\\*\\)|Gonococcal female pelvic inflammatory disease\\(N74\\.3\\*\\)\
+    |(?#A54.2|)임균성 전립선염\\(N51\\.0\\*\\)|Gonococcal prostatitis\\(N51\\.0\\*\\)\
+    |(?#A54.3|)눈의 임균감염|Gonococcal infection of eye\
+    |(?#A54.3|)임균결막염\\(H13\\.1\\*\\)|Gonococcal conjunctivitis\\(H13\\.1\\*\\)\
+    |(?#A54.3|)임균홍채섬모체염\\(H22\\.0\\*\\)|Gonococcal iridocyclitis\\(H22\\.0\\*\\)\
+    |(?#A54.3|)임균에 의한 신생아안염|Ophthalmia neonatorum due to gonococcus\
+    |(?#A54.4|)근골격계통의 임균감염|Gonococcal infection of musculoskeletal system\
+    |(?#A54.4|)임균성 골수염\\(M90\\.2\\*\\)|Gonococcal osteomyelitis\\(M90\\.2\\*\\)\
+    |(?#A54.4|)임균성 관절염\\(M01\\.3\\*\\)|Gonococcal arthritis\\(M01\\.3\\*\\)\
+    |(?#A54.4|)임균성 윤활낭염\\(M73\\.0\\*\\)|Gonococcal bursitis\\(M73\\.0\\*\\)\
+    |(?#A54.4|)임균성 윤활막염\\(M68\\.0\\*\\)|Gonococcal synovitis\\(M68\\.0\\*\\)\
+    |(?#A54.4|)임균성 힘줄윤활막염\\(M68\\.0\\*\\)|Gonococcal tenosynovitis\\(M68\\.0\\*\\)\
+    |(?#A54.5|)임균인두염|Gonococcal pharyngitis\
+    |(?#A54.6|)항문 및 직장의 임균감염|Gonococcal infection of anus and rectum\
+    |(?#A54.8|)기타 임균감염|Other gonococcal infections\
+    |(?#A54.8|)임균성 뇌농양\\(G07\\*\\)|Gonococcal brain abscess\\(G07\\*\\)\
+    |(?#A54.8|)임균성 복막염\\(K67\\.1\\*\\)|Gonococcal peritonitis\\(K67\\.1\\*\\)\
+    |(?#A54.8|)임균성 수막염\\(G01\\*\\)|Gonococcal meningitis\\(G01\\*\\)\
+    |(?#A54.8|)임균성 심근염\\(I41\\.0\\*\\)|Gonococcal myocarditis\\(I41\\.0\\*\\)\
+    |(?#A54.8|)임균성 심내막염\\(I39\\.8\\*\\)|Gonococcal endocarditis\\(I39\\.8\\*\\)\
+    |(?#A54.8|)임균성 심장막염\\(I32\\.0\\*\\)|Gonococcal pericarditis\\(I32\\.0\\*\\)\
+    |(?#A54.8|)임균성 패혈증|Gonococcal sepsis\
+    |(?#A54.8|)임균성 폐렴\\(J17\\.0\\*\\)|Gonococcal pneumonia\\(J17\\.0\\*\\)\
+    |(?#A54.8|)임균성 피부병변|Gonococcal skin lesions\
+    |(?#A54.9|)상세불명의 임균감염|Gonococcal infection, unspecified\
+    |(?#A55|)클라미디아림프육아종\\(성병성\\)|Chlamydial lymphogranuloma\\(venereum\\)\
+    |(?#A55|)기후 또는 열대 가래톳|Climatic or tropical bubo\
+    |(?#A55|)두란드-니콜라스-파브레병|Durand-Nicolas-Favre disease\
+    |(?#A55|)만성 외음궤양|Esthiomene\
+    |(?#A55|)사타구니림프육아종|Lymphogranuloma inguinale\
+    |(?#A56|)기타 성행위로 전파되는 클라미디아질환|Other sexually transmitted chlamydial diseases\
+    |(?#A56.0|)하부비뇨생식관의 클라미디아감염|Chlamydial infection of lower genitourinary tract\
+    |(?#A56.0|)클라미디아 방광염|Chlamydial cystitis\
+    |(?#A56.0|)클라미디아 외음질염|Chlamydial vulvovaginitis\
+    |(?#A56.0|)클라미디아 요도염|Chlamydial urethritis\
+    |(?#A56.0|)클라미디아 자궁경부염|Chlamydial cervicitis\
+    |(?#A56.1|)골반복막 및 기타 비뇨생식기관의 클라미디아감염|Chlamydial infection of pelviperitoneum and other genitourinary organs\
+    |(?#A56.1|)클라미디아 고환염\\(N51\\.1\\*\\)|Chlamydial orchitis\\(N51\\.1\\*\\)\
+    |(?#A56.1|)클라미디아 부고환염\\(N51\\.1\\*\\)|Chlamydial epididymitis\\(N51\\.1\\*\\)\
+    |(?#A56.1|)클라미디아 여성골반염증질환\\(N74\\.4\\*\\)|Chlamydial female pelvic inflammatory disease\\(N74\\.4\\*\\)\
+    |(?#A56.2|)상세불명의 비뇨생식관의 클라미디아감염|Chlamydial infection of genitourinary tract, unspecified\
+    |(?#A56.3|)항문 및 직장의 클라미디아감염|Chlamydial infection of anus and rectum\
+    |(?#A56.4|)인두의 클라미디아감염|Chlamydial infection of pharynx\
+    |(?#A56.8|)기타 부위의 성행위로 전파되는 클라미디아감염|Sexually transmitted chlamydial infection of other sites\
+    |(?#A57|)무른궤양|Chancroid\
+    |(?#A57|)무른궤양|Ulcus molle\
+    |(?#A60|)항문생식기의 헤르페스바이러스\\[단순헤르페스\\]감염|Anogenital herpesviral \\[herpes simplex\\] infection\
+    |(?#A60.0|)생식기 및 비뇨생식관의 헤르페스바이러스감염|Herpesviral infection of genitalia and urogenital tract\
+    |(?#A60.01|)남성 비뇨생식기관의 헤르페스바이러스감염\\(N51\\.-\\*\\)|Herpesviral infection in male genitalia and urogenital tract organs \\(N51\\.-\\*\\)\
+    |(?#A60.04|)여성 비뇨생식기관의 헤르페스바이러스감염 \\(N77\\.0-N77\\.1\\*\\)|Herpesviral infection in female genitalia and urogenital tract organs \\(N77\\.0-N77\\.1\\*\\)\
+    |(?#A60.1|)항문주위피부 및 직장의 헤르페스바이러스감염|Herpesviral infection of perianal skin and rectum\
+    |(?#A60.9|)상세불명의 항문생식기의 헤르페스바이러스감염|Anogenital herpesviral infection, unspecified\
+    |(?#A63.0|)항문생식기의\\(성병성\\) 사마귀|Anogenital\\(venereal\\) warts\
+    |(?#A65|)비성병성 매독|Nonvenereal syphilis\
+    |(?#A65|)베젤|Bejel\
+    |(?#A65|)풍토병성 매독|Endemic syphilis\
+    |(?#A65|)뇨베라|Njovera\
+    |(?#A70|)클라미디아 시타시 감염|Chlamydia psittaci infection\
+    |(?#A70|)비둘기병|Ornithosis\
+    |(?#A70|)앵무새병|Psittacosis\
+    |(?#A70|)앵무새열|Parrot fever\
+    |(?#A74|)클라미디아에 의한 기타 질환|Other diseases caused by chlamydiae\
+    |(?#A74.0|)클라미디아결막염\\(H13\\.1\\*\\)|Chlamydial conjunctivitis\\(H13\\.1\\*\\)\
+    |(?#A74.0|)파라트라코마\\(H13\\.1\\*\\)|Paratrachoma\\(H13\\.1\\*\\)\
+    |(?#A74.8|)기타 클라미디아질환|Other chlamydial diseases\
+    |(?#A74.8|)클라미디아복막염\\(K67\\.0\\*\\)|Chlamydial peritonitis\\(K67\\.0\\*\\)\
+    |(?#A74.9|)상세불명의 클라미디아감염|Chlamydial infection, unspecified\
+    |(?#A74.9|)클라미디아증 NOS|Chlamydiosis NOS\
+    |(?#I98.0|)심혈관매독|Cardiovascular syphilis\
+    |(?#I98.0|)심혈관매독 NOS\\(A52\\.0\\+\\)|Cardiovascular syphilis NOS\\(A52\\.0\\+\\)\
+    |(?#I98.0|)선천성, 만기 심혈관매독\\(A50\\.5\\+\\)|Congenital, late cardiovascular syphilis\\(A50\\.5\\+\\)\
+    |(?#J16.0|)클라미디아폐렴|Chlamydial pneumonia\
+    |(?#K67.0|)클라미디아복막염\\(A74\\.8†\\)|Chlamydial peritonitis\\(A74\\.8†\\)\
+    |(?#K67.1|)임균복막염\\(A54\\.8†\\)|Gonococcal peritonitis\\(A54\\.8†\\)\
+    |(?#K67.2|)매독복막염\\(A52\\.7†\\)|Syphilitic peritonitis\\(A52\\.7†\\)\
+    |(?#M03.1|)매독에서의 감염후관절병증|Postinfective arthropathy in syphilis\
+    |(?#M73.0|)임균윤활낭염\\(A54\\.4†\\)|Gonococcal bursitis\\(A54\\.4†\\)\
+    |(?#M73.1|)매독윤활낭염\\(A52\\.7†\\)|Syphilitic bursitis\\(A52\\.7†\\)\
+    |(?#N29.0|)신장의 만기매독\\(A52\\.7†\\)|Late syphilis of kidney\\(A52\\.7†\\)\
+    |(?#N74.2|)여성 매독성 골반염증질환\\(A51\\.4†, A52\\.7†\\)|Female syphilitic pelvic inflammatory disease\\(A51\\.4†, A52\\.7†\\)\
+    |(?#N74.3|)여성 임균성 골반염증질환\\(A54\\.2†\\)|Female gonococcal pelvic inflammatory disease\\(A54\\.2†\\)\
+    |(?#N74.4|)여성 클라미디아 골반염증질환\\(A56\\.1†\\)|Female chlamydial pelvic inflammatory disease\\(A56\\.1†\\)\
+    |(?#O98.1|)임신, 출산 및 산후기에 합병된 매독|Syphilis complicating pregnancy, childbirth and the puerperium\
+    |(?#O98.2|)임신, 출산 및 산후기에 합병된 임질|Gonorrhoea complicating pregnancy, childbirth and the puerperium\
+    |(?#P23.1|)클라미디아로 인한 선천폐렴|Congenital pneumonia due to chlamydia\
+    |(?#R76.2|)매독의 가양성 혈청검사|False-positive serological test for syphilis\
+    )"
+
+
+# 후천성면역결핍증
+SDZ_AIDS_NAME: &sdz_aids_name "(\
+    (?#B20|)감염성 및 기생충성 질환을 유발한 사람면역결핍바이러스병|Human immunodeficiency virus \\[HIV\\] disease resulting in infectious and parasitic diseases\
+    |(?#B20.0|)마이코박테리아감염을 유발한 사람면역결핍바이러스병|HIV disease resulting in mycobacterial infection\
+    |(?#B20.0|)결핵을 유발한 사람면역결핍바이러스병|HIV disease resulting in tuberculosis\
+    |(?#B20.1|)기타 세균감염을 유발한 사람면역결핍바이러스병|HIV disease resulting in other bacterial infections\
+    |(?#B20.2|)거대세포바이러스병을 유발한 사람면역결핍바이러스병|HIV disease resulting in cytomegaloviral disease\
+    |(?#B20.3|)기타 바이러스감염을 유발한 사람면역결핍바이러스병|HIV disease resulting in other viral infections\
+    |(?#B20.4|)칸디다증을 유발한 사람면역결핍바이러스병|HIV disease resulting in candidiasis\
+    |(?#B20.5|)기타 진균증을 유발한 사람면역결핍바이러스병|HIV disease resulting in other mycoses\
+    |(?#B20.6|)폐포자충폐렴을 유발한 사람면역결핍바이러스병|HIV disease resulting in Pneumocystis jirovecii pneumonia\
+    |(?#B20.6|)폐포자충폐렴을 유발한 사람면역결핍바이러스병|HIV disease resulting in Pneumocystis carinii pneumonia\
+    |(?#B20.7|)다발감염을 유발한 사람면역결핍바이러스병|HIV disease resulting in multiple infections\
+    |(?#B20.8|)기타 감염성 및 기생충성 질환을 유발한 사람면역결핍바이러스병|HIV disease resulting in other infectious and parasitic diseases\
+    |(?#B20.9|)상세불명의 감염성 또는 기생충성 질환을 유발한 사람면역결핍바이러스병|HIV disease resulting in unspecified infectious or parasitic disease\
+    |(?#B20.9|)감염을 유발한 사람면역결핍바이러스병 NOS|HIV disease resulting in infection NOS\
+    |(?#B21|)악성 신생물을 유발한 사람면역결핍바이러스병|Human immunodeficiency virus \\[HIV\\] disease resulting in malignant neoplasms\
+    |(?#B21.0|)카포시육종을 유발한 사람면역결핍바이러스병|HIV disease resulting in Kaposi’s sarcoma\
+    |(?#B21.1|)버킷림프종을 유발한 사람면역결핍바이러스병|HIV disease resulting in Burkitt lymphoma\
+    |(?#B21.2|)기타 유형의 비호지킨림프종을 유발한 사람면역결핍바이러스병|HIV disease resulting in other types of non-Hodgkin lymphoma\
+    |(?#B21.3|)림프성, 조혈성 및 관련 조직의 기타 악성 신생물을 유발한 사람면역결핍바이러스병|HIV disease resulting in other malignant neoplasms of lymphoid, haematopoietic and related tissue\
+    |(?#B21.7|)다발성 악성 신생물을 유발한 사람면역결핍바이러스병|HIV disease resulting in multiple malignant neoplasms\
+    |(?#B21.8|)기타 악성 신생물을 유발한 사람면역결핍바이러스병|HIV disease resulting in other malignant neoplasms\
+    |(?#B21.9|)상세불명의 악성 신생물을 유발한 사람면역결핍바이러스병|HIV disease resulting in unspecified malignant neoplasm\
+    |(?#B22|)기타 명시된 질환을 유발한 사람면역결핍바이러스병|Human immunodeficiency virus \\[HIV\\] disease resulting in other specified diseases\
+    |(?#B22.0|)뇌병증을 유발한 사람면역결핍바이러스병|HIV disease resulting in encephalopathy\
+    |(?#B22.0|)사람면역결핍바이러스치매|HIV dementia\
+    |(?#B22.1|)림프성 간질폐렴을 유발한 사람면역결핍바이러스병|HIV disease resulting in lymphoid interstitial pneumonitis\
+    |(?#B22.2|)성장장애를 유발한 사람면역결핍바이러스병|HIV disease resulting in failure to thrive\
+    |(?#B22.2|)소모증후군을 유발한 사람면역결핍바이러스병|HIV disease resulting in wasting syndrome\
+    |(?#B22.2|)슬림병|Slim disease\
+    |(?#B22.7|)달리 분류된 다발성 질환을 유발한 사람면역결핍바이러스병|HIV disease resulting in multiple diseases classified elsewhere\
+    |(?#B23|)기타 병태를 유발한 사람면역결핍바이러스병|Human immunodeficiency virus \\[HIV\\] disease resulting in other conditions\
+    |(?#B23.0|)급성 사람면역결핍바이러스감염증후군|Acute HIV infection syndrome\
+    |(?#B23.1|)\\(지속성\\) 전신림프선병증을 유발한 사람면역결핍바이러스병|HIV disease resulting in \\(persistent\\) generalized lymphadenopathy\
+    |(?#B23.2|)달리 분류되지 않은 혈액학적 및 면역학적 이상을 유발한 사람면역결핍바이러스병|HIV disease resulting in haematological and immunological abnormalities, NEC\
+    |(?#B23.8|)기타 명시된 병태를 유발한 사람면역결핍바이러스병|HIV disease resulting in other specified conditions\
+    |(?#B24|)상세불명의 사람면역결핍바이러스병|Unspecified human immunodeficiency virus \\[HIV\\] disease\
+    |(?#B24|)에이즈-관련복합 NOS|AIDS-related complex \\[ARC\\] NOS\
+    |(?#B24|)후천면역결핍증후군  NOS|Immunodeficiency syndrome \\[AIDS\\] NOS\
+    |(?#O98.7|)임신, 출산 및 산후기에 합병된 사람면역결핍바이러스병|Human immunodeficiency virus \\[HIV\\] disease complicating pregnancy,childbirth and the puerperium\
+    |(?#O98.7|)임신, 출산 및 산후기에 합병된 B20-B24의 병태|Conditions in B20-B24, complicating pregnancy\
+    |(?#R75|)사람면역결핍바이러스의 검사실 증거|Laboratory evidence of human immunodeficiency virus\\[HIV\\]\
+    |(?#R75|)영아의 비결정적 사람면역결핍바이러스검사소견|Nonconclusive HIV-test finding in infants\
+    |(?#Z11.4|)사람면역결핍바이러스에 대한 특수선별검사|Special screening examination for human immunodeficiency virus \\[HIV\\]\
+    |(?#Z20.6|)사람면역결핍바이러스에 접촉 및 노출|Contact with and exposure to human immunodeficiency virus \\[HIV\\]\
+    |(?#Z21|)무증상 사람면역결핍바이러스 감염상태|Asymptomatic human immunodeficiency virus \\[HIV\\] infection status\
+    |(?#Z21|)사람면역결핍바이러스 양성 NOS|HIV positive NOS\
+    |(?#Z71.7|)사람면역결핍바이러스 상담을 위해 보건서비스와 접하고 있는 사람|Persons encountering health services for human immunodeficiency virus \\[HIV\\] counselling\
+    |(?#Z83.0|)사람면역결핍바이러스병의 가족력|Family history of human immunodeficiency virus disease\
+    )"
+
+
+# 학대
+SDZ_ABUSE_NAME: &sdz_abuse_name "(\
+    (?#T74|)학대증후군|Maltreatment syndromes\
+    |(?#T74.0|)무시 또는 포기|Neglect or abandonment\
+    |(?#T74.1|)육체적 학대|Physical abuse\
+    |(?#T74.1|)구타당한 아기 또는 어린이 증후군 NOS|Battered baby or child syndrome NOS\
+    |(?#T74.1|)피학대배우자증후군 NOS|Battered spouse syndrome NOS\
+    |(?#T74.2|)성적 학대|Sexual abuse\
+    |(?#T74.3|)심리적 학대|Psychological abuse\
+    |(?#T74.8|)기타 학대증후군|Other maltreatment syndromes\
+    |(?#T74.8|)혼합형 학대증후군|Mixed forms maltreatment syndromes\
+    |(?#T74.9|)상세불명의 학대증후군|Maltreatment syndrome, unspecified\
+    |(?#T74.9|)성인 학대의 영향 NOS|Effects of abuse of adult NOS\
+    |(?#T74.9|)어린이 학대의 영향 NOS|Effects of child abuse NOS\
+    |(?#Y05|)완력에 의한 성적 학대|Sexual assault by bodily force\
+    |(?#Y05|)강간\\(기도\\)|Rape \\(attempted\\)\
+    |(?#Y05|)수간\\(기도\\)|Sodomy \\(attempted\\)\
+    |(?#Y07|)기타 학대|Other maltreatment \
+    |(?#Y07|)고문|Torture\
+    |(?#Y07|)성적 학대|Sexual abuse\
+    |(?#Y07|)신체적 학대|Physical abuse\
+    |(?#Y07|)정신적 학대|Mental cruelty\
+    |(?#Y07.0|)배우자 또는 동거자에 의한 기타 학대|Other maltreatment  by spouse or partner\
+    |(?#Y07.1|)부모에 의한 기타 학대|Other maltreatment  by parent\
+    |(?#Y07.2|)아는 사람 또는 친구에 의한 기타 학대|Other maltreatment  by acquaintance or friend\
+    |(?#Y07.3|)공공당국에 의한 기타 학대|Other maltreatment  by official authorities\
+    |(?#Y07.8|)기타 명시된 사람에 의한 기타 학대|Other maltreatment  by other specified persons\
+    |(?#Y07.9|)상세불명의 사람에 의한 기타 학대|Other maltreatment by unspecified person\
+    |(?#Z61.4|)일차지지집단내 사람에 의한 어린이의 추정된 성적 학대에 관련된 문제|Problems related to alleged sexual abuse of child by person within primary support group\
+    |(?#Z61.5|)일차지지집단외 사람에 의한 어린이의 추정된 성적 학대에 관련된 문제|Problems related to alleged sexual abuse of child by person outside primary support group\
+    |(?#Z61.6|)어린이의 추정된 육체적 학대에 관련된 문제|Problems related to alleged physical abuse of child\
+    |(?#Z91.8|)달리 분류되지 않은 기타 명시된 위험요인의 개인력|Personal history of other specified risk-factors, NEC\
+    |(?#Z91.8|)학대의 개인력 NOS|Personal history of maltreatment NOS\
+    )"
+
+
+# 낙태
+SDZ_ABORTION_NAME: &sdz_abortion_name "(\
+    (?#O04|)의학적 유산|Medical abortion\
+    |(?#O04|)합법적 임신중절|Legal termination of pregnancy\
+    |(?#O04|)치료적 임신중절|Therapeutic termination of pregnancy\
+    |(?#O04|)치료적 유산|Therapeutic abortion\
+    |(?#O04.0|)생식관 및 골반감염이 합병된 불완전 의학적 유산 \\(O08\\.0의 병태\\)|Incomplete medical abortion, complicated by genital tract and pelvic infection  \\(conditions in O08\\.0\\)\
+    |(?#O04.1|)지연 또는 심한 출혈이 합병된 불완전 의학적 유산 \\(O08\\.1의 병태\\)|Incomplete medical abortion, complicated by delayed or excessive haemorrhage  \\(conditions in O08\\.1\\)\
+    |(?#O04.2|)색전증이 합병된 불완전 의학적 유산 \\(O08\\.2의 병태\\)|Incomplete medical abortion, complicated by embolism \\(conditions in O08\\.2\\)\
+    |(?#O04.3|)기타 및 상세불명의 합병증이 동반된 불완전 의학적 유산 \\(O08\\.3-O08\\.9의 병태\\)|Incomplete medical abortion, with other and unspecified complications \\(conditions in O08\\.3-O08\\.9\\)\
+    |(?#O04.4|)합병증이 없는 불완전 의학적 유산|Incomplete medical abortion, without complication\
+    |(?#O04.5|)생식관 및 골반감염이 합병된 완전 또는 상세불명의 의학적 유산 \\(O08\\.0의 병태\\)|Complete or unspecified medical abortion, complicated by genital tract and pelvic infection \\(conditions in O08\\.0\\)\
+    |(?#O04.6|)지연 또는 심한 출혈이 합병된 완전 또는 상세불명의 의학적 유산 \\(O08\\.1의 병태\\)|Complete or unspecified medical abortion, complicated by delayed or excessive haemorrhage  \\(conditions in O08\\.1\\)\
+    |(?#O04.7|)색전증이 합병된 완전 또는 상세불명의 의학적 유산 \\(O08\\.2의 병태\\)|Complete or unspecified medical abortion, complicated by embolism \\(conditions in O08\\.2\\)\
+    |(?#O04.8|)기타 및 상세불명의 합병증이 동반된 완전 또는 상세불명의 의학적 유산 \\(O08\\.3-O08\\.9의 병태\\)|Complete or unspecified medical abortion, with other and unspecified complications \\(conditions in O08\\.3-O08\\.9\\)\
+    |(?#O04.9|)합병증이 없는 완전 또는 상세불명의 의학적 유산|Complete or unspecified medical abortion, without complication\
+    |(?#O07|)시도된 유산의 실패|Failed attempted abortion\
+    |(?#O07|)유산시도의 실패|Failure of attempted induction of abortion\
+    |(?#O07.0|)생식관 및 골반감염이 합병된 의학적 유산의 실패|Failed medical abortion, complicated by genital tract and pelvic infection\
+    |(?#O07.1|)지연 또는 심한 출혈이 합병된 의학적 유산의 실패|Failed medical abortion, complicated by delayed or excessive haemorrhage\
+    |(?#O07.2|)색전증이 합병된 의학적 유산의 실패|Failed medical abortion, complicated by embolism\
+    |(?#O07.3|)기타 및 상세불명의 합병증에 의한 의학적 유산의 실패|Failed medical abortion, with other and unspecified complications\
+    |(?#O07.4|)합병증이 없는 의학적 유산의 실패|Failed medical abortion, without complication\
+    |(?#O07.4|)의학적 유산의 실패 NOS|Failed medical abortion NOS\
+    )"
+
+# 정신질환
+SDZ_MENTAL_NAME: &sdz_mental_name "(\
+    (?#F00|)알츠하이머병에서의 치매\\(G30\\.-\\+\\)|Dementia in Alzheimer’s disease\\(G30\\.-†\\)\
+    |(?#F00.0|)조기발병 알츠하이머병에서의 치매\\(G30\\.0†\\)|Dementia in Alzheimer’s disease with early onset\\(G30\\.0†\\)\
+    |(?#F00.0|)알츠하이머병 2형\\(G30\\.0†\\)|Alzheimer’s disease, type 2\\(G30\\.0†\\)\
+    |(?#F00.0|)초로성 치매, 알츠하이머형\\(G30\\.0†\\)|Presenile dementia, Alzheimer’s type\\(G30\\.0†\\)\
+    |(?#F00.0|)알츠하이머형의 원발성 퇴행성 치매, 초로성 발병\\(G30\\.0†\\)|Primary degenerative dementia of the Alzheimer’s type, presenile onset\\(G30\\.0†\\)\
+    |(?#F00.1|)만기발병 알츠하이머병에서의 치매\\(G30\\.1†\\)|Dementia in Alzheimer’s disease with late onset\\(G30\\.1†\\)\
+    |(?#F00.1|)알츠하이머병 1형\\(G30\\.1†\\)|Alzheimer’s disease, type 1\\(G30\\.1†\\)\
+    |(?#F00.1|)알츠하어머형의 원발성 퇴행성 치매, 노년발병\\(G30\\.1†\\)|Primary degenerative dementia of the Alzheimer’s type, senile onset\\(G30\\.1†\\)\
+    |(?#F00.1|)알츠하이머형의 노년성 치매\\(G30\\.1†\\)|Senile dementia, Alzheimer’s type\\(G30\\.1†\\)\
+    |(?#F00.2|)비정형 또는 혼합형 알츠하이머병에서의 치매\\(G30\\.8†\\)|Dementia in Alzheimer’s disease, atypical or mixed type\\(G30\\.8†\\)\
+    |(?#F00.2|)비정형치매, 알츠하이머형\\(G30\\.8†\\)|Atypical dementia, Alzheimer’s type\
+    |(?#F00.9|)상세불명의 알츠하이머병에서의 치매\\(G30\\.9†\\)|Dementia in Alzheimer´s disease, unspecified\\(G30\\.9†\\)\
+    |(?#F01|)혈관성 치매|Vascular dementia\
+    |(?#F01|)동맥경화성 치매|Arteriosclerotic dementia\
+    |(?#F01.0|)급성 발병의 혈관성 치매|Vascular dementia of acute onset\
+    |(?#F01.1|)다발-경색치매|Multi-infarct dementia\
+    |(?#F01.1|)주로 피질성 치매|Predominantly cortical dementia\
+    |(?#F01.2|)피질하 혈관성 치매|Subcortical vascular dementia\
+    |(?#F01.3|)혼합형 피질 및 피질하 혈관성 치매|Mixed cortical and subcortical vascular dementia\
+    |(?#F01.8|)기타 혈관성 치매|Other vascular dementia\
+    |(?#F01.9|)상세불명의 혈관성 치매|Vascular dementia, unspecified\
+    |(?#F02|)달리 분류된 기타 질환에서의 치매|Dementia in other diseases classified elsewhere\
+    |(?#F02.0|)피크병에서의 치매\\(G31\\.00†\\)|Dementia in Pick’s disease\\(G31\\.00†\\)\
+    |(?#F02.1|)크로이츠펠트-야콥병에서의 치매\\(A81\\.0†\\)|Dementia in Creutzfeldt-Jakob disease\\(A81\\.0†\\)\
+    |(?#F02.2|)헌팅톤병에서의 치매\\(G10†\\)|Dementia in Huntington’s disease\\(G10†\\)\
+    |(?#F02.2|)헌팅톤무도병에서의 치매\\(G10†\\)|Dementia in Huntington’s chorea\\(G10†\\)\
+    |(?#F02.3|)파킨슨병에서의 치매\\(G20†\\)|Dementia in Parkinson’s disease\\(G20†\\)\
+    |(?#F02.3|)떨림마비에서의 치매\\(G20†\\)|Dementia in paralysis agitans\\(G20†\\)\
+    |(?#F02.3|)파킨슨증에서의 치매\\(G20†\\)|Dementia in parkinsonism\\(G20†\\)\
+    |(?#F02.4|)사람면역결핍바이러스병에서의 치매\\(B22\\.0†\\)|Dementia in human immunodeficiency virus \\[HIV\\] disease\\(B22\\.0†\\)\
+    |(?#F02.8|)달리 분류된 기타 명시된 질환에서의 치매|Dementia in other specified diseases classified elsewhere\
+    |(?#F02.8|)뇌지질축적증에서의 치매\\(E75\\.-†\\)|Dementia in cerebral lipidosis\\(E75\\.-†\\)\
+    |(?#F02.8|)뇌전증에서의 치매\\(G40\\.-†\\)|Dementia in epilepsy\\(G40\\.-†\\)\
+    |(?#F02.8|)간렌즈핵변성에서의 치매\\(E83\\.0†\\)|Dementia in hepatolenticular degeneration\\(E83\\.0†\\)\
+    |(?#F02.8|)과칼슘혈증에서의 치매\\(E83\\.5†\\)|Dementia in hypercalcaemia\\(E83\\.5†\\)\
+    |(?#F02.8|)후천성 갑상선기능저하증에서의 치매\\(E01\\.-†, E03\\.-†\\)|Dementia in hypothyroidism, acquired\\(E01\\.-†, E03\\.-†\\)\
+    |(?#F02.8|)중독에서의 치매\\(T36-T65†\\)|Dementia in intoxications\\(T36-T65†\\)\
+    |(?#F02.8|)루이소체\\(들\\)\\(병\\)에서의 치매\\(G31\\.82†\\)|Dementia in lewy body\\(ies\\) \\(disease\\)\\(G31\\.82†\\)\
+    |(?#F02.8|)다발경화증에서의 치매\\(G35†\\)|Dementia in multiple sclerosis\\(G35†\\)\
+    |(?#F02.8|)신경매독에서의 치매\\(A52\\.1†\\)|Dementia in neurosyphilis\\(A52\\.1†\\)\
+    |(?#F02.8|)나이아신결핍\\[펠라그라\\]에서의 치매\\(E52†\\)|Dementia in niacin deficiency\\[Pellagra\\]\\(E52†\\)\
+    |(?#F02.8|)결절성 다발동맥염에서의 치매\\(M30\\.0†\\)|Dementia in polyarteritis nodosa\\(M30\\.0†\\)\
+    |(?#F02.8|)전신홍반루푸스에서의 치매\\(M32\\.-†\\)|Dementia in systemic lupus erythematosus\\(M32\\.-†\\)\
+    |(?#F02.8|)파동편모충증에서의 치매\\(B56\\.-†, B57\\.-†\\)|Dementia in trypanosomiasis\\(B56\\.-†, B57\\.-†\\)\
+    |(?#F02.8|)비타민B12결핍에서의 치매\\(E53\\.8†\\)|Dementia in Vitamin B12 deficiency\\(E53\\.8†\\)\
+    |(?#F02.8|)요독증에서의 치매\\(N18\\.5†\\)|Dementia in uraemia\\(N18\\.5†\\)\
+    |(?#F03|)상세불명의 치매|Unspecified dementia\
+    |(?#F03|)초로성 치매 NOS|Presenile dementia NOS\
+    |(?#F03|)초로성 정신병 NOS|Presenile psychosis NOS\
+    |(?#F03|)원발성 퇴행성 치매 NOS|Primary degenerative dementia NOS\
+    |(?#F03|)노년치매 NOS|Senile dementia NOS\
+    |(?#F03|)우울형 또는 편집형 노년치매|Senile dementia depressed or paranoid type\
+    |(?#F03|)노년정신병 NOS|Senile psychosis NOS\
+    |(?#F04|)알코올 및 기타 정신활성물질에 의해 유발된 것이 아닌 기질성 기억상실증후군|Organic amnesic syndrome, not induced by alcohol and other psychoactive substances\
+    |(?#F04|)비알코올성 코르사코프정신병 또는 증후군|Korsakov’s psychosis or syndrome, nonalcoholic\
+    |(?#F05|)알코올 및 기타 정신활성물질에 의하여 유발된 것이 아닌 섬망|Delirium, not induced by alcohol and other psychoactive substances\
+    |(?#F05|)급성 또는 아급성 뇌증후군|Acute or subacute brain syndrome\
+    |(?#F05|)급성 또는 아급성 착란상태\\(비알코올성\\)|Acute or subacute confusional state \\(nonalcoholic\\)\
+    |(?#F05|)급성 또는 아급성 감염성 정신병|Acute or subacute infective psychosis\
+    |(?#F05|)급성 또는 아급성 기질성 반응|Acute or subacute organic reaction\
+    |(?#F05|)급성 또는 아급성 정신-기질성 증후군|Acute or subacute psycho-organic syndrome\
+    |(?#F05.0|)치매에 병발되지 않은 섬망|Delirium not superimposed on dementia, so described\
+    |(?#F05.1|)치매에 병발된 섬망|Delirium superimposed on dementia\
+    |(?#F05.8|)기타 섬망|Other delirium\
+    |(?#F05.8|)혼합 기원의 섬망|Delirium of mixed origin\
+    |(?#F05.8|)수술후 섬망|Postoperative delirium\
+    |(?#F05.9|)상세불명의 섬망|Delirium, unspecified\
+    |(?#F06|)뇌손상, 뇌기능이상 및 신체질환에 의한 기타 정신장애|Other mental disorders due to brain damage and dysfunction and to physical disease\
+    |(?#F06.0|)기질성 환각증|Organic hallucinosis\
+    |(?#F06.0|)기질성 환각상태\\(비알코올성\\)|Organic hallucinatory state\\(nonalcoholic\\)\
+    |(?#F06.1|)기질성 긴장성 장애|Organic catatonic disorder\
+    |(?#F06.2|)기질성 망상성 \\[조현병-유사\\]장애|Organic delusional \\[Schizophrenia-like\\] disorder\
+    |(?#F06.2|)편집성 및 편집-환각성 기질성 상태|Paranoid and paranoid-hallucinatory organic states\
+    |(?#F06.2|)뇌전증에서의 조현병-유사정신병|Schizophrenia-like psychosis in epilepsy\
+    |(?#F06.3|)기질성 기분\\[정동\\]장애|Organic mood\\[affective\\] disorders\
+    |(?#F06.30|)기질성 기분\\[정동\\]장애, 우울 양상 동반|Organic mood disorder, with depressive features\
+    |(?#F06.31|)기질성 기분\\[정동\\]장애, 주요우울 유사 삽화 동반|Organic mood disorder with major depressive-like episode\
+    |(?#F06.32|)기질성 기분\\[정동\\]장애, 조증 양상 동반|Organic mood disorder, with manic features\
+    |(?#F06.33|)기질성 기분\\[정동\\]장애, 조증 또는 경조증 유사 삽화동반|Organic mood disorder, with manic or hypomanic-like episode\
+    |(?#F06.34|)기질성 기분\\[정동\\]장애, 혼재성 양상 동반|Organic mood disorder, with mixed features\
+    |(?#F06.39|)기질성 기분\\[정동\\]장애, 상세불명의|Organic Mood disorder, unspecified\
+    |(?#F06.4|)기질성 불안장애|Organic anxiety disorder\
+    |(?#F06.5|)기질성 해리장애|Organic dissociative disorder\
+    |(?#F06.6|)기질성 정서불안정\\[무력성\\]장애|Organic emotionally labile \\[asthenic\\] disorder\
+    |(?#F06.7|)경도 인지장애|Mild cognitive disorder\
+    |(?#F06.8|)뇌손상, 뇌기능이상 및 신체질환에 의한 기타 명시된 정신장애|Other specified mental disorders due to brain damage and dysfunction and to physical disease\
+    |(?#F06.8|)뇌전증정신병 NOS|Epileptic psychosis NOS\
+    |(?#F06.9|)뇌손상, 뇌기능이상 및 신체질환에 의한 상세불명의 정신장애|Unspecified mental disorder due to brain damage and dysfunction and to physical disease\
+    |(?#F06.9|)기질성 뇌증후군 NOS|Organic brain syndrome NOS\
+    |(?#F06.9|)기질성 정신장애 NOS|Organic mental disorder NOS\
+    |(?#F07|)뇌질환, 뇌손상 및 기능이상에 의한 인격 및 행동장애|Personality and behavioural disorders due to brain disease, damage and dysfunction\
+    |(?#F07.0|)기질성 인격장애|Organic personality disorder\
+    |(?#F07.0|)기질성 거짓정신병증성 인격|Organic pseudopsychopathic personality\
+    |(?#F07.0|)기질성 거짓지연인격|Organic pseudoretarded personality\
+    |(?#F07.0|)전두엽 증후군|Frontal lobe syndrome\
+    |(?#F07.0|)변연부뇌전증인격 증후군|Limbic epilepsy personality syndrome\
+    |(?#F07.0|)뇌엽절개 증후군|Lobotomy syndrome\
+    |(?#F07.0|)백질절개후 증후군|Postleucotomy syndrome\
+    |(?#F07.1|)뇌염후증후군|Postencephalitic syndrome\
+    |(?#F07.2|)뇌진탕후증후군|Postconcussional syndrome\
+    |(?#F07.2|)타박상후증후군\\(뇌병증\\)|Postcontusional syndrome\\(encephalopathy\\)\
+    |(?#F07.2|)비정신병적 외상후뇌증후군|Post-traumatic brain syndrome, nonpsychotic\
+    |(?#F07.8|)뇌질환, 뇌손상 및 뇌기능 이상에 의한 기타 기질성 인격 및 행동 장애|Other organic personality and behavioural disorders due to brain disease, damage and dysfunction\
+    |(?#F07.8|)우측대뇌반구의 기질성 정동장애|Right hemispheric organic affective disorder\
+    |(?#F07.9|)뇌질환, 뇌손상 및 뇌기능 이상에 의한 상세불명의 기질성 인격 및 행동 장애|Unspecified organic personality and behavioural disorder due to brain disease, damage and dysfunction\
+    |(?#F07.9|)기질성 정신증후군|Organic psychosyndrome\
+    |(?#F09|)상세불명의 기질성 또는 증상성 정신장애|Unspecified organic or symptomatic mental disorder\
+    |(?#F09|)기질성 정신병 NOS|Organic psychosis NOS\
+    |(?#F09|)증상성 정신병 NOS|Symptomatic psychosis NOS\
+    |(?#F10|)알코올사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of alcohol\
+    |(?#F10.0|)알코올사용에 의한 급성 중독|Acute intoxication due to use of alcohol\
+    |(?#F10.0|)알코올중독에서의 급성 취한상태|Acute drunkenness in alcoholism\
+    |(?#F10.0|)알코올사용에 의한 나쁜 환각적 경험|Bad trips due to use of alcohol\
+    |(?#F10.0|)알코올사용에 의한 취한상태 NOS|Drunkenness NOS due to use of alcohol \
+    |(?#F10.0|)알코올의 병적 중독|Pathological intoxication due to use of alcohol\
+    |(?#F10.0|)알코올중독에서 몽환상태 및 빙의증|Trance and possession disorders in alcohol intoxication\
+    |(?#F10.1|)알코올의 유해한 사용|Harmful use of alcohol\
+    |(?#F10.1|)알코올의 남용|Alcohol abuse\
+    |(?#F10.2|)알코올의 의존증후군|Dependence syndrome of alcohol\
+    |(?#F10.2|)만성 알코올중독증|Chronic alcoholism\
+    |(?#F10.2|)알코올 사용에 의한 발작성 대주증|Dipsomania due to use of alcohol\
+    |(?#F10.2|)알코올 탐닉|Addiction of alcohol\
+    |(?#F10.3|)알코올의 금단상태|Withdrawal state of alcohol\
+    |(?#F10.4|)섬망을 동반한 알코올의 금단상태|Withdrawal state with delirium of alcohol\
+    |(?#F10.4|)떨림섬망\\(알코올-유발\\)|Delirium tremens \\(alcohol-induced\\)\
+    |(?#F10.5|)알코올사용에 의한 정신병적 장애|Psychotic disorder due to use of alcohol\
+    |(?#F10.5|)알코올성 환각증|Alcoholic hallucinosis\
+    |(?#F10.5|)알코올성 질투|Alcoholic jealousy\
+    |(?#F10.5|)알코올성 편집증|Alcoholic paranoia\
+    |(?#F10.5|)알코올성 정신병 NOS|Alcoholic psychosis NOS\
+    |(?#F10.6|)알코올사용에 의한 기억상실증후군|Amnesic syndrome due to use of alcohol\
+    |(?#F10.6|)알코올성 또는 약물유발 기억상실장애|Amnestic disorder, alcohol- or drug-induced\
+    |(?#F10.6|)알코올성 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, alcohol- or other psychoactive substance-induced or unspecified\
+    |(?#F10.7|)알코올사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of alcohol\
+    |(?#F10.7|)알코올성 치매 NOS|Alcoholic dementia NOS\
+    |(?#F10.7|)만성 알코올성 뇌증후군|Chronic alcoholic brain syndrome\
+    |(?#F10.7|)알코올사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions due to use of alcohol\
+    |(?#F10.7|)알코올사용에 의한 환각의 재현현상|Flashbacks due to use of alcohol\
+    |(?#F10.7|)만기-발병성 알코올 유발성 정신병적 장애|Late-onset alcohol-induced psychotic disorder\
+    |(?#F10.7|)알코올로 인한 환각제후 지각장애|Posthallucinogen perception disorder due to use of alcohol\
+    |(?#F10.7|)알코올로 인한 잔류성 정동장애|Residual affective disorder due to use of alcohol\
+    |(?#F10.7|)알코올로 인한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour due to use of alcohol\
+    |(?#F10.8|)알코올사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of alcohol\
+    |(?#F10.9|)알코올사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of alcohol\
+    |(?#F11|)아편유사제 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of opioids\
+    |(?#F11.0|)아편유사제 사용에 의한 급성 중독|Acute intoxication due to use of opioids\
+    |(?#F11.0|)아편유사제 사용에 의한 급성 취한상태|Acute drunkenness due to use of opioids\
+    |(?#F11.0|)아편유사제 사용에 의한 나쁜 환각적 경험|Bad trips due to use of opioids\
+    |(?#F11.0|)아편유사제 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of opioids\
+    |(?#F11.0|)아편유사제 사용에 의한 병적 중독|Pathological intoxication of opioids\
+    |(?#F11.0|)아편유사제 중독에서 몽환상태 및 빙의증|Trance and possession disorders in opioid intoxication\
+    |(?#F11.1|)아편유사제의 유해한 사용|Harmful use of opioids\
+    |(?#F11.1|)아편유사제 남용|Opioids abuse\
+    |(?#F11.2|)아편유사제의 의존증후군|Dependence syndrome of opioids\
+    |(?#F11.2|)아편유사제 사용에 의한 발작성 대주증|Dipsomania due to use of opioids\
+    |(?#F11.2|)아편유사제 탐닉|Addiction of opioids\
+    |(?#F11.3|)아편유사제 사용에 의한 금단상태|Withdrawal state due to use of opioids\
+    |(?#F11.4|)아편유사제 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of opioids\
+    |(?#F11.5|)아편유사제 사용에 의한 정신병적 장애|Psychotic disorder due to use of opioids\
+    |(?#F11.5|)아편유사제 사용에 의한 환각증|Hallucinosis due to use of opioids\
+    |(?#F11.5|)아편유사제 사용에 의한 질투|Jealousy due to use of opioids\
+    |(?#F11.5|)아편유사제 사용에 의한 편집증|Paranoia due to use of opioids\
+    |(?#F11.5|)아편유사제 사용에 의한 정신병 NOS|Psychosis NOS due to use of opioids\
+    |(?#F11.6|)아편유사제 사용에 의한 기억상실증후군|Amnesic syndrome due to use of opioids\
+    |(?#F11.6|)아편유사제 또는 약물유발 기억상실장애|Amnestic disorder, opioids- or drug-induced\
+    |(?#F11.6|)아편유사제 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, opioids- or other psychoactive substance-induced or unspecified\
+    |(?#F11.7|)아편유사제 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of opioids\
+    |(?#F11.7|)아편유사제 사용에 의한 치매 NOS|Dementia NOS  due to use of opioids\
+    |(?#F11.7|)아편유사제 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of opioids\
+    |(?#F11.7|)아편유사제 사용에 의한 환각의 재현현상|Flashbacks  due to use of opioids\
+    |(?#F11.7|)만기-발병성 아편유사제 유발성 정신병적 장애|Late-onset opioids-induced psychotic disorder\
+    |(?#F11.7|)아편유사제 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of opioids\
+    |(?#F11.7|)아편유사제 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of opioids\
+    |(?#F11.7|)아편유사제 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of opioids\
+    |(?#F11.8|)아편유사제 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of opioids\
+    |(?#F11.9|)아편유사제 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of opioids\
+    |(?#F12|)카나비노이드 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of cannabinoids\
+    |(?#F12.0|)카나비노이드 사용에 의한 급성 중독|Acute intoxication due to use of cannabinoids\
+    |(?#F12.0|)카나비노이드 사용에 의한 급성 취한상태|Acute drunkenness due to use of cannabinoids\
+    |(?#F12.0|)카나비노이드 사용에 의한 나쁜 환각적 경험|Bad trips due to use of cannabinoids\
+    |(?#F12.0|)카나비노이드 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of cannabinoids\
+    |(?#F12.0|)카나비노이드 사용에 의한 병적 중독|Pathological intoxication due to use of cannabinoids\
+    |(?#F12.0|)카나비노이드 중독에서 몽환상태 및 빙의증|Trance and possession disorders in cannabinoid intoxication\
+    |(?#F12.1|)카나비노이드의 유해한 사용|Harmful use of cannabinoids\
+    |(?#F12.1|)카나비노이드 남용|Cannabinoids abuse\
+    |(?#F12.2|)카나비노이드의 의존증후군|Dependence syndrome of cannabinoids\
+    |(?#F12.2|)카나비노이드 사용에 의한 발작성 대주증|Dipsomania due to use of cannabinoids\
+    |(?#F12.2|)카나비노이드 탐닉|Addiction of cannabinoids\
+    |(?#F12.3|)카나비노이드 사용에 의한 금단상태|Withdrawal state due to use of cannabinoids\
+    |(?#F12.4|)카나비노이드 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of cannabinoids\
+    |(?#F12.5|)카나비노이드 사용에 의한 정신병적 장애|Psychotic disorder due to use of cannabinoids\
+    |(?#F12.5|)카나비노이드 사용에 의한 환각증|Hallucinosis due to use of cannabinoids\
+    |(?#F12.5|)카나비노이드 사용에 의한 질투|Jealousy due to use of cannabinoids\
+    |(?#F12.5|)카나비노이드 사용에 의한 편집증|Paranoia due to use of cannabinoids\
+    |(?#F12.5|)카나비노이드 사용에 의한 정신병 NOS|Psychosis NOS due to use of cannabinoids\
+    |(?#F12.6|)카나비노이드 사용에 의한 기억상실증후군|Amnesic syndrome due to use of cannabinoids\
+    |(?#F12.6|)카나비노이드 또는 약물유발 기억상실장애|Amnestic disorder, cannabinoids- or drug-induced\
+    |(?#F12.6|)카나비노이드 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, cannabinoids- or other psychoactive substance-induced or unspecified\
+    |(?#F12.7|)카나비노이드 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of cannabinoids\
+    |(?#F12.7|)카나비노이드 사용에 의한 치매 NOS|Dementia NOS  due to use of cannabinoids\
+    |(?#F12.7|)카나비노이드 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of cannabinoids\
+    |(?#F12.7|)카나비노이드 사용에 의한 환각의 재현현상|Flashbacks  due to use of cannabinoids\
+    |(?#F12.7|)만기-발병성 카나비노이드 유발성 정신병적 장애|Late-onset cannabinoids-induced psychotic disorder\
+    |(?#F12.7|)카나비노이드 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of cannabinoids\
+    |(?#F12.7|)카나비노이드 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of cannabinoids\
+    |(?#F12.7|)카나비노이드 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of cannabinoids\
+    |(?#F12.8|)카나비노이드 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of cannabinoids\
+    |(?#F12.9|)카나비노이드 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of cannabinoids\
+    |(?#F13|)진정제 또는 수면제 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of sedatives or hypnotics\
+    |(?#F13.0|)진정제 또는 수면제 사용에 의한 급성 중독|Acute intoxication due to use of sedatives or hypnotics\
+    |(?#F13.0|)진정제 또는 수면제 사용에 의한 급성 취한상태|Acute drunkenness due to use of sedatives or hypnotics\
+    |(?#F13.0|)진정제 또는 수면제 사용에 의한 나쁜 환각적 경험|Bad trips due to use of sedatives or hypnotics\
+    |(?#F13.0|)진정제 또는 수면제 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of sedatives or hypnotics\
+    |(?#F13.0|)진정제 또는 수면제 사용에 의한 병적 중독|Pathological intoxication of sedatives or hypnotics\
+    |(?#F13.0|)진정제 또는 수면제 중독에서 몽환상태 및 빙의증|Trance and possession disorders in sedatives or hypnotic intoxication\
+    |(?#F13.1|)진정제 또는 수면제의 유해한 사용|Harmful use of sedatives or hypnotics\
+    |(?#F13.1|)진정제 또는 수면제 남용|Sedatives or hypnotics abuse\
+    |(?#F13.2|)진정제 또는 수면제의 의존증후군|Dependence syndrome of sedatives or hypnotics\
+    |(?#F13.2|)진정제 또는 수면제 사용에 의한 발작성 대주증|Dipsomania due to use of sedatives or hypnotics\
+    |(?#F13.2|)진정제 또는 수면제 탐닉|Addiction of sedatives or hypnotics\
+    |(?#F13.3|)진정제 또는 수면제 사용에 의한 금단상태|Withdrawal state due to use of sedatives or hypnotics\
+    |(?#F13.4|)진정제 또는 수면제 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of sedatives or hypnotics\
+    |(?#F13.5|)진정제 또는 수면제 사용에 의한 정신병적 장애|Psychotic disorder due to use of sedatives or hypnotics\
+    |(?#F13.5|)진정제 또는 수면제 사용에 의한 환각증|Hallucinosis due to use of sedatives or hypnotics\
+    |(?#F13.5|)진정제 또는 수면제 사용에 의한 질투|Jealousy due to use of sedatives or hypnotics\
+    |(?#F13.5|)진정제 또는 수면제 사용에 의한 편집증|Paranoia due to use of sedatives or hypnotics\
+    |(?#F13.5|)진정제 또는 수면제 사용에 의한 정신병 NOS|Psychosis NOS due to use of sedatives or hypnotics\
+    |(?#F13.6|)진정제 또는 수면제 사용에 의한 기억상실증후군|Amnesic syndrome due to use of sedatives or hypnotics\
+    |(?#F13.6|)진정제 또는 수면제 또는 약물유발 기억상실장애|Amnestic disorder, sedatives or hypnotics- or drug-induced\
+    |(?#F13.6|)진정제 또는 수면제 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, sedatives or hypnotics- or other psychoactive substance-induced or unspecified\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of sedatives or hypnotics\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 치매 NOS|Dementia NOS  due to use of sedatives or hypnotics\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of sedatives or hypnotics\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 환각의 재현현상|Flashbacks  due to use of sedatives or hypnotics\
+    |(?#F13.7|)만기-발병성 진정제 또는 수면제 유발성 정신병적 장애|Late-onset sedatives or hypnotics-induced psychotic disorder\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of sedatives or hypnotics\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of sedatives or hypnotics\
+    |(?#F13.7|)진정제 또는 수면제 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of sedatives or hypnotics\
+    |(?#F13.8|)진정제 또는 수면제 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of sedatives or hypnotics\
+    |(?#F13.9|)진정제 또는 수면제 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of sedatives or hypnotics\
+    |(?#F14|)코카인 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of cocaine\
+    |(?#F14.0|)코카인 사용에 의한 급성 중독|Acute intoxication due to use of cocaine\
+    |(?#F14.0|)코카인 사용에 의한 급성 취한상태|Acute drunkenness due to use of cocaine\
+    |(?#F14.0|)코카인 사용에 의한 나쁜 환각적 경험|Bad trips due to use of cocaine\
+    |(?#F14.0|)코카인 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of cocaine\
+    |(?#F14.0|)코카인 사용에 의한 병적 중독|Pathological intoxication of cocaine\
+    |(?#F14.0|)코카인 중독에서 몽환상태 및 빙의증|Trance and possession disorders in psychoactive substance intoxication\
+    |(?#F14.1|)코카인의 유해한 사용|Harmful use of cocaine\
+    |(?#F14.1|)코카인 남용|Cocaine abuse\
+    |(?#F14.2|)코카인의 의존증후군|Dependence syndrome of cocaine\
+    |(?#F14.2|)코카인 사용에 의한 발작성 대주증|Dipsomania due to use of cocaine\
+    |(?#F14.2|)코카인 탐닉|Addiction of cocaine\
+    |(?#F14.3|)코카인 사용에 의한 금단상태|Withdrawal state due to use of cocaine\
+    |(?#F14.4|)코카인 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of cocaine\
+    |(?#F14.5|)코카인 사용에 의한 정신병적 장애|Psychotic disorder due to use of cocaine\
+    |(?#F14.5|)코카인 사용에 의한 환각증|Hallucinosis due to use of cocaine\
+    |(?#F14.5|)코카인 사용에 의한 질투|Jealousy due to use of cocaine\
+    |(?#F14.5|)코카인 사용에 의한 편집증|Paranoia due to use of cocaine\
+    |(?#F14.5|)코카인 사용에 의한 정신병 NOS|Psychosis NOS due to use of cocaine\
+    |(?#F14.6|)코카인 사용에 의한 기억상실증후군|Amnesic syndrome due to use of cocaine\
+    |(?#F14.6|)코카인 또는 약물유발 기억상실장애|Amnestic disorder, cocaine- or drug-induced\
+    |(?#F14.6|)코카인 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, cocaine- or other psychoactive substance-induced or unspecified\
+    |(?#F14.7|)코카인 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of cocaine\
+    |(?#F14.7|)코카인 사용에 의한 치매 NOS|Dementia NOS  due to use of cocaine\
+    |(?#F14.7|)코카인 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of cocaine\
+    |(?#F14.7|)코카인 사용에 의한 환각의 재현현상|Flashbacks  due to use of cocaine\
+    |(?#F14.7|)만기-발병성 코카인 유발성 정신병적 장애|Late-onset cocaine-induced psychotic disorder\
+    |(?#F14.7|)코카인 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of cocaine\
+    |(?#F14.7|)코카인 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of cocaine\
+    |(?#F14.7|)코카인 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of cocaine\
+    |(?#F14.8|)코카인 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of cocaine\
+    |(?#F14.9|)코카인 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of cocaine\
+    |(?#F15|)카페인을 포함하는 기타 흥분제 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of other stimulants, including caffeine\
+    |(?#F15.0|)카페인을 포함하는 기타 흥분제 사용에 의한 급성 중독|Acute intoxication of other stimulants, including caffeine\
+    |(?#F15.0|)카페인을 포함하는 기타 흥분제 사용에 의한 급성 취한상태|Acute drunkenness of other stimulants, including caffeine\
+    |(?#F15.0|)카페인을 포함하는 기타 흥분제 사용에 의한 나쁜 환각적 경험|Bad trips due to use of other stimulants, including caffeine\
+    |(?#F15.0|)카페인을 포함하는 기타 흥분제 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of other stimulants, including caffeine\
+    |(?#F15.0|)카페인을 포함하는 기타 흥분제 사용에 의한 병적 중독|Pathological intoxication of other stimulants, including caffeine\
+    |(?#F15.0|)카페인 중독에서 몽환상태 및 빙의증|Trance and possession disorders in caffeine intoxication\
+    |(?#F15.1|)카페인을 포함하는 기타 흥분제의 유해한 사용|Harmful use of other stimulants, including caffeine\
+    |(?#F15.1|)카페인을 포함하는 기타 흥분제의 남용|Psychoactive substance abuse of other stimulants, including caffeine\
+    |(?#F15.2|)카페인을 포함하는 기타 흥분제의 의존증후군|Dependence syndrome of other stimulants, including caffeine\
+    |(?#F15.2|)카페인을 포함하는 기타 흥분제 사용에 의한 발작성 대주증|Dipsomania due to use of other stimulants, including caffeine\
+    |(?#F15.2|)카페인을 포함하는 기타 흥분제 탐닉|Addiction of other stimulants, including caffeine\
+    |(?#F15.3|)카페인을 포함하는 기타 흥분제 사용에 의한 금단상태|Withdrawal state due to use of other stimulants, including caffeine \
+    |(?#F15.4|)카페인을 포함하는 기타 흥분제 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of other stimulants, including caffeine \
+    |(?#F15.5|)카페인을 포함하는 기타 흥분제 사용에 의한 정신병적 장애|Psychotic disorder due to use of other stimulants, including caffeine\
+    |(?#F15.5|)카페인을 포함하는 기타 흥분제 사용에 의한 환각증|Hallucinosis due to use of other stimulants, including caffeine\
+    |(?#F15.5|)카페인을 포함하는 기타 흥분제 사용에 의한 질투|Jealousy due to use of other stimulants, including caffeine\
+    |(?#F15.5|)카페인을 포함하는 기타 흥분제 사용에 의한 편집증|Paranoia due to use of other stimulants, including caffeine\
+    |(?#F15.5|)카페인을 포함하는 기타 흥분제 사용에 의한 정신병 NOS|Psychosis NOS due to use of other stimulants, including caffeine\
+    |(?#F15.6|)카페인을 포함하는 기타 흥분제 사용에 의한 기억상실증후군|Amnesic syndrome due to use of other stimulants, including caffeine\
+    |(?#F15.6|)카페인을 포함하는 기타 흥분제 또는 약물유발 기억상실장애|Amnestic disorder, other stimulants, including caffeine- or drug-induced\
+    |(?#F15.6|)카페인을 포함하는 기타 흥분제 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, other stimulants, including caffeine- or other psychoactive substance-induced or unspecified\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of other stimulants, including caffeine\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 치매 NOS|Dementia NOS  due to use of other stimulants, including caffeine\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of other stimulants, including caffeine\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 환각의 재현현상|Flashbacks  due to use of other stimulants, including caffeine\
+    |(?#F15.7|)만기-발병성 카페인 유발성 정신병적 장애|Late-onset caffeine-induced psychotic disorder\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of other stimulants, including caffeine\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of other stimulants, including caffeine\
+    |(?#F15.7|)카페인을 포함하는 기타 흥분제 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of other stimulants, including caffeine\
+    |(?#F15.8|)카페인을 포함하는 기타 흥분제 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of other stimulants, including caffeine\
+    |(?#F15.9|)카페인을 포함하는 기타 흥분제 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of other stimulants, including caffeine\
+    |(?#F16|)환각제 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of hallucinogens\
+    |(?#F16.0|)환각제 사용에 의한 급성 중독|Acute intoxication due to use of hallucinogens\
+    |(?#F16.0|)환각제 사용에 의한 급성 취한상태|Acute drunkenness due to use of hallucinogens\
+    |(?#F16.0|)환각제 사용에 의한 나쁜 환각적 경험|Bad trips due to use of hallucinogens\
+    |(?#F16.0|)환각제 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of hallucinogens\
+    |(?#F16.0|)환각제 사용에 의한 병적 중독|Pathological intoxication of hallucinogens\
+    |(?#F16.0|)환각제 중독에서 몽환상태 및 빙의증|Trance and possession disorders in hallucinogens intoxication\
+    |(?#F16.1|)환각제의 유해한 사용|Harmful use of hallucinogens\
+    |(?#F16.1|)환각제 남용|Hallucinogens abuse\
+    |(?#F16.2|)환각제의 의존증후군|Dependence syndrome of hallucinogens\
+    |(?#F16.2|)환각제 사용에 의한 발작성 대주증|Dipsomania due to use of hallucinogens\
+    |(?#F16.2|)환각제 탐닉|Addiction of hallucinogens\
+    |(?#F16.3|)환각제 사용에 의한 금단상태|Withdrawal state due to use of hallucinogens\
+    |(?#F16.4|)환각제 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of hallucinogens\
+    |(?#F16.5|)환각제 사용에 의한 정신병적 장애|Psychotic disorder due to use of hallucinogens\
+    |(?#F16.5|)환각제 사용에 의한 환각증|Hallucinosis due to use of hallucinogens\
+    |(?#F16.5|)환각제 사용에 의한 질투|Jealousy due to use of hallucinogens\
+    |(?#F16.5|)환각제 사용에 의한 편집증|Paranoia due to use of hallucinogens\
+    |(?#F16.5|)환각제 사용에 의한 정신병 NOS|Psychosis NOS due to use of hallucinogens\
+    |(?#F16.6|)환각제 사용에 의한 기억상실증후군|Amnesic syndrome due to use of hallucinogens\
+    |(?#F16.6|)환각제 또는 약물유발 기억상실장애|Amnestic disorder, hallucinogens- or drug-induced\
+    |(?#F16.6|)환각제 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, hallucinogens- or other psychoactive substance-induced or unspecified\
+    |(?#F16.7|)환각제 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of hallucinogens\
+    |(?#F16.7|)환각제 사용에 의한 치매 NOS|Dementia NOS  due to use of hallucinogens\
+    |(?#F16.7|)환각제 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of hallucinogens\
+    |(?#F16.7|)환각제 사용에 의한 환각의 재현현상|Flashbacks  due to use of hallucinogens\
+    |(?#F16.7|)만기-발병성 환각제 유발성 정신병적 장애|Late-onset hallucinogens-induced psychotic disorder\
+    |(?#F16.7|)환각제 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of hallucinogens\
+    |(?#F16.7|)환각제 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of hallucinogens\
+    |(?#F16.7|)환각제 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of hallucinogens\
+    |(?#F16.8|)환각제 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of hallucinogens\
+    |(?#F16.9|)환각제 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of hallucinogens\
+    |(?#F17|)담배흡연에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of tobacco\
+    |(?#F17.0|)담배흡연에 의한 급성 중독|Acute intoxication due to use of tobacco\
+    |(?#F17.0|)담배흡연에 의한 급성 취한상태|Acute drunkenness due to use of tobacco\
+    |(?#F17.0|)담배흡연에 의한 나쁜 환각적 경험|Bad trips due to use of tobacco\
+    |(?#F17.0|)담배흡연에 의한 취한상태 NOS|Drunkenness NOS due to use of tobacco\
+    |(?#F17.0|)담배흡연에 의한 병적 중독|Pathological intoxication of tobacco\
+    |(?#F17.0|)담배흡연 중독에서 몽환상태 및 빙의증|Trance and possession disorders in tobacco intoxication\
+    |(?#F17.1|)담배흡연의 유해한 사용|Harmful use of tobacco\
+    |(?#F17.1|)담배흡연 남용|Tobacco abuse\
+    |(?#F17.2|)담배흡연의 의존증후군|Dependence syndrome of tobacco\
+    |(?#F17.2|)담배흡연에 의한 발작성 대주증|Dipsomania due to use of tobacco\
+    |(?#F17.2|)담배흡연 탐닉|Addiction of tobacco\
+    |(?#F17.3|)담배흡연에 의한 금단상태|Withdrawal state due to use of tobacco\
+    |(?#F17.4|)담배흡연에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of tobacco\
+    |(?#F17.5|)담배흡연에 사용에 의한 정신병적 장애|Psychotic disorder due to use of tobacco\
+    |(?#F17.5|)담배흡연에 의한 환각증|Hallucinosis due to use of tobacco\
+    |(?#F17.5|)담배흡연에 의한 질투|Jealousy due to use of tobacco\
+    |(?#F17.5|)담배흡연에 의한 편집증|Paranoia due to use of tobacco\
+    |(?#F17.5|)담배흡연에 의한 정신병 NOS|Psychosis NOS due to use of tobacco\
+    |(?#F17.6|)담배흡연에 의한 기억상실증후군|Amnesic syndrome due to use of tobacco\
+    |(?#F17.6|)담배흡연에 또는 약물유발 기억상실장애|Amnestic disorder, tobacco- or drug-induced\
+    |(?#F17.6|)담배흡연에 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, tobacco- or other psychoactive substance-induced or unspecified\
+    |(?#F17.7|)담배흡연에 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of tobacco\
+    |(?#F17.7|)담배흡연에 의한 치매 NOS|Dementia NOS  due to use of tobacco\
+    |(?#F17.7|)담배흡연에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of tobacco\
+    |(?#F17.7|)담배흡연에 의한 환각의 재현현상|Flashbacks  due to use of tobacco\
+    |(?#F17.7|)만기-발병성 담배흡연 유발성 정신병적 장애|Late-onset tobacco-induced psychotic disorder\
+    |(?#F17.7|)담배흡연에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of tobacco\
+    |(?#F17.7|)담배흡연에 의한 잔류성 정동장애|Residual affective disorder  due to use of tobacco\
+    |(?#F17.7|)담배흡연에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of tobacco\
+    |(?#F17.8|)담배흡연에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of tobacco\
+    |(?#F17.9|)담배흡연에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of tobacco\
+    |(?#F18|)휘발용제 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to use of volatile solvents\
+    |(?#F18.0|)휘발용제 사용에 의한 급성 중독|Acute intoxication due to use of volatile solvents\
+    |(?#F18.0|)휘발용제 사용에 의한 급성 취한상태|Acute drunkenness due to use of volatile solvents\
+    |(?#F18.0|)휘발용제 사용에 의한 나쁜 환각적 경험|Bad trips due to use of volatile solvents\
+    |(?#F18.0|)휘발용제 사용에 의한 취한상태 NOS|Drunkenness NOS due to use of volatile solvents\
+    |(?#F18.0|)휘발용제 사용에 의한 병적 중독|Pathological intoxication of volatile solvents\
+    |(?#F18.0|)휘발용제 중독에서 몽환상태 및 빙의증|Trance and possession disorders in volatile solvents intoxication\
+    |(?#F18.1|)휘발용제의 유해한 사용|Harmful use of volatile solvents\
+    |(?#F18.1|)휘발용제 남용|Volatile solvents abuse\
+    |(?#F18.2|)휘발용제의 의존증후군|Dependence syndrome of volatile solvents\
+    |(?#F18.2|)휘발용제 사용에 의한 발작성 대주증|Dipsomania due to use of volatile solvents\
+    |(?#F18.2|)휘발용제 탐닉|Addiction of volatile solvents\
+    |(?#F18.3|)휘발용제 사용에 의한 금단상태|Withdrawal state due to use of volatile solvents\
+    |(?#F18.4|)휘발용제 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to use of volatile solvents\
+    |(?#F18.5|)휘발용제 사용에 의한 정신병적 장애|Psychotic disorder due to use of volatile solvents\
+    |(?#F18.5|)휘발용제 사용에 의한 환각증|Hallucinosis due to use of volatile solvents\
+    |(?#F18.5|)휘발용제 사용에 의한 질투|Jealousy due to use of volatile solvents\
+    |(?#F18.5|)휘발용제 사용에 의한 편집증|Paranoia due to use of volatile solvents\
+    |(?#F18.5|)휘발용제 사용에 의한 정신병 NOS|Psychosis NOS due to use of volatile solvents\
+    |(?#F18.6|)휘발용제 사용에 의한 기억상실증후군|Amnesic syndrome due to use of volatile solvents\
+    |(?#F18.6|)휘발용제 또는 약물유발 기억상실장애|Amnestic disorder, volatile solvents- or drug-induced\
+    |(?#F18.6|)휘발용제 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, volatile solvents- or other psychoactive substance-induced or unspecified\
+    |(?#F18.7|)휘발용제 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to use of volatile solvents\
+    |(?#F18.7|)휘발용제 사용에 의한 치매 NOS|Dementia NOS  due to use of volatile solvents\
+    |(?#F18.7|)휘발용제 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to use of volatile solvents\
+    |(?#F18.7|)휘발용제 사용에 의한 환각의 재현현상|Flashbacks  due to use of volatile solvents\
+    |(?#F18.7|)만기-발병성 휘발용제 유발성 정신병적 장애|Late-onset volatile solvents-induced psychotic disorder\
+    |(?#F18.7|)휘발용제 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to use of volatile solvents\
+    |(?#F18.7|)휘발용제 사용에 의한 잔류성 정동장애|Residual affective disorder  due to use of volatile solvents\
+    |(?#F18.7|)휘발용제 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to use of volatile solvents\
+    |(?#F18.8|)휘발용제 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of volatile solvents\
+    |(?#F18.9|)휘발용제 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of volatile solvents\
+    |(?#F19|)여러 약물 사용 및 기타 정신활성물질의 사용에 의한 정신 및 행동 장애|Mental and behavioural disorders due to multiple drug use and use of other psychoactive substances\
+    |(?#F19|)약물의 오용 NOS|Misuse of drugs NOS\
+    |(?#F19.0|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 급성 중독|Acute intoxication due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.0|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 급성 취한상태|Acute drunkenness due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.0|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 나쁜 환각적 경험|Bad trips due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.0|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 취한상태 NOS|Drunkenness NOS due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.0|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 병적 중독|Pathological intoxication of multiple drug use and use of other psychoactive substances\
+    |(?#F19.0|)여러 약물 사용 및 기타 정신활성물질 중독에서 몽환상태 및 빙의증|Trance and possession disorders in multiple drug use and use of other psychoactive substances intoxication\
+    |(?#F19.1|)여러 약물 사용 및 기타 정신활성물질의 유해한 사용|Harmful use of multiple drug use and use of other psychoactive substances\
+    |(?#F19.1|)여러 약물 사용 및 기타 정신활성물질 남용|Multiple drug use and other psychoactive substance abuse\
+    |(?#F19.2|)여러 약물 사용 및 기타 정신활성물질의 의존증후군|Dependence syndrome of multiple drug use and use of other psychoactive substances\
+    |(?#F19.2|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 발작성 대주증|Dipsomania due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.2|)여러 약물 사용 및 기타 정신활성물질 탐닉|Addiction of multiple drug use and use of other psychoactive substances\
+    |(?#F19.3|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 금단상태|Withdrawal state due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.4|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 섬망을 동반한 금단상태|Withdrawal state with delirium due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.5|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 정신병적 장애|Psychotic disorder due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.5|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 환각증|Hallucinosis due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.5|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 질투|Jealousy due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.5|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 편집증|Paranoia due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.5|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 정신병 NOS|Psychosis NOS due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.6|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 기억상실증후군|Amnesic syndrome due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.6|)여러 약물 사용 및 기타 정신활성물질 또는 약물유발 기억상실장애|Amnestic disorder, multiple drug use and use of other psychoactive substances- or drug-induced\
+    |(?#F19.6|)여러 약물 사용 및 기타 정신활성물질 또는 기타 정신활성물질유발 또는 상세불명의 코르사코프정신병 또는 증후군|Korsakov psychosis or syndrome, multiple drug use and use of other psychoactive substances- or other psychoactive substance-induced or unspecified\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 잔류 및 만기-발병 정신병적 장애|Residual and late-onset psychotic disorder due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 치매 NOS|Dementia NOS  due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 치매 및 기타 지속성 인지기능 손상의 경증형|Dementia and other milder forms of persisting impairment of cognitive functions  due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 환각의 재현현상|Flashbacks  due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.7|)만기-발병성 여러 약물 사용 및 기타 정신활성물질 유발성 정신병적 장애|Late-onset multiple drug use and other psychoactive substances-induced psychotic disorder\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 환각제후 지각장애|Posthallucinogen perception disorder  due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 잔류성 정동장애|Residual affective disorder  due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.7|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 잔류성 인격 및 행동장애|Residual disorder of personality and behaviour  due to multiple drug use and use of other psychoactive substances\
+    |(?#F19.8|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 기타 정신 및 행동 장애|Other mental and behavioural disorders due to use of multiple drug use and use of other psychoactive substances\
+    |(?#F19.9|)여러 약물 사용 및 기타 정신활성물질 사용에 의한 상세불명의 정신 및 행동 장애|Unspecified mental and behavioural disorder due to use of multiple drug use and use of other psychoactive substances\
+    |(?#F20|)조현병|Schizophrenia\
+    |(?#F20.0|)편집조현병|Paranoid schizophrenia\
+    |(?#F20.0|)편집분열성 조현병|Paraphrenic schizophrenia\
+    |(?#F20.1|)파과형조현병|Hebephrenic schizophrenia\
+    |(?#F20.1|)해체성 조현병|Disorganized schizophrenia\
+    |(?#F20.1|)파과증|Hebephrenia\
+    |(?#F20.2|)긴장성 조현병|Catatonic schizophrenia\
+    |(?#F20.2|)긴장성 혼미|Catatonic stupor\
+    |(?#F20.2|)조현병성 카탈렙시|Schizophrenic catalepsy\
+    |(?#F20.2|)조현병성 긴장증|Schizophrenic catatonia\
+    |(?#F20.2|)조현병성 납굴증|Schizophrenic flexibilitas cerea\
+    |(?#F20.3|)미분화조현병|Undifferentiated schizophrenia\
+    |(?#F20.3|)비정형조현병|Atypical schizophrenia\
+    |(?#F20.4|)조현병후우울증|Post-schizophrenic depression\
+    |(?#F20.5|)잔류조현병|Residual schizophrenia\
+    |(?#F20.5|)만성 미분화조현병|Chronic undifferentiated schizophrenia\
+    |(?#F20.5|)레스트추스탄트\\(조현병성\\)|Restzustand\\(schizophrenic\\)\
+    |(?#F20.5|)조현병성 잔류상태|Schizophrenic residual state\
+    |(?#F20.6|)단순형조현병|Simple schizophrenia\
+    |(?#F20.8|)기타 조현병|Other schizophrenia\
+    |(?#F20.8|)체감장애조현병|Cenesthopathic schizophrenia\
+    |(?#F20.8|)조현양상장애 NOS|Schizophreniform disorder NOS\
+    |(?#F20.8|)조현양상정신병 NOS|Schizophreniform psychosis NOS\
+    |(?#F20.9|)상세불명의 조현병|Schizophrenia, unspecified\
+    |(?#F21|)조현형장애|Schizotypal disorder\
+    |(?#F21|)잠재 조현병성 반응|Latent schizophrenic reaction\
+    |(?#F21|)경계성 조현병|Borderline schizophrenia\
+    |(?#F21|)잠재성 조현병|Latent schizophrenia\
+    |(?#F21|)전정신병적 조현병|Prepsychotic schizophrenia\
+    |(?#F21|)전구성 조현병|Prodromal schizophrenia\
+    |(?#F21|)거짓신경증성 조현병|Pseudoneurotic schizophrenia\
+    |(?#F21|)거짓정신병증성 조현병|Pseudopsychopathic schizophrenia\
+    |(?#F21|)조현형인격장애|Schizotypal personality disorder\
+    |(?#F22|)지속성 망상장애|Persistent delusional disorders\
+    |(?#F22.0|)망상장애|Delusional disorder\
+    |(?#F22.0|)편집증|Paranoia\
+    |(?#F22.0|)편집증정신병|Paranoia psychosis\
+    |(?#F22.0|)편집증상태|Paranoia state\
+    |(?#F22.0|)망상분열증\\(만기의\\)|Paraphrenia\\(late\\)\
+    |(?#F22.0|)민감망상|Sensitiver Beziehungswahn\
+    |(?#F22.8|)기타 지속성 망상장애|Other persistent delusional disorders\
+    |(?#F22.8|)망상성 이상형태공포증|Delusional dysmorphophobia\
+    |(?#F22.8|)퇴행성 편집상태|Involutional paranoid state\
+    |(?#F22.8|)불평편집증|Paranoia querulans\
+    |(?#F22.9|)상세불명의 지속적 망상장애|Persistent delusional disorder, unspecified\
+    |(?#F23|)급성 및 일과성 정신병장애|Acute and transient psychotic disorders\
+    |(?#F23.0|)조현병의 증상이 없는 급성 다형성 정신병장애|Acute polymorphic psychotic disorder without symptoms of schizophrenia\
+    |(?#F23.0|)조현병 증상이 없거나 상세불명의 부페 델리랑뜨|Bouffée délirante without symptoms of schizophrenia or unspecified\
+    |(?#F23.0|)조현병 및 상세불명의 증상이 없는 순환형 정신병|Cycloid psychosis without symptoms of schizophrenia or unspecified\
+    |(?#F23.1|)조현병의 증상이 있는 급성 다형성 정신병장애|Acute polymorphic psychotic disorder with symptoms of schizophrenia\
+    |(?#F23.1|)조현병 증상이 있는 부페 델리랑뜨|Bouffée délirante with symptoms of schizophrenia\
+    |(?#F23.1|)조현병의 증상이 있는 순환형 정신병|Cycloid psychosis with symptoms of schizophrenia\
+    |(?#F23.2|)급성 조현병-유사정신병장애|Acute schizophrenia-like psychotic disorder\
+    |(?#F23.2|)급성 \\(미분화형\\) 조현병|Acute\\(undifferentiated\\) schizophrenia\
+    |(?#F23.2|)단기 조현양상장애|Brief schizophreniform disorder\
+    |(?#F23.2|)단기 조현양상정신병|Brief schizophreniform psychosis\
+    |(?#F23.2|)몽환정신병|Oneirophrenia\
+    |(?#F23.2|)조현병성 반응|Schizophrenic reaction\
+    |(?#F23.3|)기타 급성 주로 망상우세성 정신병장애|Other acute predominantly delusional psychotic disorders\
+    |(?#F23.3|)편집반응|Paranoid reaction\
+    |(?#F23.3|)심인성 편집정신병|Psychogenic paranoid psychosis\
+    |(?#F23.8|)기타 급성 및 일과성 정신병장애|Other acute and transient psychotic disorders\
+    |(?#F23.9|)상세불명의 급성 및 일과성 정신병장애|Acute and transient psychotic disorder, unspecified\
+    |(?#F23.9|)단기 반응성 정신병 NOS|Brief reactive psychosis NOS\
+    |(?#F23.9|)반응성 정신병|Reactive psychosis\
+    |(?#F24|)유도망상장애|Induced delusional disorder\
+    |(?#F24|)감응성 정신병|Folie a deux\
+    |(?#F24|)유도편집장애|Induced paranoid disorder\
+    |(?#F24|)유도정신병장애|Induced psychotic disorder\
+    |(?#F25|)조현정동장애|Schizoaffective disorders\
+    |(?#F25.0|)조현정동장애, 조증형|Schizoaffective disorder, manic type\
+    |(?#F25.0|)조현정동정신병, 조증형|Schizoaffective psychosis, manic type\
+    |(?#F25.0|)조현양상정신병, 조증형|Schizophreniform psychosis, manic type\
+    |(?#F25.1|)조현정동장애, 우울증형|Schizoaffective disorder, depressive type\
+    |(?#F25.1|)조현정동정신병, 우울증형|Schizoaffective psychosis, depressive type\
+    |(?#F25.1|)조현양상정신병, 우울증형|Schizophreniform psychosis, depressive type\
+    |(?#F25.2|)조현정동장애, 혼합형|Schizoaffective disorder, mixed type\
+    |(?#F25.2|)순환성 조현병|Cyclic schizophrenia\
+    |(?#F25.2|)혼합형 조현병성 및 정동성 정신병|Mixed schizophrenic and affective psychosis\
+    |(?#F25.8|)기타 조현정동장애|Other schizoaffective disorders\
+    |(?#F25.9|)상세불명의 조현정동장애|Schizoaffective disorder, unspecified\
+    |(?#F25.9|)조현정동정신병 NOS|Schizoaffective psychosis NOS\
+    |(?#F28|)기타 비기질성 정신병장애|Other nonorganic psychotic disorders\
+    |(?#F28|)만성 환각성 정신병|Chronic hallucinatory psychosis\
+    |(?#F29|)상세불명의 비기질성 정신병|Unspecified nonorganic psychosis\
+    |(?#F29|)정신병 NOS|Psychosis NOS\
+    |(?#F30|)조증에피소드|Manic episode\
+    |(?#F30|)양극성 장애, 단일조증에피소드|Bipolar disorder, single manic episode\
+    |(?#F30.0|)경조증|Hypomania\
+    |(?#F30.1|)정신병적 증상이 없는 조병|Mania without psychotic symptoms\
+    |(?#F30.2|)정신병적 증상이 있는 조병|Mania with psychotic symptoms\
+    |(?#F30.2|)기분과 조화된 정신병적 증상을 동반한 조병|Mania with mood-congruent psychotic symptoms\
+    |(?#F30.2|)기분과 부조화된 정신병적 증상을 동반한 조병|Mania with mood-incongruent psychotic symptoms\
+    |(?#F30.2|)조증성 혼미|Manic stupor\
+    |(?#F30.8|)기타 조증 에피소드|Other manic episodes\
+    |(?#F30.9|)상세불명의 조증 에피소드|Manic episode, unspecified\
+    |(?#F30.9|)조병 NOS|Mania NOS\
+    |(?#F31|)양극성 정동장애|Bipolar affective disorder\
+    |(?#F31|)조울증|Manic depression\
+    |(?#F31|)조울병|Manic-depressive illness\
+    |(?#F31|)조울정신병|Manic-depressive psychosis\
+    |(?#F31|)조울반응|Manic-depressive reaction\
+    |(?#F31.0|)양극성 정동장애, 현존 경조증|Bipolar affective disorder, current episode hypomanic\
+    |(?#F31.1|)양극성 정동장애, 현존 정신병적 증상이 없는 조증|Bipolar affective disorder, current episode manic without psychotic symptoms\
+    |(?#F31.2|)양극성 정동장애, 현존 정신병적 증상이 있는 조증|Bipolar affective disorder, current episode manic with psychotic symptoms\
+    |(?#F31.3|)양극성 정동장애, 현존 경증 또는 중등도의 우울증|Bipolar affective disorder, current episode mild or moderate depression\
+    |(?#F31.4|)양극성 정동장애, 현존 정신병적 증상이 없는 심한 우울증|Bipolar affective disorder, current episode severe depression without psychotic symptoms\
+    |(?#F31.5|)양극성 정동장애, 현존 정신병적 증상이 있는 심한 우울증|Bipolar affective disorder, current episode severe depression with psychotic symptoms\
+    |(?#F31.6|)양극성 정동장애, 현존 혼합형|Bipolar affective disorder, current episode mixed\
+    |(?#F31.7|)양극성 정동장애, 현존 관해상태|Bipolar affective disorder, currently in remission\
+    |(?#F31.8|)기타 양극성 정동장애|Other bipolar affective disorders\
+    |(?#F31.8|)양극성 Ⅱ장애|Bipolar Ⅱ disorder\
+    |(?#F31.8|)재발성 조증 에피소드 NOS|Recurrent manic episodes NOS\
+    |(?#F31.9|)상세불명의 양극성 정동장애|Bipolar affective disorder, unspecified\
+    |(?#F31.9|)조울증 NOS|Manic depression NOS\
+    |(?#F32|)우울에피소드|Depressive episode\
+    |(?#F32|)우울반응의 단일 에피소드|Single episodes of depressive reaction\
+    |(?#F32|)심인성 우울증의 단일 에피소드|Single episodes of psychogenic depression\
+    |(?#F32|)반응성 우울증의 단일 에피소드|Single episodes of reactive depression\
+    |(?#F32.0|)경도 우울에피소드|Mild depressive episode\
+    |(?#F32.1|)중등도 우울에피소드|Moderate depressive episode\
+    |(?#F32.2|)정신병적 증상이 없는 중증의 우울에피소드|Severe depressive episode without psychotic symptoms\
+    |(?#F32.2|)초조우울증 정신병적 증상이 없는 단일에피소드|Agitated depression single episode without psychotic symptoms\
+    |(?#F32.2|)주요우울증 정신병적 증상이 없는 단일에피소드|Major depression single episode without psychotic symptoms\
+    |(?#F32.2|)저활력 우울증 정신병적 증상이 없는 단일에피소드|Vital depression single episode without psychotic symptoms\
+    |(?#F32.3|)정신병적 증상이 있는 중증의 우울에피소드|Severe depressive episode with psychotic symptoms\
+    |(?#F32.3|)정신병적 증상을 가진 주요우울증의 단일 에피소드|Single episodes of major-depression with psychotic symptoms\
+    |(?#F32.3|)심인성 우울증성 정신병의 단일 에피소드|Single episodes of psychogenic depressive psychosis\
+    |(?#F32.3|)정신병적 우울증의 단일 에피소드|Single episodes of psychotic depression\
+    |(?#F32.3|)반응성 우울증 정신병의 단일 에피소드|Single episodes of reactive depressive psychosis\
+    |(?#F32.8|)기타 우울에피소드|Other depressive episodes\
+    |(?#F32.8|)비정형우울증|Atypical depression\
+    |(?#F32.8|)“가면”우울증의 단일 에피소드 NOS|Single episodes of “masked” depression NOS\
+    |(?#F32.9|)상세불명의 우울에피소드|Depressive episode, unspecified\
+    |(?#F32.9|)우울증 NOS|Depression NOS\
+    |(?#F32.9|)우울장애 NOS|Depressive disorder NOS\
+    |(?#F33|)재발성 우울장애|Recurrent depressive disorder\
+    |(?#F33|)우울반응의 재발에피소드|Recurrent episodes of depressive reaction\
+    |(?#F33|)심인성 우울증의 재발에피소드|Recurrent episodes of psychogenic depression\
+    |(?#F33|)반응성 우울증의 재발에피소드|Recurrent episodes of reactive depression\
+    |(?#F33|)계절성 우울장애|Seasonal depressive disorder\
+    |(?#F33.0|)재발성 우울장애, 현존 경도|Recurrent depressive disorder, current episode mild\
+    |(?#F33.1|)재발성 우울장애, 현존 중등도|Recurrent depressive disorder, current episode moderate\
+    |(?#F33.2|)재발성 우울장애, 현존 정신병적 증상이 없는 중증|Recurrent depressive disorder, current episode severe without psychotic symptoms\
+    |(?#F33.2|)정신병적 증상이 없는 내인성 우울증|Endogenous depression without psychotic symptoms\
+    |(?#F33.2|)정신병적 증상이 없이 재발하는 주요우울증|Major depression, recurrent without psychotic symptoms\
+    |(?#F33.2|)정신병적 증상이 없는 우울형의 조울정신병|Manic-depressive psychosis, depressed type without psychotic symptoms\
+    |(?#F33.2|)정신병적 증상이 없이 재발하는 저활력 우울증|Vital depression, recurrent without psychotic symptoms\
+    |(?#F33.3|)재발성 우울장애, 현존 정신병적 증상이 있는 중증|Recurrent depressive disorder, current episode severe with psychotic symptoms\
+    |(?#F33.3|)정신병적 증상이 있는 내인성 우울증|Endogenous depression with psychotic symptoms\
+    |(?#F33.3|)조울정신병, 정신병적 증상을 가진 우울증형|Manic-depressive psychosis, depressed type with psychotic symptoms\
+    |(?#F33.3|)정신병적 증상이 있는 주요우울증의 반복되는 중증 에피소드|Recurrent severe episodes of major depression with psychotic symptoms\
+    |(?#F33.3|)심인성 우울증성 정신병의 반복되는 중증 에피소드|Recurrent severe episodes of psychogenic depressive psychosis\
+    |(?#F33.3|)정신병적 우울증의 반복되는 중증 에피소드|Recurrent severe episodes of psychotic depression\
+    |(?#F33.3|)반응성 우울증정신병의 반복되는 중증 에피소드|Recurrent severe episodes of reactive depressive psychosis\
+    |(?#F33.4|)재발성 우울장애, 현존 관해 상태|Recurrent depressive disorder, currently in remission\
+    |(?#F33.8|)기타 재발성 우울장애|Other recurrent depressive disorders\
+    |(?#F33.9|)상세불명의 재발성 우울장애|Recurrent depressive disorder, unspecified\
+    |(?#F33.9|)단극성 우울증 NOS|Monopolar depression NOS\
+    |(?#F34|)지속성 기분\\[정동\\]장애|Persistent mood \\[affective\\] disorders\
+    |(?#F34.0|)순환기분장애|Cyclothymia\
+    |(?#F34.0|)정동성 인격장애|Affective personality disorder\
+    |(?#F34.0|)순환형 인격|Cycloid personality\
+    |(?#F34.0|)순환기분성 인격|Cyclothymic personality\
+    |(?#F34.1|)기분저하증|Dysthymia\
+    |(?#F34.1|)우울신경증|Depressive neurosis\
+    |(?#F34.1|)우울인격장애|Depressive personality disorder\
+    |(?#F34.1|)신경증성 우울증|Neurotic depression\
+    |(?#F34.1|)지속성 불안우울증|Persistent anxiety depression\
+    |(?#F34.8|)기타 지속성 기분\\[정동\\]장애|Other persistent mood\\[affective\\] disorders\
+    |(?#F34.9|)상세불명의 지속성 기분\\[정동\\]장애|Persistent mood\\[affective\\] disorder, unspecified\
+    |(?#F38|)기타 기분\\[정동\\]장애|Other mood \\[affective\\] disorders\
+    |(?#F38.0|)기타 단일기분\\[정동\\]장애|Other single mood\\[affective\\] disorders\
+    |(?#F38.0|)혼합형정동에피소드|Mixed affective episode\
+    |(?#F38.1|)기타 재발성 기분\\[정동\\]장애|Other recurrent mood\\[affective\\] disorders\
+    |(?#F38.1|)재발성 단기 우울에피소드|Recurrent brief depressive episodes\
+    |(?#F38.8|)기타 명시된 기분\\[정동\\]장애|Other specified mood \\[affective\\] disorders\
+    |(?#F39|)상세불명의 기분\\[정동\\]장애|Unspecified mood\\[affective\\] disorder\
+    |(?#F39|)정동성 정신병 NOS|Affective psychosis NOS\
+    |(?#F40|)공포성 불안장애|Phobic anxiety disorders\
+    |(?#F40.0|)광장공포증|Agoraphobia\
+    |(?#F40.0|)공황장애의 병력이 없는 광장공포증|Agoraphobia without history of panic disorder\
+    |(?#F40.0|)광장공포증이 있는 공황장애|Panic disorder with agoraphobia\
+    |(?#F40.1|)사회공포증|Social phobias\
+    |(?#F40.1|)대인공포증|Anthropophobia\
+    |(?#F40.1|)사회신경증|Social neurosis\
+    |(?#F40.2|)특정 \\(고립된\\) 공포증|Specific \\(isolated\\) phobias\
+    |(?#F40.2|)고소공포증|Acrophobia\
+    |(?#F40.2|)단순공포증|Simple phobia\
+    |(?#F40.2|)동물공포증|Animal phobias\
+    |(?#F40.2|)밀폐공포증|Claustrophobia\
+    |(?#F40.2|)혈액-주사-손상형 공포증|Blood-Injection-Injury type phobia\
+    |(?#F40.8|)기타 공포성 불안장애|Other phobic anxiety disorders\
+    |(?#F40.9|)상세불명의 공포성 불안장애|Phobic anxiety disorder, unspecified\
+    |(?#F40.9|)공포증 NOS|Phobia NOS\
+    |(?#F40.9|)공포증 상태 NOS|Phobic state NOS\
+    |(?#F41|)기타 불안장애|Other anxiety disorders\
+    |(?#F41.0|)공황장애\\[우발적 발작성 불안\\]|Panic disorder \\[episodic paroxysmal anxiety\\]\
+    |(?#F41.0|)공황발작|Panic attack\
+    |(?#F41.0|)공황상태|Panic state\
+    |(?#F41.1|)범불안장애|Generalized anxiety disorder\
+    |(?#F41.1|)불안 신경증|Anxiety neurosis\
+    |(?#F41.1|)불안 반응|Anxiety reaction\
+    |(?#F41.1|)불안 상태|Anxiety state\
+    |(?#F41.2|)혼합형 불안 및 우울장애|Mixed anxiety and depressive disorder\
+    |(?#F41.2|)불안우울증\\(경도이거나 지속되지 않음\\)|Anxiety depression\\(mild or not persistent\\)\
+    |(?#F41.3|)기타 혼합형 불안장애|Other mixed anxiety disorders\
+    |(?#F41.8|)기타 명시된 불안장애|Other specified anxiety disorders\
+    |(?#F41.8|)불안히스테리|Anxiety hysteria\
+    |(?#F41.9|)상세불명의 불안장애|Anxiety disorder, unspecified\
+    |(?#F41.9|)불안 NOS|Anxiety NOS\
+    |(?#F42|)강박장애|Obsessive-compulsive disorder\
+    |(?#F42|)강박반응성 신경증|Anankastic neurosis\
+    |(?#F42|)강박신경증|Obsessive-compulsive neurosis\
+    |(?#F42.0|)강박성 사고 또는 되새김|Predominantly obsessional thoughts or ruminations\
+    |(?#F42.1|)현저한 강박행위\\[강박적 의식\\(儀式\\)\\]|Predominantly compulsive acts \\[obsessional rituals\\]\
+    |(?#F42.2|)혼합형 강박성 사고와 행위|Mixed obsessional thoughts and acts\
+    |(?#F42.8|)기타 강박장애|Other obsessive-compulsive disorders\
+    |(?#F42.9|)상세불명의 강박장애|Obsessive-compulsive disorder, unspecified\
+    |(?#F43|)심한 스트레스에 대한 반응 및 적응장애|Reaction to severe stress, and adjustment disorders\
+    |(?#F43.0|)급성 스트레스반응|Acute stress reaction\
+    |(?#F43.0|)급성 위기반응|Acute crisis reaction\
+    |(?#F43.0|)스트레스에 대한 급성반응|Acute reaction to stress\
+    |(?#F43.0|)위기상태|Crisis state\
+    |(?#F43.0|)전쟁피로|Combat fatigue\
+    |(?#F43.0|)정신적 쇼크|Psychic shock\
+    |(?#F43.1|)외상후스트레스장애|Post-traumatic stress disorder\
+    |(?#F43.1|)외상성 신경증|Traumatic neurosis\
+    |(?#F43.2|)적응장애|Adjustment disorders\
+    |(?#F43.2|)문화충격|Culture shock\
+    |(?#F43.2|)애도반응|Grief reaction\
+    |(?#F43.2|)소아에서의 병원증|Hospitalism in children\
+    |(?#F43.8|)심한 스트레스에 대한 기타 반응|Other reactions to severe stress\
+    |(?#F43.9|)심한 스트레스에 대한 상세불명의 반응|Reaction to severe stress, unspecified\
+    |(?#F44|)해리\\[전환\\]장애|Dissociative \\[conversion\\] disorders\
+    |(?#F44|)전환히스테리|Conversion hysteria\
+    |(?#F44|)전환반응|Conversion reaction\
+    |(?#F44|)히스테리|Hysteria\
+    |(?#F44|)히스테리정신병|Hysterical psychosis\
+    |(?#F44.0|)해리기억상실|Dissociative amnesia\
+    |(?#F44.1|)해리성 둔주|Dissociative fugue\
+    |(?#F44.2|)해리성 혼미|Dissociative stupor\
+    |(?#F44.3|)트랜스와 빙의증|Trance and possession disorders\
+    |(?#F44.4|)해리성 운동장애|Dissociative motor disorders\
+    |(?#F44.4|)심인성 발성불능|Psychogenic aphonia\
+    |(?#F44.4|)심인성 발성장애|Psychogenic dysphonia\
+    |(?#F44.5|)해리성 경련|Dissociative convulsions\
+    |(?#F44.6|)해리성 무감각 및 감각상실|Dissociative anaesthesia and sensory loss\
+    |(?#F44.6|)심인성 난청|Psychogenic deafness\
+    |(?#F44.7|)혼합형 해리\\[전환\\]장애|Mixed dissociative \\[conversion\\] disorders\
+    |(?#F44.8|)기타 해리\\[전환\\]장애|Other dissociative \\[conversion\\] disorders\
+    |(?#F44.8|)간저증후군|Ganser’s syndrome\
+    |(?#F44.8|)다중인격|Multiple personality\
+    |(?#F44.8|)심인성 착란|Psychogenic confusion\
+    |(?#F44.8|)심인성 몽롱상태|Psychogenic twilight state\
+    |(?#F44.9|)상세불명의 해리\\[전환\\]장애|Dissociative \\[conversion\\] disorder, unspecified\
+    |(?#F45|)신체형장애|Somatoform disorders\
+    |(?#F45.0|)신체화장애|Somatization disorder\
+    |(?#F45.0|)브리퀘장애|Briquet’s disorder\
+    |(?#F45.0|)다발정신신체장애|Multiple psychosomatic disorder\
+    |(?#F45.1|)미분화신체형장애|Undifferentiated somatoform disorder\
+    |(?#F45.1|)미분화정신신체장애|Undifferentiated psychosomatic disorder\
+    |(?#F45.2|)건강염려증성 장애|Hypochondriacal disorder\
+    |(?#F45.2|)신체이상형태성 장애|Body dysmorphic disorder\
+    |(?#F45.2|)이상형태공포증\\(비망상성\\)|Dysmorphophobia \\(nondelusional\\)\
+    |(?#F45.2|)건강염려증성 신경증|Hypochondriacal neurosis\
+    |(?#F45.2|)건강염려증|Hypochondriasis\
+    |(?#F45.2|)질병공포증|Nosophobia\
+    |(?#F45.3|)신체형자율신경기능장애|Somatoform autonomic dysfunction\
+    |(?#F45.3|)심장성 신경증|Cardiac neurosis\
+    |(?#F45.3|)다코스타증후군|Da Costa’s syndrome\
+    |(?#F45.3|)위신경증|Gastric neurosis\
+    |(?#F45.3|)신경순환성 무력증|Neurocirculatory asthenia\
+    |(?#F45.3|)공기삼킴증의 심인성 형태|Psychogenic forms of aerophagy\
+    |(?#F45.3|)기침의 심인성 형태|Psychogenic forms of cough\
+    |(?#F45.3|)설사의 심인성 형태|Psychogenic forms of diarrhoea\
+    |(?#F45.3|)소화불량의 심인성 형태|Psychogenic forms of dyspepsia\
+    |(?#F45.3|)배뇨통의 심인성 형태|Psychogenic forms of dysuria\
+    |(?#F45.3|)고창의 심인성 형태|Psychogenic forms of flatulence\
+    |(?#F45.3|)딸꾹질의 심인성 형태|Psychogenic forms of hiccough\
+    |(?#F45.3|)과다환기의 심인성 형태|Psychogenic forms of hyperventilation\
+    |(?#F45.3|)배뇨횟수증가의 심인성 형태|Psychogenic forms of increased frequency of micturition\
+    |(?#F45.3|)과민대장증후군의 심인성 형태|Psychogenic forms of irritable bowel syndrome\
+    |(?#F45.3|)유문연축의 심인성 형태|Psychogenic forms of pylorospasm\
+    |(?#F45.4|)지속적 신체형통증장애|Persistent somatoform pain disorder\
+    |(?#F45.4|)정신성 통증|Psychalgia\
+    |(?#F45.4|)심인성 요통|Psychogenic backache\
+    |(?#F45.4|)심인성 두통|Psychogenic headache\
+    |(?#F45.4|)신체형통증장애|Somatoform pain disorder\
+    |(?#F45.8|)기타 신체형장애|Other somatoform disorders\
+    |(?#F45.8|)심인성 월경통|Psychogenic dysmenorrhoea\
+    |(?#F45.8|)심인성 “히스테리구”를 포함하는 삼킴곤란|Psychogenic dysphagia, including “globus hystericus”\
+    |(?#F45.8|)심인성 가려움증|Psychogenic pruritus\
+    |(?#F45.8|)심인성 기운목|Psychogenic torticollis\
+    |(?#F45.8|)이갈이|Teeth-grinding\
+    |(?#F45.9|)상세불명의 신체형장애|Somatoform disorder, unspecified\
+    |(?#F45.9|)정신신체장애 NOS|Psychosomatic disorder NOS\
+    |(?#F48|)기타 신경성 장애|Other neurotic disorders\
+    |(?#F48.0|)신경무력증|Neurasthenia\
+    |(?#F48.0|)피로증후군|Fatigue syndrome\
+    |(?#F48.1|)이인화-현실감소실증후군|Depersonalization-derealization syndrome\
+    |(?#F48.8|)기타 명시된 신경증성 장애|Other specified neurotic disorders\
+    |(?#F48.8|)닷증후군|Dhat syndrome\
+    |(?#F48.8|)직업성 신경증, 필기경련 포함|Occupational neurosis, including writer’s cramp\
+    |(?#F48.8|)정신무력|Psychasthenia\
+    |(?#F48.8|)정신쇠약성 신경증|Psychasthenic neurosis\
+    |(?#F48.8|)심인성 실신|Psychogenic syncope\
+    |(?#F48.9|)상세불명의 신경증성 장애|Neurotic disorder, unspecified\
+    |(?#F48.9|)신경증 NOS|Neurosis NOS\
+    |(?#F50|)식사장애|Eating disorders\
+    |(?#F50.0|)신경성 식욕부진|Anorexia nervosa\
+    |(?#F50.1|)비전형적 신경성 식욕부진|Atypical anorexia nervosa\
+    |(?#F50.2|)신경성 폭식증|Bulimia nervosa\
+    |(?#F50.2|)폭식증 NOS|Bulimia NOS\
+    |(?#F50.2|)신경성 식욕과다|Hyperorexia nervosa\
+    |(?#F50.3|)비전형 신경성 폭식증|Atypical bulimia nervosa\
+    |(?#F50.4|)기타 심리적 장애와 연관된 과식|Overeating associated with other psychological disturbances\
+    |(?#F50.4|)사별, 사고, 출산 등과 같은 스트레스성 사건에 의한 과식|Overeating due to stressful events, such as bereavement, accident, childbirth, etc\\.\
+    |(?#F50.4|)심인성 과식|Psychogenic overeating\
+    |(?#F50.5|)기타 심리적 장애와 연관된 구토|Vomiting associated with other psychological disturbances\
+    |(?#F50.5|)심인성 구토|Psychogenic vomiting\
+    |(?#F50.8|)기타 식사장애|Other eating disorders\
+    |(?#F50.8|)성인이식증\\(異食症\\)|Pica in adults\
+    |(?#F50.8|)심인성 식욕상실|Psychogenic loss of appetite\
+    |(?#F50.9|)상세불명의 식사장애|Eating disorder, unspecified\
+    |(?#F51|)비기질성 수면장애|Nonorganic sleep disorders\
+    |(?#F51.0|)비기질성 불면증|Nonorganic insomnia\
+    |(?#F51.1|)비기질성 과다수면|Nonorganic hypersomnia\
+    |(?#F51.2|)수면각성일정의 비기질성 장애|Nonorganic disorder of the sleep-wake schedule\
+    |(?#F51.2|)일교차리듬의 심인성 역전|Psychogenic inversion of circadian rhythm\
+    |(?#F51.2|)주야리듬의 심인성 역전|Psychogenic inversion of nyctohemeral rhythm\
+    |(?#F51.2|)수면리듬의 심인성 역전|Psychogenic inversion of sleep rhythm\
+    |(?#F51.3|)몽유병|Sleepwalking \\[somnambulism\\]\
+    |(?#F51.4|)야경증\\(夜痙症\\)|Sleep terrors \\[night terrors\\]\
+    |(?#F51.5|)악몽|Nightmares\
+    |(?#F51.5|)꿈불안장애|Dream anxiety disorder\
+    |(?#F51.8|)기타 비기질성 수면장애|Other nonorganic sleep disorders\
+    |(?#F51.9|)상세불명의 비기질성 수면장애|Nonorganic sleep disorder, unspecified\
+    |(?#F51.9|)정서적 수면장애 NOS|Emotional sleep disorder NOS\
+    |(?#F52|)기질성 장애나 질병에 의하지 않은 성기능장애|Sexual dysfunction, not caused by organic disorder or disease\
+    |(?#F52.0|)성욕감퇴 또는 상실|Lack or loss of sexual desire\
+    |(?#F52.0|)불감증|Frigidity\
+    |(?#F52.0|)저활동성 성욕장애|Hypoactive sexual desire disorder\
+    |(?#F52.1|)성혐오와 성적 쾌감결핍|Sexual aversion and lack of sexual enjoyment\
+    |(?#F52.1|)성적 무쾌감증|Anhedonia, sexual\
+    |(?#F52.2|)생식기반응의 부전|Failure of genital response\
+    |(?#F52.2|)여성성흥분장애|Female sexual arousal disorder\
+    |(?#F52.2|)남성발기장애|Male erectile disorder\
+    |(?#F52.2|)심인성 발기부전|Psychogenic impotence\
+    |(?#F52.3|)성극치감기능이상|Orgasmic dysfunction\
+    |(?#F52.3|)억제된 성극치감\\(남\\)\\(여\\)|Inhibited orgasm \\(male\\)\\(female\\)\
+    |(?#F52.3|)심인성 성극치감결여|Psychogenic anorgasmy\
+    |(?#F52.4|)조루\\(早漏\\)|Premature ejaculation\
+    |(?#F52.5|)비기질성 질경련|Nonorganic vaginismus\
+    |(?#F52.5|)심인성 질경련|Psychogenic vaginismus\
+    |(?#F52.6|)비기질성 성교통|Nonorganic dyspareunia\
+    |(?#F52.6|)심인성 성교통|Psychogenic dyspareunia\
+    |(?#F52.7|)성욕과다|Excessive sexual drive\
+    |(?#F52.7|)여자색정증|Nymphomania\
+    |(?#F52.7|)남성색정증|Satyriasis\
+    |(?#F52.8|)기질성 장애 또는 질병에 의하지 않은 기타 성기능장애|Other sexual dysfunction, not caused by organic disorder or disease\
+    |(?#F52.9|)기질성 장애 또는 질병에 의하지 않은 상세불명의 성기능장애|Unspecified sexual dysfunction, not caused by organic disorder or disease\
+    |(?#F53|)달리 분류되지 않은 산후기의 정신 및 행동 장애|Mental and behavioural disorders associated with the puerperium, NEC\
+    |(?#F53.0|)달리 분류되지 않은 산후기와 연관된 경한 정신 및 행동 장애|Mild mental and behavioural disorders associated with the puerperium, NEC\
+    |(?#F53.0|)출산후 우울증 NOS|Postnatal depression NOS\
+    |(?#F53.0|)분만후 우울증 NOS|Postpartum depression NOS\
+    |(?#F53.1|)달리 분류되지 않은 산후기와 연관된 심한 정신 및 행동 장애|Severe mental and behavioural disorders associated with the puerperium, NEC\
+    |(?#F53.1|)산후기 정신병 NOS|Puerperal psychosis NOS\
+    |(?#F53.8|)달리 분류되지 않은 산후기와 연관된 기타 정신 및 행동 장애|Other mental and behavioural disorders associated with the puerperium, NEC\
+    |(?#F53.9|)상세불명의 산후기 정신장애|Puerperal mental disorder, unspecified\
+    |(?#F54|)달리 분류된 장애나 질환에 연관된 심리적 요인 및 행동적 요인|Psychological and behavioural factors associated with disorders or diseases classified elsewhere\
+    |(?#F54|)신체적 조건에 영향을 미치는 심리요인|Psychological factors affecting physical conditions\
+    |(?#F54|)천식 F54와 J45 이 분류항목이 쓰인 예|Examples of the use of this category are asthma F54 and J45\
+    |(?#F54|)피부염 F54와 L23-L25 이 분류항목이 쓰인 예|Examples of the use of this category are dermatitis F54 and L23-L25\
+    |(?#F54|)위궤양 F54와 K25\\.-1 이 분류항목이 쓰인 예|Examples of the use of this category are gastric ulcer F54 and K25\\.-1\
+    |(?#F54|)과민대장증후군 F54와 K58\\.- 이 분류항목이 쓰인 예|Examples of the use of this category are irritable bowel syndrome  F54 and K58\\.-\
+    |(?#F54|)궤양성 대장염 F54와 K51\\.- 이 분류항목이 쓰인 예|Examples of the use of this category are ulcerative colitis F54 and K51\\.-\
+    |(?#F54|)두드러기 F54와 L50\\.- 이 분류항목이 쓰인 예|Examples of the use of this category are urticaria F54 and L50\\.-\
+    |(?#F55|)비의존성 물질의 남용|Abuse of non-dependence-producing substances\
+    |(?#F55|)제산제의 남용|Abuse of antacids\
+    |(?#F55|)약초 또는 민간약제의 남용|Abuse of herbal or folk remedies\
+    |(?#F55|)스테로이드 또는 호르몬의 남용|Abuse of steroids or hormones\
+    |(?#F55|)비타민의 남용|Abuse of vitamins\
+    |(?#F55|)설사제 상습의 남용|Abuse of laxative habit\
+    |(?#F59|)생리적 장애 및 신체적 요인과 연관된 상세불명의 행동증후군|Unspecified behavioural syndromes associated with physiological disturbances and physical factors\
+    |(?#F59|)심인성 생리적 기능이상 NOS|Psychogenic physiological dysfunction NOS\
+    |(?#F60|)특정 인격장애|Specific personality disorders\
+    |(?#F60.0|)편집인격장애|Paranoid personality disorder\
+    |(?#F60.0|)확대편집성 인격\\(장애\\)|Expansive paranoid personality\\(disorder\\)\
+    |(?#F60.0|)광신적 인격\\(장애\\)|Fanatic personality\\(disorder\\)\
+    |(?#F60.0|)불평 인격\\(장애\\)|Querulant personality\\(disorder\\)\
+    |(?#F60.0|)편집성 인격\\(장애\\)|Paranoid personality\\(disorder\\)\
+    |(?#F60.0|)민감편집성 인격\\(장애\\)|Sensitive paranoid personality\\(disorder\\)\
+    |(?#F60.1|)조현성 인격장애|Schizoid personality disorder\
+    |(?#F60.2|)비사교적 인격장애|Dissocial personality disorder\
+    |(?#F60.2|)무도덕적 인격\\(장애\\)|Amoral personality\\(disorder\\)\
+    |(?#F60.2|)반사회적 인격\\(장애\\)|Antisocial personality\\(disorder\\)\
+    |(?#F60.2|)비사회적 인격\\(장애\\)|Asocial personality\\(disorder\\)\
+    |(?#F60.2|)정신병적 인격\\(장애\\)|Psychopathic personality\\(disorder\\)\
+    |(?#F60.2|)사회병적 인격\\(장애\\)|Sociopathic personality\\(disorder\\)\
+    |(?#F60.3|)정서불안성 인격장애|Emotionally unstable personality disorder\
+    |(?#F60.3|)공격성 인격\\(장애\\)|Aggressive personality\\(disorder\\)\
+    |(?#F60.3|)경계성 인격\\(장애\\)|Borderline personality\\(disorder\\)\
+    |(?#F60.3|)폭발성 인격\\(장애\\)|Explosive personality\\(disorder\\)\
+    |(?#F60.4|)연기성 인격장애|Histrionic personality disorder\
+    |(?#F60.4|)히스테리성 인격\\(장애\\)|Hysterical personality\\(disorder\\)\
+    |(?#F60.4|)정신영아성 인격\\(장애\\)|Psychoinfantile personality\\(disorder\\)\
+    |(?#F60.5|)강박성 인격장애|Anankastic personality disorder\
+    |(?#F60.5|)강박행동성 인격\\(장애\\)|Compulsive personality\\(disorder\\)\
+    |(?#F60.5|)강박관념성 인격\\(장애\\)|Obsessional personality\\(disorder\\)\
+    |(?#F60.5|)강박성 인격\\(장애\\)|Obsessive-compulsive personality\\(disorder\\)\
+    |(?#F60.6|)불안성\\[회피성\\] 인격장애|Anxious\\[avoidant\\] personality disorder\
+    |(?#F60.7|)의존성 인격장애|Dependent personality disorder\
+    |(?#F60.7|)무력증 인격\\(장애\\)|Asthenic personality\\(disorder\\)\
+    |(?#F60.7|)부적절한 인격\\(장애\\)|Inadequate personality\\(disorder\\)\
+    |(?#F60.7|)수동적 인격\\(장애\\)|Passive personality\\(disorder\\)\
+    |(?#F60.7|)자포자기 인격\\(장애\\)|Self-defeating personality\\(disorder\\)\
+    |(?#F60.8|)기타 특정 인격장애|Other specific personality disorders\
+    |(?#F60.8|)치우친 인격\\(장애\\)|Eccentric personality\\(disorder\\)\
+    |(?#F60.8|)무절제형 인격\\(장애\\)|“Haltlose” type personality\\(disorder\\)\
+    |(?#F60.8|)미숙한 인격\\(장애\\)|Immature personality\\(disorder\\)\
+    |(?#F60.8|)자기애적 인격\\(장애\\)|Narcissistic personality\\(disorder\\)\
+    |(?#F60.8|)수동-공격형 인격\\(장애\\)|Passive-aggressive personality\\(disorder\\)\
+    |(?#F60.8|)정신신경증성 인격\\(장애\\)|Psychoneurotic personality\\(disorder\\)\
+    |(?#F60.9|)상세불명의 인격장애|Personality disorder, unspecified\
+    |(?#F60.9|)성격신경증 NOS|Character neurosis NOS\
+    |(?#F60.9|)병적 인격 NOS|Pathological personality NOS\
+    |(?#F61|)혼합형 및 기타 인격장애|Mixed and other personality disorders\
+    |(?#F62|)뇌 손상과 질병이 원인이 아닌 지속적인 인격변화|Enduring personality changes, not attributable to brain damage and disease\
+    |(?#F62.0|)재난경험후의 지속적 인격변화|Enduring personality change after catastrophic experience\
+    |(?#F62.0|)강제수용소의 경험 이후의 인격변화|Personality change after concentration camp experiences\
+    |(?#F62.0|)재앙 이후의 인격변화|Personality change after disaster\
+    |(?#F62.0|)고문 이후의 인격변화|Personality change after torture\
+    |(?#F62.1|)정신질환 후의 지속적 인격변화|Enduring personality change after psychiatric illness\
+    |(?#F62.8|)기타 지속적 인격변화|Other enduring personality changes\
+    |(?#F62.8|)만성 통증인격증후군|Chronic pain personality syndrome\
+    |(?#F62.9|)상세불명의 지속적 인격변화|Enduring personality change, unspecified\
+    |(?#F63|)습관 및 충동 장애|Habit and impulse disorders\
+    |(?#F63.0|)병적 도박|Pathological gambling\
+    |(?#F63.0|)강박성 도박|Compulsive gambling\
+    |(?#F63.1|)병적 방화\\[방화벽\\]|Pathological fire-setting \\[pyromania\\]\
+    |(?#F63.2|)병적 도둑질\\[절도벽\\]|Pathological stealing\\[kleptomania\\]\
+    |(?#F63.3|)발모벽|Trichotillomania\
+    |(?#F63.8|)기타 습관 및 충동 장애|Other habit and impulse disorders\
+    |(?#F63.8|)간헐성 폭발성 장애|Intermittent explosive disorder\
+    |(?#F63.9|)상세불명의 습관 및 충동 장애|Habit and impulse disorder, unspecified\
+    |(?#F64|)성주체성장애|Gender identity disorders\
+    |(?#F64.0|)성전환증|Transsexualism\
+    |(?#F64.1|)이중역할의상도착증|Dual-role transvestism\
+    |(?#F64.2|)소아기의 성주체성장애|Gender identity disorder of childhood\
+    |(?#F64.8|)기타 성주체성장애|Other gender identity disorders\
+    |(?#F64.9|)상세불명의 성주체성장애|Gender identity disorder, unspecified\
+    |(?#F64.9|)성-역할장애 NOS|Gender-role disorder NOS\
+    |(?#F65|)성선호장애|Disorders of sexual preference\
+    |(?#F65|)성도착증|Paraphilias\
+    |(?#F65.0|)물품음란증|Fetishism\
+    |(?#F65.1|)물품음란성 의상도착증|Fetishistic transvestism\
+    |(?#F65.1|)의상도착성 물품음란증|Transvestic fetishism\
+    |(?#F65.2|)노출증|Exhibitionism\
+    |(?#F65.3|)관음증|Voyeurism\
+    |(?#F65.4|)소아성애증|Paedophilia\
+    |(?#F65.5|)가학피학증|Sadomasochism\
+    |(?#F65.5|)피학증|Masochism\
+    |(?#F65.5|)가학증|Sadism\
+    |(?#F65.6|)성선호의 다발성 장애|Multiple disorders of sexual preference\
+    |(?#F65.8|)기타 성선호|Other disorders of sexual preference\
+    |(?#F65.8|)마찰도착증|Frotteurism\
+    |(?#F65.8|)시체성애증|Necrophilia\
+    |(?#F65.9|)상세불명의 성선호장애|Disorder of sexual preference, unspecified\
+    |(?#F65.9|)성도착 NOS|Sexual deviation NOS\
+    |(?#F66|)성적 발달과 지향에 관계된 심리적 장애 및 행동장애|Psychological and behavioural disorders associated with sexual development and orientation\
+    |(?#F66.0|)성적 성숙장애|Sexual maturation disorder\
+    |(?#F66.1|)자아이질적 성적 지향|Egodystonic sexual orientation\
+    |(?#F66.2|)성적 관계장애|Sexual relationship disorder\
+    |(?#F66.8|)기타 정신성적 발달장애|Other psychosexual development disorders\
+    |(?#F66.9|)상세불명의 정신성적 발달장애|Psychosexual development disorder, unspecified\
+    |(?#F68|)성인의 인격 및 행동의 기타 장애|Other disorders of adult personality and behaviour\
+    |(?#F68.1|)신체적 또는 심리학적인 증상 또는 불구의 가장이나 고의적 유발\\[꾸며낸 장애\\]|Intentional production or feigning of symptoms or disabilities, either physical or psychological \\[factitious disorder\\]\
+    |(?#F68.1|)병원을 이리저리 옮겨다니는 증후군|Hospital hopper syndrome\
+    |(?#F68.1|)뭔흐하우젠증후군|Münchhausen syndrome\
+    |(?#F68.1|)병원순례환자|Peregrinating patient\
+    |(?#F68.8|)성인의 인격 및 행동의 기타 명시된 장애|Other specified disorders of adult personality and behaviour\
+    |(?#F68.8|)성격장애 NOS|Character disorder NOS\
+    |(?#F68.8|)관계장애 NOS|Relationship disorder NOS\
+    |(?#F69|)성인의 인격 및 행동의 상세불명의 장애|Unspecified disorder of adult personality and behaviour\
+    |(?#F70|)경도 정신지체|Mild mental retardation\
+    |(?#F70|)정신박약|Feeble-mindedness\
+    |(?#F70|)경도 정신저하|Mild mental subnormality\
+    |(?#F70.0|)행동의 장애가 없거나 최소라고 진술된 경도 정신지체|Mild mental retardation with the statement of no, or minimal, impairment of behaviour\
+    |(?#F70.1|)주의나 처치가 필요한 심각한 행동의 장애가 있는  경도 정신지체|Mild mental retardation with significant impairment of behaviour requiring attention or treatment\
+    |(?#F70.8|)기타 행동의 장애가 있는 경도 정신지체|Mild mental retardation with other impairments of behaviour\
+    |(?#F70.9|)행동의 장애에 대한 언급이 없는 경도 정신지체|Mild mental retardation without mention of impairment of behaviour\
+    |(?#F71|)중등도 정신지체|Moderate mental retardation\
+    |(?#F71|)중등도 정신저하|Moderate mental subnormality\
+    |(?#F71.0|)행동의 장애가 없거나 최소라고 진술된 중등도 정신지체|Moderate mental retardation with the statement of no, or minimal, impairment of behaviour\
+    |(?#F71.1|)주의나 처치가 필요한 심각한 행동의 장애가 있는 중등도 정신지체|Moderate mental retardation with significant impairment of behaviour requiring attention or treatment\
+    |(?#F71.8|)기타 행동의 장애가 있는 중등도 정신지체|Moderate mental retardation with other impairments of behaviour\
+    |(?#F71.9|)행동의 장애에 대한 언급이 없는 중등도 정신지체|Moderate mental retardation without mention of impairment of behaviour\
+    |(?#F72|)중증 정신지체|Severe mental retardation\
+    |(?#F72|)중증 정신저하|Severe mental subnormality\
+    |(?#F72.0|)행동의 장애가 없거나 최소라고 진술된 중증 정신지체|Severe mental retardation with the statement of no, or minimal, impairment of behaviour\
+    |(?#F72.1|)주의나 처치가 필요한 심각한 행동의 장애가 있는 중증 정신지체|Severe mental retardation with significant impairment of behaviour requiring attention or treatment\
+    |(?#F72.8|)기타 행동의 장애가 있는 중증 정신지체|Severe mental retardation with other impairments of behaviour\
+    |(?#F72.9|)행동의 장애에 대한 언급이 없는 중증 정신지체|Severe mental retardation without mention of impairment of behaviour\
+    |(?#F73|)최중증 정신지체|Profound mental retardation\
+    |(?#F73|)최중증 정신저하|Profound mental subnormality\
+    |(?#F73.0|)행동의 장애가 없거나 최소라고 진술된 최중증 정신지체|Profound mental retardation with the statement of no, or minimal, impairment of behaviour\
+    |(?#F73.1|)주의나 처치가 필요한 심각한 행동의 장애가 있는 최중증 정신지체|Profound mental retardation with significant impairment of behaviour requiring attention or treatment\
+    |(?#F73.8|)기타 행동의 장애가 있는 최중증 정신지체|Profound mental retardation with other impairments of behaviour\
+    |(?#F73.9|)행동의 장애에 대한 언급이 없는 최중증 정신지체|Profound mental retardation without mention of impairment of behaviour\
+    |(?#F78|)기타 정신지체|Other mental retardation\
+    |(?#F78.0|)행동의 장애가 없거나 최소라고 진술된 기타 정신지체|Other mental retardation with the statement of no, or minimal, impairment of behaviour\
+    |(?#F78.1|)주의나 처치가 필요한 심각한 행동의 장애가 있는 기타 정신지체|Other mental retardation with significant impairment of behaviour requiring attention or treatment\
+    |(?#F78.8|)기타 행동의 장애가 있는 기타 정신지체|Other mental retardation with other impairments of behaviour\
+    |(?#F78.9|)행동의 장애에 대한 언급이 없는 기타 정신지체|Other mental retardation without mention of impairment of behaviour\
+    |(?#F79|)상세불명의 정신지체|Unspecified mental retardation\
+    |(?#F79|)정신박약 NOS|Mental deficiency NOS\
+    |(?#F79|)정신저하 NOS|Mental subnormality NOS\
+    |(?#F79.0|)행동의 장애가 없거나 최소라고 진술된 상세불명의 정신지체|Unspecified mental retardation with the statement of no, or minimal, impairment of behaviour\
+    |(?#F79.1|)주의나 처치가 필요한 심각한 행동의 장애가 있는 상세불명의 정신지체|Unspecified mental retardation with significant impairment of behaviour requiring attention or treatment\
+    |(?#F79.8|)기타 행동의 장애가 있는 상세불명의 정신지체|Unspecified mental retardation with other impairments of behaviour\
+    |(?#F79.9|)행동의 장애에 대한 언급이 없는 상세불명의 정신지체|Unspecified mental retardation without mention of impairment of behaviour\
+    |(?#F80|)말하기와 언어의 특정 발달장애|Specific developmental disorders of speech and language\
+    |(?#F80.0|)특정 구음장애|Specific speech articulation disorder\
+    |(?#F80.0|)발달성 음성학적 장애|Developmental phonological disorder\
+    |(?#F80.0|)발달성 구음장애|Developmental speech articulation disorder\
+    |(?#F80.0|)구음장애|Dyslalia\
+    |(?#F80.0|)기능성 구음장애|Functional speech articulation disorder\
+    |(?#F80.0|)발음혼동\\(요설\\)|Lalling\
+    |(?#F80.1|)표현언어장애|Expressive language disorder\
+    |(?#F80.1|)발달성 언어장애 또는 실어증\\(失語症\\), 표현형|Developmental dysphasia or aphasia, expressive type\
+    |(?#F80.2|)수용성 언어장애|Receptive language disorder\
+    |(?#F80.2|)선천성 청각성 지각부전|Congenital auditory imperception\
+    |(?#F80.2|)발달성 언어장애 또는 실어증, 수용형|Developmental dysphasia or aphasia, receptive type\
+    |(?#F80.2|)발달성 베르니케실어증|Developmental Wernicke’s aphasia\
+    |(?#F80.2|)단어농|Word deafness\
+    |(?#F80.8|)말하기와 언어의 기타 발달장애|Other developmental disorders of speech and language\
+    |(?#F80.8|)혀짧은 소리|Lisping\
+    |(?#F80.9|)말하기와 언어의 상세불명의 발달장애|Developmental disorder of speech and language, unspecified\
+    |(?#F80.9|)언어장애 NOS|Language disorder NOS\
+    |(?#F81|)학습술기의 특정 발달장애|Specific developmental disorders of scholastic skills\
+    |(?#F81.0|)특정 읽기장애|Specific reading disorder\
+    |(?#F81.0|)“뒤로 읽기”|“Backward reading”\
+    |(?#F81.0|)발달성 난독증\\(독서장애\\)|Developmental dyslexia\
+    |(?#F81.0|)특정 읽기지연|Specific reading retardation\
+    |(?#F81.1|)특정 철자장애|Specific spelling disorder\
+    |(?#F81.1|)특정 철자법 지연\\(읽기장애 없음\\)|Specific spelling retardation \\(without reading disorder\\)\
+    |(?#F81.2|)특정 산술술기장애|Specific disorder of arithmetical skills\
+    |(?#F81.2|)발달성 계산불능|Developmental acalculia\
+    |(?#F81.2|)발달성 산술장애|Developmental arithmetical disorder\
+    |(?#F81.2|)발달성 게르스트만증후군|Developmental Gerstmann’s syndrome\
+    |(?#F81.3|)학습술기의 혼합형 장애|Mixed disorder of scholastic skills\
+    |(?#F81.8|)학습술기의 기타 발달장애|Other developmental disorders of scholastic skills\
+    |(?#F81.8|)발달과정의 표현적 쓰기장애|Developmental expressive writing disorder\
+    |(?#F81.9|)상세불명의 학습술기의 발달장애|Developmental disorder of scholastic skills, unspecified\
+    |(?#F81.9|)지식획득장애 NOS|Knowledge acquisition disability NOS\
+    |(?#F81.9|)학습장애 NOS|Learning disability NOS\
+    |(?#F81.9|)학습장애 NOS|Learning disorder NOS\
+    |(?#F82|)운동기능의 특정 발달장애|Specific developmental disorder of motor function\
+    |(?#F82|)둔한소아증후군|Clumsy child syndrome\
+    |(?#F82|)발달성 협조장애|Developmental coordination disorder\
+    |(?#F82|)발달성 행동장애|Developmental dyspraxia\
+    |(?#F83|)혼합형 특정 발달장애|Mixed specific developmental disorders\
+    |(?#F84|)전반발달장애|Pervasive developmental disorders\
+    |(?#F84.0|)소아기 자폐증|Childhood autism\
+    |(?#F84.0|)자폐성 장애|Autistic disorder\
+    |(?#F84.0|)영아자폐증|Infantile autism\
+    |(?#F84.0|)영아정신병|Infantile psychosis\
+    |(?#F84.0|)카너증후군|Kanner’s syndrome\
+    |(?#F84.1|)비정형자폐증|Atypical autism\
+    |(?#F84.1|)비정형 소아기 정신병|Atypical childhood psychosis\
+    |(?#F84.1|)자폐성향의 정신지체|Mental retardation with autistic features\
+    |(?#F84.3|)기타 소아기 붕괴성 장애|Other childhood disintegrative disorder\
+    |(?#F84.3|)영아치매|Dementia infantilis\
+    |(?#F84.3|)붕괴성 정신병|Disintegrative psychosis\
+    |(?#F84.3|)헬러증후군|Heller’s syndrome\
+    |(?#F84.3|)공생정신병|Symbiotic psychosis\
+    |(?#F84.4|)정신지체 및 상동운동과 연관된 과다활동성 장애|Overactive disorder associated with mental retardation and stereotyped movements\
+    |(?#F84.5|)아스퍼거증후군|Asperger’s syndrome\
+    |(?#F84.5|)자폐성 정신병증|Autistic psychopathy\
+    |(?#F84.5|)소아기의 조현성 장애|Schizoid disorder of childhood\
+    |(?#F84.8|)기타 전반발달장애|Other pervasive developmental disorders\
+    |(?#F84.9|)상세불명의 전반발달장애|Pervasive developmental disorder, unspecified\
+    |(?#F88|)심리적 발달의 기타 장애|Other disorders of psychological development\
+    |(?#F88|)발달성 실인증|Developmental agnosia\
+    |(?#F89|)심리적 발달의 상세불명의 장애|Unspecified disorder of psychological development\
+    |(?#F89|)발달성 장애 NOS|Developmental disorder NOS\
+    |(?#F90|)운동과다장애|Hyperkinetic disorders\
+    |(?#F90.0|)활동성 및 주의력 장애|Disturbance of activity and attention\
+    |(?#F90.0|)과다활동을 수반한 주의력결핍장애|Attention deficit disorder with hyperactivity\
+    |(?#F90.0|)과다활동성 주의력결핍장애|Attention deficit hyperactivity disorder\
+    |(?#F90.0|)과다활동을 수반한 주의력결핍증후군|Attention deficit syndrome with hyperactivity\
+    |(?#F90.1|)운동과다성 행동장애|Hyperkinetic conduct disorder\
+    |(?#F90.1|)행동장애와 연관된 운동과다장애|Hyperkinetic disorder associated with conduct disorder\
+    |(?#F90.8|)기타 운동과다장애|Other hyperkinetic disorders\
+    |(?#F90.9|)상세불명의 운동과다장애|Hyperkinetic disorder, unspecified\
+    |(?#F90.9|)소아기와 청소년기의 운동과다반응 NOS|Hyperkinetic reaction of childhood or adolescence NOS\
+    |(?#F90.9|)운동과다증후군 NOS|Hyperkinetic syndrome NOS\
+    |(?#F91|)행동장애|Conduct disorders\
+    |(?#F91.0|)가족관계에만 한정된 행동장애|Conduct disorder confined to the family context\
+    |(?#F91.1|)사회화되지 않은 행동장애|Unsocialized conduct disorder\
+    |(?#F91.1|)고립성 공격성 행동장애|Conduct disorder, solitary aggressive type\
+    |(?#F91.1|)사회화되지 않은 공격성 장애|Unsocialized aggressive disorder\
+    |(?#F91.2|)사회화된 행동장애|Socialized conduct disorder\
+    |(?#F91.2|)행동장애, 집단형|Conduct disorder, group type\
+    |(?#F91.2|)집단비행|Group delinquency\
+    |(?#F91.2|)폭력단 단원으로서 공격|Offences in the context of gang membership\
+    |(?#F91.2|)다른 사람과 같이하는 도둑질|Stealing in company with others\
+    |(?#F91.2|)학교수업 빼먹기|Truancy from school\
+    |(?#F91.3|)적대적 반항장애|Oppositional defiant disorder\
+    |(?#F91.8|)기타 행동장애|Other conduct disorders\
+    |(?#F91.9|)상세불명의 행동장애|Conduct disorder, unspecified\
+    |(?#F91.9|)소아기 행동장애 NOS|Childhood behavioural disorder NOS\
+    |(?#F91.9|)소아기 행동장애 NOS|Childhood conduct disorder NOS\
+    |(?#F92|)행동 및 정서의 혼합 장애|Mixed disorders of conduct and emotions\
+    |(?#F92.0|)우울증성 행동장애|Depressive conduct disorder\
+    |(?#F92.8|)행동 및 정서의 기타 혼합 장애|Other mixed disorders of conduct and emotions\
+    |(?#F92.9|)행동 및 정서의 상세불명의 혼합 장애|Mixed disorder of conduct and emotions, unspecified\
+    |(?#F93|)소아기에만 발병하는 정서장애|Emotional disorders with onset specific to childhood\
+    |(?#F93.0|)소아기의 분리불안장애|Separation anxiety disorder of childhood\
+    |(?#F93.1|)소아기의 공포불안장애|Phobic anxiety disorder of childhood\
+    |(?#F93.2|)소아기의 사회적 불안장애|Social anxiety disorder of childhood\
+    |(?#F93.2|)소아기와 청소년기의 회피장애|Avoidant disorder of childhood or adolescence\
+    |(?#F93.3|)동기간경쟁장애|Sibling rivalry disorder\
+    |(?#F93.3|)동기간 질투|Sibling jealousy\
+    |(?#F93.8|)기타 소아기 정서장애|Other childhood emotional disorders\
+    |(?#F93.8|)주체성 장애|Identity disorder\
+    |(?#F93.8|)과잉불안장애|Overanxious disorder\
+    |(?#F93.9|)상세불명의 소아기 정서장애|Childhood emotional disorder, unspecified\
+    |(?#F94|)소아기 및 청소년기에만 발병하는 사회적 기능수행장애|Disorders of social functioning with onset specific to childhood and adolescence\
+    |(?#F94.0|)선택적 무언증|Elective mutism\
+    |(?#F94.0|)선택적 무언증|Selective mutism\
+    |(?#F94.1|)소아기 반응성 애착장애|Reactive attachment disorder of childhood\
+    |(?#F94.2|)소아기 무억제성 애착장애|Disinhibited attachment disorder of childhood\
+    |(?#F94.2|)감동결여성 정신병증|Affectionless psychopathy\
+    |(?#F94.2|)공공시설증후군|Institutional syndrome\
+    |(?#F94.8|)사회적 기능수행의 기타 소아기 장애|Other childhood disorders of social functioning\
+    |(?#F94.9|)사회적 기능수행의 상세불명의 소아기 장애|Childhood disorder of social functioning, unspecified\
+    |(?#F95|)틱장애|Tic disorders\
+    |(?#F95.0|)일과성 틱장애|Transient tic disorder\
+    |(?#F95.1|)만성 운동 또는 음성 틱장애|Chronic motor or vocal tic disorder\
+    |(?#F95.2|)복합된 음성 및 다발성 운동 틱장애\\[데라투렛 증후군\\]|Combined vocal and multiple motor tic disorder\\[de la Tourette\\]\
+    |(?#F95.8|)기타 틱장애|Other tic disorders\
+    |(?#F95.9|)상세불명의 틱장애|Tic disorder, unspecified\
+    |(?#F95.9|)틱 NOS|Tic NOS\
+    |(?#F98|)소아기 및 청소년기에 주로 발병하는 기타 행동 및 정서장애|Other behavioural and emotional disorders with onset usually occurring in childhood and adolescence\
+    |(?#F98.0|)비기질성 유뇨증|Nonorganic enuresis\
+    |(?#F98.0|)기능성 유뇨증|Functional enuresis\
+    |(?#F98.0|)비기질적 원인에 의한 유뇨증\\(원발성\\)\\(이차성\\)|Enuresis \\(primary\\)\\(secondary\\) of nonorganic origin\
+    |(?#F98.0|)심인성 유뇨증|Psychogenic enuresis\
+    |(?#F98.0|)비기질적 원인에 의한 요실금|Urinary incontinence of nonorganic origin\
+    |(?#F98.1|)비기질성 유분증|Nonorganic encopresis\
+    |(?#F98.1|)기능성 유분증|Functional encopresis\
+    |(?#F98.1|)비기질적 원인에 의한 대변실금|Incontinence of faeces of nonorganic origin\
+    |(?#F98.1|)심인성 유분증|Psychogenic encopresis\
+    |(?#F98.2|)영아기 또는 소아기의 급식장애|Feeding disorder of infancy and childhood\
+    |(?#F98.2|)영아기의 되새김장애|Rumination disorder of infancy\
+    |(?#F98.3|)영아기 또는 소아기의 이식증\\(異食症\\)|Pica of infancy and childhood\
+    |(?#F98.4|)상동적\\(常同的\\) 운동장애|Stereotyped movement disorders\
+    |(?#F98.4|)상동증/습관 장애|Stereotype/habit disorder\
+    |(?#F98.5|)말더듬\\[말더듬증\\]|Stuttering\\[stammering\\]\
+    |(?#F98.6|)속화증\\(速話症\\)|Cluttering\
+    |(?#F98.8|)기타 명시된 소아기와 청소년기에 주로 발병하는 행동 및 정서 장애|Other specified behavioural and emotional disorders with onset usually occurring in childhood and adolescence\
+    |(?#F98.8|)과다활동을 수반하지 않은 주의력결핍장애|Attention deficit disorder without hyperactivity\
+    |(?#F98.8|)과다자위행위|Excessive masturbation\
+    |(?#F98.8|)손톱씹기|Nail-biting\
+    |(?#F98.8|)코파기|Nose-picking\
+    |(?#F98.8|)엄지손가락빨기|Thumb-sucking\
+    |(?#F98.9|)소아기 및 청소년기에 주로 발병하는 상세불명의 행동 및 정서 장애|Unspecified behavioural and emotional disorders with onset usually occurring in childhood and adolescence\
+    |(?#F99|)정신장애 NOS|Mental disorder NOS\
+    |(?#F99|)정신질환 NOS|Mental illness NOS\
+    )"
+
+
+# 희귀질환
+SDZ_RARE_NAME: &sdz_rare_name "(\
+    (?#A31.9|)비정형마이코박테륨증, 가족형, X연관|Atypical mycobacteriosis, familial, X-linked\
+    |(?#A81.0|)크로이츠펠트-야콥병|Creutzfeldt-Jakob disease\
+    |(?#A81.0|)아급성 해면모양뇌병증|Subacute spongiform encephalopathy\
+    |(?#D12.6|)가족성선종성폴립증|Familial adenomatous polyposis\
+    |(?#D55.0|)포도당-6-인산탈수소효소결핍에 의한 빈혈|Anaemia due to glucose-6- phosphate dehydrogenase \\[G6PD\\] deficiency\
+    |(?#D55.0|)G6PD결핍빈혈|G6PD deficiency anaemia\
+    |(?#D55.0|)잠두중독|Favism\
+    |(?#D55.2|)해당효소의 장애에 의한 빈혈|Anaemia due to disorders of glycolytic enzymes\
+    |(?#D55.2|)삼탄당인산염이성화효소결핍빈혈|Triose-phosphate isomerase deficiency anaemia\
+    |(?#D55.2|)용혈성 비구상적혈구성 \\(유전성\\) Ⅱ형 빈혈|Haemolytic nonspherocytic \\(hereditary\\), type Ⅱ anaemia\
+    |(?#D55.2|)피루브산염카이네이스결핍빈혈|Pyruvate kinase\\[PK\\] deficiency anaemia\
+    |(?#D55.2|)헥소카이네이스결핍빈혈|Hexokinase deficiency anaemia\
+    |(?#D56.0|)알파지중해빈혈|Alpha thalassaemia\
+    |(?#D56.1|)베타지중해빈혈|Beta thalassaemia\
+    |(?#D56.1|)중간형 지중해빈혈|Intermedia thalassaemia\
+    |(?#D56.1|)중증 베타지중해빈혈|Severe beta thalassaemia\
+    |(?#D56.1|)중증 지중해빈혈|Major thalassaemia\
+    |(?#D56.1|)쿠울리빈혈|Cooley’s anaemia\
+    |(?#D56.2|)델타-베타지중해빈혈|Delta-beta thalassaemia\
+    |(?#D56.3|)지중해빈혈 소질|Thalassaemia trait\
+    |(?#D56.4|)태아헤모글로빈의 유전적 존속|Hereditary persistence of fetal haemoglobin \\[HPFH\\]\
+    |(?#D59.3|)비정형 용혈-요독증후군|Atypical haemolytic-uraemic syndrome\
+    |(?#D59.5|)발작성 야간헤모글로빈뇨|Paroxysmal nocturnal haemoglobinuria \\[Marchiafava-Micheli\\]\
+    |(?#D60.0|)만성 후천성 순수적혈구무형성|Chronic acquired pure red cell aplasia\
+    |(?#D61.0|)체질성 무형성빈혈|Constitutional aplastic anaemia\
+    |(?#D61.0|)선천성 무형성\\(순수\\)적혈구|Aplasia, \\(pure\\) red cell \\(of\\) congenital\
+    |(?#D61.0|)영아 무형성\\(순수\\)적혈구|Aplasia, \\(pure\\) red cell \\(of\\) infants\
+    |(?#D61.0|)원발성 무형성\\(순수\\)적혈구|Aplasia, \\(pure\\) red cell \\(of\\) primary\
+    |(?#D61.0|)블랙판-다이아몬드증후군|Blackfan-Diamond syndrome\
+    |(?#D61.0|)가족성 저형성빈혈|Familial hypoplastic anaemia\
+    |(?#D61.0|)판코니빈혈|Fanconi’s anaemia\
+    |(?#D61.0|)기형을 동반한 범혈구감소증|Pancytopenia with malformations\
+    |(?#D61.3|)특발성 무형성빈혈|Idiopathic aplastic anaemia\
+    |(?#D61.9|)저형성빈혈 NOS|Hypoplastic anaemia NOS\
+    |(?#D61.9|)골수형성저하|Medullary hypoplasia\
+    |(?#D61.9|)범골수황폐|Panmyelophthisis\
+    |(?#D64.4|)선천성 적혈구조혈이상빈혈|Congenital dyserythropoietic anaemia\
+    |(?#D64.4|)이상조혈성 빈혈\\(선천성\\)|Dyshaematopoietic anaemia\\(congenital\\)\
+    |(?#D66|)유전성 제8인자결핍|Hereditary factor Ⅷ deficiency\
+    |(?#D66|)제8인자결핍\\(기능적 결함을 동반\\)|Deficiency factor Ⅷ \\(with functional defect\\)\
+    |(?#D66|)혈우병 NOS|Haemophilia NOS\
+    |(?#D66|)A형혈우병|Haemophilia A\
+    |(?#D66|)고전적 혈우병|Classical haemophilia\
+    |(?#D67|)유전성 제9인자결핍|Hereditary factor Ⅸ deficiency\
+    |(?#D67|)크리스마스병|Christmas disease\
+    |(?#D67|)제9인자결핍\\(기능적 결함을 동반\\)|Factor Ⅸ deficiency \\(with functional defect\\)\
+    |(?#D67|)혈장트롬보플라스틴성분결핍|Plasma thromboplastin component\\[PTC\\] deficiency\
+    |(?#D67|)B형혈우병|Haemophilia B\
+    |(?#D68.0|)폰빌레브란트병|Von Willebrand’s disease\
+    |(?#D68.0|)혈관결손이 있는 제8인자결핍|Factor Ⅷ deficiency with vascular defect\
+    |(?#D68.0|)혈관혈우병|Angiohaemophilia\
+    |(?#D68.0|)혈관혈우병|Vascular haemophilia\
+    |(?#D68.1|)유전성 제11인자결핍|Hereditary factor Ⅺ deficiency\
+    |(?#D68.1|)C형혈우병|Haemophilia C\
+    |(?#D68.1|)혈장트롬보플라스틴전구물질결핍|Plasma thromboplastin antecedent \\[PTA\\] deficiency\
+    |(?#D68.2|)기타 응고인자의 유전성 결핍|Hereditary deficiency of other clotting factors\
+    |(?#D68.2|)선천성 무피브리노젠혈증|Congenital afibrinogenaemia\
+    |(?#D68.2|)AC글로불린결핍|AC globulin deficiency\
+    |(?#D68.2|)프로악셀레린결핍|Proaccelerin deficiency\
+    |(?#D68.2|)제1인자\\[피브리노젠\\]의 결핍|Ⅰ\\[Fibrinogen\\] deficiency of factor\
+    |(?#D68.2|)제2인자\\[프로트롬빈\\]의 결핍|Ⅱ\\[Prothrombin\\] deficiency of factor\
+    |(?#D68.2|)제5인자\\[불안정\\]의 결핍|Ⅴ\\[Labile\\] deficiency of factor\
+    |(?#D68.2|)제7인자\\[안정\\]의 결핍|Ⅶ\\[Stable\\] deficiency of factor\
+    |(?#D68.2|)제10인자\\[스튜어트-프라워\\]의 결핍|Ⅹ\\[Stuart-Prower\\] deficiency of factor\
+    |(?#D68.2|)제12인자\\[하게만\\]의 결핍|ⅩⅡ\\[Hageman\\] deficiency of factor\
+    |(?#D68.2|)제13인자\\[피브린안정화\\]의 결핍|ⅩⅢ\\[Fibrin-stabilizing\\] deficiency of factor\
+    |(?#D68.2|)이상피브리노젠혈증\\(선천성\\)|Dysfibrinogenaemia \\(congenital\\)\
+    |(?#D68.2|)저프로콘버틴혈증|Hypoproconvertinaemia\
+    |(?#D68.2|)오우렌병|Owren’s disease\
+    |(?#D68.5|)항트롬빈결핍|Antithrombin deficiency\
+    |(?#D68.5|)단백질C결핍|Protein C deficiency\
+    |(?#D68.5|)단백질S결핍|Protein S deficiency\
+    |(?#D68.6|)항인지질증후군|Antiphospholipid syndrome\
+    |(?#D69.1|)정성적 혈소판결손|Qualitative platelet defects\
+    |(?#D69.1|)베르나르-술리에\\[거대혈소판\\]증후군|Bernard-Soulier\\[giant platelet\\] syndrome\
+    |(?#D69.1|)글란즈만병|Glanzmann’s disease\
+    |(?#D69.1|)그레이혈소판증후군|Grey platelet syndrome\
+    |(?#D69.1|)혈소판무력증\\(출혈성\\)\\(유전성\\)|Thromboasthenia \\(haemorrhagic\\)\\(hereditary\\)\
+    |(?#D69.1|)혈소판병증|Thrombocytopathy\
+    |(?#D69.3|)에반스증후군|Evans’ syndrome\
+    |(?#D69.4|)유전성 혈소판감소증|Hereditary thrombocytopenia\
+    |(?#D70|)무과립구증|Agranulocytosis\
+    |(?#D70|)무과립구성 안지나|Agranulocytic angina\
+    |(?#D70|)선천성 무과립구증|Congenital agranulocytosis\
+    |(?#D70|)영아 유전성 무과립구증|Infantile genetic agranulocytosis\
+    |(?#D70|)코스트만병|Kostmann’s disease\
+    |(?#D70|)호중구감소 NOS|Neutropenia NOS\
+    |(?#D70|)선천성 호중구감소|Congenital neutropenia\
+    |(?#D70|)순환성 호중구감소|Cyclic neutropenia\
+    |(?#D70|)주기성 호중구감소|Periodic neutropenia\
+    |(?#D70|)호중구감소성 비장비대|Neutropenic splenomegaly\
+    |(?#D70|)베르너-슐츠병|Werner-Schultz disease\
+    |(?#D71|)다형핵호중구의 기능장애|Functional disorders of polymorphonuclear neutrophils\
+    |(?#D71|)세포막수용체복합체\\[CR3\\]결손|Cell membrane receptor complex \\[CR3\\] defect\
+    |(?#D71|)만성 \\(소아기\\) 육아종성 질환|Chronic \\(childhood\\) granulomatous disease\
+    |(?#D71|)선천성 이상식작용증|Congenital dysphagocytosis\
+    |(?#D71|)진행성 패혈성 육아종증|Progressive septic granulomatosis\
+    |(?#D76.1|)혈구탐식성 림프조직구증|Haemophagocytic lymphohistiocytosis\
+    |(?#D76.1|)가족성 혈구탐식세망증|Familial haemophagocytic reticulosis\
+    |(?#D76.1|)단핵탐식세포의 조직구증|Histiocytoses of mononuclear phagocytes\
+    |(?#D76.3|)세망조직구종\\(거대세포\\)|Reticulohistiocytoma\\(giant-cell\\)\
+    |(?#D76.3|)심한 림프선병증을 동반한 동조직구증|Sinus histiocytosis with massive lymph- adenopathy\
+    |(?#D80.0|)유전성 저감마글로불린혈증|Hereditary hypogammaglobulinaemia\
+    |(?#D80.0|)보통염색체열성 무감마글로불린혈증\\(스위스형\\)|Autosomal recessive agammaglobulinaemia \\(Swiss type\\)\
+    |(?#D80.0|)X-연관무감마글로불린혈증\\[브루톤\\]\\(성장호르몬결핍을 동반\\)|X-linked agammaglobulinaemia \\[Bruton\\] \\(with growth hormone deficiency\\)\
+    |(?#D80.0|)원발성 무감마글로불린혈증|Agammaglobulinemia, primary\
+    |(?#D80.1|)비가족성 저감마글로불린혈증|Nonfamilial hypogammaglobulinaemia\
+    |(?#D80.1|)면역글로불린을 지닌 B-림프구가 있는 무감마글로불린혈증|Agammaglobulinaemia with immunoglobulin-bearing B-lymphocytes\
+    |(?#D80.1|)공통가변성 무감마글로불린혈증|Common variable agammaglobulinaemia \\[CVAgamma\\]\
+    |(?#D80.1|)저감마글로불린혈증 NOS|Hypogammaglobulinaemia NOS\
+    |(?#D80.2|)면역글로불린A의 선택적 결핍|Selective deficiency of immunoglobulin A\\[IgA\\]\
+    |(?#D80.3|)면역글로불린G 서브클래스의 선택적 결핍|Selective deficiency of immunoglobulin G \\[IgG\\] subclasses\
+    |(?#D80.4|)면역글로불린M의 선택적 결핍|Selective deficiency of immunoglobulin M\\[IgM\\]\
+    |(?#D80.5|)면역글로불린M의 증가를 동반한 면역결핍|Immunodeficiency with increased immunoglobulin M\\[IgM\\]\
+    |(?#D80.6|)거의 정상의 면역글로불린 또는 고면역글로불린혈증을 동반한 항체결핍|Antibody deficiency with near-normal immunoglobulins or with hyperimmunoglobulinaemia\
+    |(?#D80.8|)항체결손이 현저한 기타 면역결핍|Other immunodeficiencies with predominantly antibody defects\
+    |(?#D80.8|)카파경쇄결핍|Kappa light chain deficiency\
+    |(?#D81.0|)세망세포발생이상을 동반한 중증복합면역결핍|Severe combined immunodeficiency \\[SCID\\] with reticular dysgenesis\
+    |(?#D81.1|)T- 및 B-세포수가 감소된 중증복합면역결핍|Severe combined immunodeficiency \\[SCID\\] with low T-and B-cell numbers\
+    |(?#D81.2|)B-세포수가 정상이거나 감소된 중증복합면역결핍|Severe combined immunodeficiency \\[SCID\\] with low or normal B-cell numbers\
+    |(?#D81.3|)아데노신탈아미노효소결핍|Adenosine deaminase\\[ADA\\] deficiency\
+    |(?#D81.4|)네젤로프증후군|Nezelof’s syndrome\
+    |(?#D81.5|)퓨린뉴클레오사이드인산화효소결핍|Purine nucleoside phosphorylase\\[PNP\\] deficiency\
+    |(?#D81.6|)주조직적합성복합체I형결핍|Major histocompatibility complex class I deficiency\
+    |(?#D81.6|)노출림프구증후군|Bare lymphocyte syndrome\
+    |(?#D81.7|)주조직적합성복합체Ⅱ형결핍|Major histocompatibility complex class Ⅱ deficiency\
+    |(?#D81.8|)바이오틴-의존카복실레이스결핍|Biotin-dependent carboxylase deficiency\
+    |(?#D81.8|)오멘증후군|Omenn syndrome\
+    |(?#D81.9|)중증복합면역결핍장애 NOS|Severe combined immunodeficiency disorder \\[SCID\\]\\) NOS\
+    |(?#D82.0|)비스코트-얼드리치증후군|Wiskott-Aldrich syndrome\
+    |(?#D82.0|)혈소판감소 및 습진을 동반한 면역결핍|Immunodeficiency with thrombocytopenia and eczema\
+    |(?#D82.1|)디죠지증후군|Di George’s syndrome\
+    |(?#D82.1|)인두낭증후군|Pharyngeal pouch syndrome\
+    |(?#D82.1|)흉선성 림프조직무형성|Thymic alymphoplasia\
+    |(?#D82.1|)면역결핍을 동반한 흉선무형성 또는 형성저하|Thymic aplasia or hypoplasia with immunodeficiency\
+    |(?#D82.2|)짧은사지체구를 동반한 면역결핍|Immunodeficiency with short-limbed stature\
+    |(?#D82.3|)엡스타인-바르바이러스에 대한 유전성 결손반응에 따른 면역결핍|Immunodeficiency following hereditary defective response to Epstein-Barr virus\
+    |(?#D82.3|)X-연관 림프증식성 질환|X-linked lymphoproliferative disease\
+    |(?#D82.4|)고면역글로불린E증후군|Hyperimmunoglobulin E \\[IgE\\] syndrome\
+    |(?#D83.0|)B-세포 수 및 기능의 현저한 이상에 의한 공통 가변성 면역결핍|Common variable immunodeficiency with predominant abnormalities of B-cell numbers and function\
+    |(?#D83.1|)현저한 면역조절T-세포장애에 의한 공통 가변성 면역결핍|Common variable immunodeficiency with predominant immunoregulatory T-cell disorders\
+    |(?#D83.2|)B- 또는 T-세포에 대한 자가항체를 동반한 공통 가변성 면역결핍|Common variable immunodeficiency with autoantibodies to B-or T-cells\
+    |(?#D84.0|)림프구기능항원-1결손|Lymphocyte function antigen-1\\[LFA-1\\] defect\
+    |(?#D84.1|)보체계통의 결손|Defects in the complement system\
+    |(?#D84.1|)C1에스터레이스억제인자결핍|C1 esterase inhibitor\\[C1-INH\\] deficiency\
+    |(?#D86.0|)폐의 사르코이드증|Sarcoidosis of lung\
+    |(?#D86.1|)림프절의 사르코이드증|Sarcoidosis of lymph nodes\
+    |(?#D86.2|)림프절의 사르코이드증을 동반한 폐의 사르코이드증|Sarcoidosis of lung with sarcoidosis of lymph nodes\
+    |(?#D86.3|)피부의 사르코이드증|Sarcoidosis of skin\
+    |(?#D86.8|)기타 및 복합부위의 사르코이드증|Sarcoidosis of other and combined sites\
+    |(?#D86.8|)사르코이드증에서의 홍채섬모체염\\(H22\\.1\\*\\)|Iridocyclitis in sarcoidosis\\(H22\\.1\\*\\)\
+    |(?#D86.8|)사르코이드증에서의 다발성 뇌신경마비\\(G53\\.2\\*\\)|Multiple cranial nerve palsies in sarcoidosis\\(G53\\.2\\*\\)\
+    |(?#D86.8|)사르코이드관절병증\\(M14\\.8\\*\\)|Sarcoid arthropathy\\(M14\\.8\\*\\)\
+    |(?#D86.8|)사르코이드심근염\\(I41\\.8\\*\\)|Sarcoid myocarditis\\(I41\\.8\\*\\)\
+    |(?#D86.8|)사르코이드근염\\(M63\\.3\\*\\)|Sarcoid myositis\\(M63\\.3\\*\\)\
+    |(?#D86.8|)포도막귀밑샘열|Uveoparotid fever\\[Heerfordt\\]\
+    |(?#D89.1|)한랭글로불린혈증성 혈관염|Cryoglobulinaemic vasculitis\
+    |(?#E16.10)|선천성 고인슐린혈증|Congenital hyperinsulinaemia\
+    |(?#E20.1|)거짓 부갑상선기능저하증|Pseudohypoparathyroidism\
+    |(?#E22.0|)말단비대증 및 뇌하수체거인증|Acromegaly and pituitary gigantism\
+    |(?#E22.0|)말단비대증과 관련된 관절병증 \\(M14\\.5\\*\\)|Arthropathy associated with acromegaly\\(M14\\.5\\*\\)\
+    |(?#E22.0|)성장호르몬의 과잉생산|Overproduction of growth hormone\
+    |(?#E23.0|)콜만증후군|Kallmann’s syndrome\
+    |(?#E23.0|)쉬한증후군|Sheehan’s syndrome\
+    |(?#E24.0|)뇌하수체-의존 쿠싱병|Pituitary-dependent Cushing’s disease\
+    |(?#E24.0|)뇌하수체 부신피질자극호르몬의 과다생산|Overproduction of pituitary ACTH\
+    |(?#E24.0|)뇌하수체-의존 부신피질기능항진증|Pituitary-dependent hyperadrenocorticism\
+    |(?#E24.1|)넬슨증후군|Nelson’s syndrome\
+    |(?#E24.3|)이소성 부신피질자극호르몬증후군|Ectopic ACTH syndrome\
+    |(?#E25.0|)효소결핍과 관련된 선천성 부신생식기장애|Congenital adrenogenital disorders associated with enzyme deficiency\
+    |(?#E25.0|)선천성 부신증식증|Congenital adrenal hyperplasia\
+    |(?#E25.0|)21-수산화효소결핍|21-Hydroxylase deficiency\
+    |(?#E25.0|)염류소실 선천성 부신증식증|Salt-losing congenital adrenal hyperplasia\
+    |(?#E25.9|)부신생식기증후군 NOS|Adrenogenital syndrome NOS\
+    |(?#E26.8|)바터증후군|Bartter’s syndrome\
+    |(?#E27.1|)가족성 부신코티코이드결핍|Familial glucocorticoid deficiency\
+    |(?#E27.1|)원발성 부신피질부전|Primary adrenocortical insufficiency\
+    |(?#E27.1|)애디슨병|Addison’s disease\
+    |(?#E27.1|)자가면역성 부신염|Autoimmune adrenalitis\
+    |(?#E27.2|)애디슨발증|Addisonian crisis\
+    |(?#E27.2|)부신발증|Adrenal crisis\
+    |(?#E27.2|)부신피질발증|Adrenocortical crisis\
+    |(?#E27.4|)부신출혈|Adrenal haemorrhage\
+    |(?#E27.4|)부신경색증|Adrenal infarction\
+    |(?#E27.4|)부신피질부전 NOS|Adrenocortical insufficiency NOS\
+    |(?#E27.4|)저알도스테론증|Hypoaldosteronism\
+    |(?#E34.8|)송과선 기능이상|Pineal gland dysfunction\
+    |(?#E34.8|)조로증|Progeria\
+    |(?#E34.8|)요정증\\[랍슨 멘덴홀 증후군\\]|Leprechaunism \\[Rabson-Mendenhall syndrome\\]\
+    |(?#E55.0|)활동성 구루병|Rickets, active\
+    |(?#E55.0|)영아골연화증|Infantile osteomalacia\
+    |(?#E55.0|)연소성 골연화증|Juvenile osteomalacia\
+    |(?#E70.0|)고전적 페닐케톤뇨증|Classical phenylketonuria\
+    |(?#E70.1|)기타 고페닐알라닌혈증|Other hyperphenylalaninaemias\
+    |(?#E70.2|)타이로신대사장애|Disorders of tyrosine metabolism\
+    |(?#E70.2|)알캅톤뇨증|Alkaptonuria\
+    |(?#E70.2|)조직흑갈병|Ochronosis\
+    |(?#E70.2|)타이로신혈증|Tyrosinaemia\
+    |(?#E70.2|)타이로신증|Tyrosinosis\
+    |(?#E70.3|)눈피부백색증|Oculocutaneous albinism\
+    |(?#E70.3|)눈백색증|Ocular albinism\
+    |(?#E70.3|)체디아크\\(-스타인브링크\\)-히가시증후군|Chediak\\(-Steinbrinck\\)-Higashi syndrome\
+    |(?#E70.3|)교차증후군|Cross syndrome\
+    |(?#E70.3|)헤르만스키-푸들라크증후군|Hermansky-Pudlak syndrome\
+    |(?#E70.3|)바르덴브르그 증후군 \\(백색증을 동반한\\)|Waardenburg´s syndrome \\(with albinism\\)\
+    |(?#E70.8|)히스티딘대사장애|Disorder of histidine metabolism\
+    |(?#E70.8|)트립토판대사장애|Disorder of tryptophan metabolism\
+    |(?#E71.0|)단풍시럽뇨병|Maple-syrup-urine disease\
+    |(?#E71.1|)고류신-이소류신혈증|Hyperleucine-isoleucinaemia\
+    |(?#E71.1|)고발린혈증|Hypervalinaemia\
+    |(?#E71.1|)메틸말론산혈증|Methylmalonic acidaemia\
+    |(?#E71.1|)아이소발레린산혈증|Isovaleric acidaemia\
+    |(?#E71.1|)프로피온산혈증|Propionic acidaemia\
+    |(?#E71.3|)지방산대사장애|Disorders of fatty-acid metabolism\
+    |(?#E71.3|)부신백질디스트로피\\[애디슨-쉴더\\]|Adrenoleukodystrophy\\[Addison-Schilder\\]\
+    |(?#E71.3|)근육카르니틴팔미틸트란스퍼레이스결핍|Muscle carnitine palmityltransferase deficiency\
+    |(?#E71.3|)장쇄수산화아실코에이탈수소효소결핍증\\(VLCAD\\)|Very long chain acyl-CoA dehydrogenase\\(VLCAD\\) deficiency\
+    |(?#E72.0|)아미노산운반장애|Disorders of amino-acid transport\
+    |(?#E72.0|)시스틴축적병\\(N29\\.8\\*\\)|Cystine storage disease\\(N29\\.8\\*\\)\
+    |(?#E72.0|)시스틴증|Cystinosis\
+    |(?#E72.0|)시스틴뇨증|Cystinuria\
+    |(?#E72.0|)판코니\\(-드토니\\)\\(-드브레\\)증후군|Fanconi\\(-de Toni\\)\\(-Debré\\)syndrome\
+    |(?#E72.0|)하르트넙병|Hartnup’s disease\
+    |(?#E72.0|)로베증후군|Lowe’s syndrome\
+    |(?#E72.1|)유황함유아미노산대사장애|Disorders of sulfur-bearing amino-acid metabolism\
+    |(?#E72.1|)시스타타이오닌뇨증|Cystathioninuria\
+    |(?#E72.1|)호모시스틴뇨|Homocystinuria\
+    |(?#E72.1|)메타이오닌혈증|Methioninaemia\
+    |(?#E72.1|)아황산염산화효소결핍|Sulfite oxidase deficiency\
+    |(?#E72.1|)고호모시스테인혈증|Hyperhomocysteinemia\
+    |(?#E72.2|)요소회로대사장애|Disorders of urea cycle metabolism\
+    |(?#E72.2|)아르지닌혈증|Argininaemia\
+    |(?#E72.2|)아르지닌숙신산뇨|Argininosuccinic aciduria\
+    |(?#E72.2|)시트룰린혈증|Citrullinaemia\
+    |(?#E72.2|)고암모니아혈증|Hyperammonaemia\
+    |(?#E72.3|)라이신 및 하이드록시라이신 대사장애|Disorders of lysine and hydroxylysine metabolism\
+    |(?#E72.3|)글루타르산뇨|Glutaric aciduria\
+    |(?#E72.3|)하이드록시라이신혈증|Hydroxylysinaemia\
+    |(?#E72.3|)고라이신혈증|Hyperlysinaemia\
+    |(?#E72.4|)오르니틴트랜스카바미라제결핍|Ornithine transcarbamylase deficiency\
+    |(?#E72.4|)오르니틴대사장애|Disorders of ornithine metabolism\
+    |(?#E72.4|)오르니틴혈증\\(Ⅰ, Ⅱ형\\)|Ornithinaemia \\(typesⅠ, Ⅱ\\)\
+    |(?#E72.5|)글라이신대사장애|Disorders of glycine metabolism\
+    |(?#E72.5|)고하이드록시프롤린혈증|Hyperhydroxyprolinaemia\
+    |(?#E72.5|)고프롤린혈증\\(Ⅰ, Ⅱ형\\)|Hyperprolinaemia \\(typesⅠ, Ⅱ\\)\
+    |(?#E72.5|)비케톤고글라이신혈증|Non-ketotic hyperglycinaemia\
+    |(?#E72.5|)사르코신혈증|Sarcosinaemia\
+    |(?#E72.8|)베타아미노산대사장애|Disorders of β-amino-acid metabolism\
+    |(?#E72.8|)감마글루타밀회로의 장애|Disorders of γ-glutamyl cycle\
+    |(?#E72.8|)숙신알데히드 탈수소효소 결핍\\(증\\)|Succinic semialdehyde dehydrogenase deficiency \\(SSADHD\\)\
+    |(?#E73.0|)선천성 젖당분해효소결핍|Congenital lactase deficiency\
+    |(?#E74.0|)글리코젠축적병 1b형 A|Glycogen storage disease 1b type A\
+    |(?#E74.0|)글리코젠합성효소결핍|Glycogen synthase deficiency\
+    |(?#E74.0|)글리코젠축적병|Glycogen storage disease\
+    |(?#E74.0|)심장글리코젠증|Cardiac glycogenosis\
+    |(?#E74.0|)안데르센병|Andersen’s disease\
+    |(?#E74.0|)코리병|Cori’s disease\
+    |(?#E74.0|)포르브스병|Forbes’ disease\
+    |(?#E74.0|)허스병|Hers’ disease\
+    |(?#E74.0|)맥아들병|McArdle’s disease\
+    |(?#E74.0|)폼페병|Pompe’s disease\
+    |(?#E74.0|)타루이병|Tarui’s disease\
+    |(?#E74.0|)폰기에르케병|von Gierke’s disease\
+    |(?#E74.0|)간인산화효소결핍|Liver phosphorylase deficiency\
+    |(?#E74.2|)갈락토스대사장애|Disorders of galactose metabolism\
+    |(?#E74.2|)갈락토카이네이스결핍|Galactokinase deficiency\
+    |(?#E74.2|)갈락토스혈증|Galactosaemia\
+    |(?#E74.4|)피루브산염대사 및 포도당신합성 장애|Disorders of pyruvate metabolism and gluco- neogenesis\
+    |(?#E74.4|)포스포에놀피루브산염카르복시카이네이스의 결핍|Deficiency of phosphoenolpyruvate carboxykinase\
+    |(?#E74.4|)카복실레이스피루브산염의 결핍|Deficiency of carboxylase pyruvate\
+    |(?#E74.4|)탈수소효소피루브산염의 결핍|Deficiency of dehydrogenase pyruvate\
+    |(?#E74.8|)옥살산뇨|Oxaluria\
+    |(?#E75.0|)GM₂-강글리오시드증|GM₂-gangliosidosis\
+    |(?#E75.0|)샌드호프병|Sandhoff’s disease\
+    |(?#E75.0|)테이-삭스병|Tay-Sachs’ disease\
+    |(?#E75.0|)GM₂-강글리오시드증 NOS|GM₂gangliosidosis NOS\
+    |(?#E75.0|)성인형 GM₂-강글리오시드증|Adult GM₂gangliosidosis\
+    |(?#E75.0|)연소형 GM₂-강글리오시드증|Juvenile GM₂gangliosidosis\
+    |(?#E75.1|)강글리오시드증 NOS|Gangliosidosis NOS\
+    |(?#E75.1|)GM₁-강글리오시드증|GM₁-gangliosidosis\
+    |(?#E75.1|)GM₃-강글리오시드증|GM₃-gangliosidosis\
+    |(?#E75.1|)뮤코지질증 Ⅳ|Mucolipidosis Ⅳ\
+    |(?#E75.2|)파브리\\(-앤더슨\\)병|Fabry’s\\(-Anderson\\) disease\
+    |(?#E75.2|)고쉐병|Gaucher’s disease\
+    |(?#E75.2|)크라베병|Krabbe’s disease\
+    |(?#E75.2|)니만-픽병|Niemann-Pick’s disease\
+    |(?#E75.2|)화버증후군|Farber’s syndrome\
+    |(?#E75.2|)이염성 백질디스트로피|Metachromatic leukodystrophy\
+    |(?#E75.2|)설파테이스결핍|Sulfatase deficiency\
+    |(?#E75.2|)카나반 병|Canavan´s disease\
+    |(?#E75.2|)펠리제우스-메르츠바하병|Pelizaeus-Merzbacher disease\
+    |(?#E75.4|)신경세포세로이드라이포푸스신증|Neuronal ceroid lipofuscinosis\
+    |(?#E75.4|)바텐병|Batten’s disease\
+    |(?#E75.4|)얀스키-빌쇼스키병|Jansky-Bielschowsky’s disease\
+    |(?#E75.4|)쿠프스병|Kufs’ disease\
+    |(?#E75.4|)스필마이어-보그트병|Spielmeyer-Vogt’s disease\
+    |(?#E75.5|)대뇌건의 콜레스테롤증\\[밴보게르트-쉐러-엡스타인\\]|Cerebrotendinous cholesterosis \\[van Bogaert-Scherer-Epstein\\]\
+    |(?#E75.5|)월만병|Wolman’s disease\
+    |(?#E76.0|)Ⅰ형 점액다당류증|Mucopolysaccharidosis, type Ⅰ\
+    |(?#E76.0|)헐러증후군|Hurler syndrome\
+    |(?#E76.0|)헐러-샤이에증후군|Hurler-Scheie syndrome\
+    |(?#E76.0|)샤이에증후군|Scheie syndrome\
+    |(?#E76.1|)Ⅱ형 점액다당류증|Mucopolysaccharidosis, type Ⅱ\
+    |(?#E76.1|)헌터증후군|Hunter’s syndrome\
+    |(?#E76.2|)베타-글루쿠론산분해효소결핍|β-Glucuronidase deficiency\
+    |(?#E76.2|)Ⅲ, Ⅳ, Ⅵ, Ⅶ형 점액다당류증|Mucopolysaccharidosis, types Ⅲ, Ⅳ, Ⅵ, Ⅶ\
+    |(?#E76.2|)마로토-라미 \\(경도\\)\\(중증\\) 증후군|Maroteaux-Lamy \\(mild\\)\\(severe\\) syndrome\
+    |(?#E76.2|)모르키오 \\(-유사\\)\\(고전적\\) 증후군|Morquio\\(-like\\)\\(classic\\) syndrome\
+    |(?#E76.2|)산필립포 \\(B형\\)\\(C형\\)\\(D형\\) 증후군|Sanfilippo \\(types B\\)\\(type C\\)\\(type D\\) syndrome\
+    |(?#E77.0|)라이소솜효소의 번역후 수정의 결손|Defects in post-translational modification of lysosomal enzymes\
+    |(?#E77.0|)뮤코지질증Ⅱ\\[Ⅰ-세포병\\]|Mucolipidosis Ⅱ\\[Ⅰ-cell disease\\]\
+    |(?#E77.0|)뮤코지질증Ⅲ\\[거짓헐러다발디스트로피\\]|Mucolipidosis Ⅲ \\[Pseudo-Hurler polydystrophy\\]\
+    |(?#E77.1|)당단백질분해의 결손|Defects in glycoprotein degradation\
+    |(?#E77.1|)아스파르틸글루코사민뇨|Aspartylglucosaminuria\
+    |(?#E77.1|)푸고스축적증|Fucosidosis\
+    |(?#E77.1|)마노스축적증|Mannosidosis\
+    |(?#E77.1|)시알산증\\[뮤코지질증Ⅰ\\]|Sialidosis\\[mucolipidosisⅠ\\]\
+    |(?#E79.1|)레쉬-니한증후군|Lesch-Nyhan syndrome\
+    |(?#E80.2|)급성 간헐성 \\(간성\\) 포르피린증|Acute intermittent\\(hepatic\\) porphyria\
+    |(?#E80.2|)유전성 코프로포르피린증|Hereditary coproporphyria\
+    |(?#E80.2|)포르피린증 NOS|Porphyria NOS\
+    |(?#E83.0|)구리대사장애|Disorders of copper metabolism\
+    |(?#E83.0|)멘케스\\(꼬인모발\\)\\(강모\\)병|Menkes \\(kinky hair\\)\\(steely hair\\) disease\
+    |(?#E83.0|)윌슨병|Wilson’s disease\
+    |(?#E83.1|)혈색소증|Haemochromatosis\
+    |(?#E83.1|)특발성 폐 헤모시데린증|Idiopathic pulmonary hemosiderosis\
+    |(?#E83.2|)장병성 말단피부염|Acrodermatitis enteropathica\
+    |(?#E83.3|)인대사 및 인산분해효소 장애|Disorders of phosphorus metabolism and phosphatases\
+    |(?#E83.3|)산성인산분해효소결핍|Acid phosphatase deficiency\
+    |(?#E83.3|)가족성 저인산혈증|Familial hypophosphataemia\
+    |(?#E83.3|)저인산효소증|Hypophosphatasia\
+    |(?#E83.3|)비타민D저항골연화증|Vitamin-D-resistant osteomalacia\
+    |(?#E83.3|)비타민D저항구루병|Vitamin-D-resistant rickets\
+    |(?#E84.0|)폐증상을 동반한 낭성 섬유증|Cystic fibrosis with pulmonary manifestations\
+    |(?#E84.1|)장증상을 동반한 낭성 섬유증|Cystic fibrosis with intestinal manifestations\
+    |(?#E84.1|)원위장폐쇄증후군|Distal intestinal obstruction syndrome\
+    |(?#E84.1|)낭성 섬유증에서의 태변장폐색 \\(P75\\*\\)|Meconium ileus in cystic fibrosis\\(P75\\*\\)\
+    |(?#E85.0|)비신경병성 유전가족성 아밀로이드증|Non-neuropathic heredofamilial amyloidosis\
+    |(?#E85.0|)가족성 지중해열|Familial Mediterranean fever\
+    |(?#E85.0|)유전성 아밀로이드 신장병증|Hereditary amyloid nephropathy\
+    |(?#E85.1|)신경병성 유전가족성 아밀로이드증|Neuropathic heredofamilial amyloidosis\
+    |(?#E85.1|)아밀로이드다발신경병증\\(포르투갈\\)|Amyloid polyneuropathy\\(Portuguese\\)\
+    |(?#E85.2|)상세불명의 유전가족성 아밀로이드증|Heredofamilial amyloidosis, unspecified\
+    |(?#E85.4|)기관한정아밀로이드증|Organ-limited amyloidosis\
+    |(?#E85.4|)국소적 아밀로이드증|Localized amyloidosis\
+    |(?#E88.0|)알파-1-항트립신결핍|α-1-Antitrypsin deficiency\
+    |(?#E88.1|)선천성 전신지방디스트로피|Congenital systemic lipodystrophy\
+    |(?#F01.1|)카다실|CADASIL, Cerebral autosomal dominant arteriopathy with subcortical infarcts and leukoencephalopathy\
+    |(?#F80.3|)뇌전증에 동반된 후천성 실어증\\(失語症\\)\\[란다우-클레프너\\]|Acquired aphasia with epilepsy \\[Landau-Kleffner\\]\
+    |(?#F84.2|)레트증후군|Rett’s syndrome\
+    |(?#G04.8|)자가면역 뇌염|Autoimmune encephalitis\
+    |(?#G04.8|)라스무센 뇌염|Rasmussen encephalitis\
+    |(?#G10|)헌팅톤병|Huntington’s disease\
+    |(?#G10|)헌팅톤무도병|Huntington’s chorea\
+    |(?#G11.0|)선천성 비진행성 운동실조|Congenital nonprogressive ataxia\
+    |(?#G11.1|)조기발병 소뇌성 운동실조|Early-onset cerebellar ataxia\
+    |(?#G11.1|)본태성 떨림을\\(를\\) 동반한 조기발병 소뇌성 운동실조|Early-onset cerebellar ataxia with essential tremor\
+    |(?#G11.1|)마이오클로누스\\[헌트운동실조\\]을\\(를\\) 동반한 조기발병 소뇌성 운동실조|Early-onset cerebellar ataxia with myoclonus\\[Hunt’s ataxia\\]\
+    |(?#G11.1|)보류된 힘줄반사을\\(를\\) 동반한 조기발병 소뇌성 운동실조|Early-onset cerebellar ataxia with retained tendon reflexes\
+    |(?#G11.1|)프리드라이히운동실조\\(보통염색체열성\\)|Friedreich’s ataxia\\(autosomal recessive\\)\
+    |(?#G11.1|)X-연관 열성 척수소뇌성 운동실조|X-linked recessive spinocerebellar ataxia\
+    |(?#G11.2|)만기발병 소뇌성 운동실조|Late-onset cerebellar ataxia\
+    |(?#G11.3|)DNA복구결손을 수반한 소뇌성 운동실조|Cerebellar ataxia with defective DNA repair\
+    |(?#G11.3|)모세혈관확장성 운동실조\\[루이-바\\]|Ataxia telangiectasia\\[Louis-bar\\]\
+    |(?#G11.4|)유전성 강직성 하반신마비|Hereditary spastic paraplegia\
+    |(?#G11.8|)기타 유전성 운동실조|Other hereditary ataxias\
+    |(?#G11.9|)상세불명의 유전성 운동실조|Hereditary ataxia, unspecified\
+    |(?#G11.9|)유전성 소뇌의 운동실조 NOS|Hereditary cerebellar ataxia NOS\
+    |(?#G11.9|)유전성 소뇌의 변성|Hereditary cerebellar degeneration\
+    |(?#G11.9|)유전성 소뇌의 병|Hereditary cerebellar disease\
+    |(?#G11.9|)유전성 소뇌의 증후군|Hereditary cerebellar syndrome\
+    |(?#G12.0|)영아척수성 근위축, I형\\[베르드니히-호프만\\]|Infantile spinal muscular atrophy, type Ⅰ\\[Werdnig-Hoffman\\]\
+    |(?#G12.1|)소아기의 진행성 연수마비\\[파지오-론데\\]|Progressive bulbar palsy of childhood \\[Fazio-Londe\\]\
+    |(?#G12.1|)성인형 척수성 근위축|Adult form spinal muscular atrophy\
+    |(?#G12.1|)소아형, Ⅱ형 척수성 근위축|Childhood form, type Ⅱ spinal muscular atrophy\
+    |(?#G12.1|)원위 척수성 근위축|Distal spinal muscular atrophy\
+    |(?#G12.1|)연소형, Ⅲ형\\[쿠겔베르그-벨란더\\] 척수성 근위축|Juvenile form, typeⅢ \\[Kugelberg-Welander\\] spinal muscular atrophy\
+    |(?#G12.1|)어깨종아리형 척수성 근위축|Scapuloperoneal form spinal muscular atrophy\
+    |(?#G12.2|)운동신경세포병|Motor neuron disease\
+    |(?#G12.20|)가족성 근위축측삭경화증|Familial amyotrophic lateral sclerosis\
+    |(?#G12.20|)가족성 운동신경세포병|Familial motor neuron disease\
+    |(?#G12.21|)산발형 근위축측삭경화증|Sporadic amyotrophic lateral sclerosis\
+    |(?#G12.22|)원발성 측삭경화증|Primary lateral sclerosis\
+    |(?#G12.23|)진행성 연수마비|Progressive bulbar palsy\
+    |(?#G12.28|)X-연관척수연수근위축|X-linked spinobular muscular atrophy\
+    |(?#G12.28|)진행성 근위축|Progressive muscular atrophy\
+    |(?#G12.28|)케네디 병|Kennedy disease\
+    |(?#G12.8|)기타 척수성 근위축 및 관련 증후군|Other spinal muscular atrophies and related syndromes\
+    |(?#G12.9|)상세불명의 척수성 근위축|Spinal muscular atrophy, unspecified\
+    |(?#G23.0|)할러포르덴-스파츠병|Hallervorden-Spatz disease\
+    |(?#G23.0|)색소성 담창구변성|Pigmentary pallidal degeneration\
+    |(?#G23.1|)진행성 핵상안근마비 \\[스틸-리차드슨-올스제위스키\\]|Progressive supranuclear ophthalmoplegia \\[Steele-Richardson-Olszewski\\]\
+    |(?#G23.8|)파르병|Fahr's Disease\
+    |(?#G24.8|)돌발성 운동유발 이상운동|Paroxysmal kinesigenic dyskinesia\\[PKD\\]\
+    |(?#G25.8|)강직인간증후군|Stiff-person\\[man\\] syndrome\
+    |(?#G31.81|)아급성 괴사성 뇌병증\\[리이\\]|Subacute necrotizing encephalopathy\\[Leigh\\]\
+    |(?#G31.88|)아이카디-구티에레스 증후군|Aicardi-Goutieres Syndrome\
+    |(?#G35|)다발경화증|Multiple sclerosis\
+    |(?#G35|)다발경화증 NOS|Multiple sclerosis \\(of\\) NOS\
+    |(?#G35|)뇌간\\(~의\\) 다발경화증|Multiple sclerosis \\(of\\) brain stem\
+    |(?#G35|)척수\\(~의\\) 다발경화증|Multiple sclerosis \\(of\\) cord\
+    |(?#G35|)파종성\\(~의\\) 다발경화증|Multiple sclerosis \\(of\\) disseminated\
+    |(?#G35|)전신성\\(~의\\) 다발경화증|Multiple sclerosis \\(of\\) generalized\
+    |(?#G36.0|)시신경척수염\\[데빅병\\]|Neuromyelitis optica\\[Devic\\]\
+    |(?#G40.4|)레녹스-가스토증후군|Lennox-Gastaut syndrome\
+    |(?#G40.4|)웨스트증후군|West’s syndrome\
+    |(?#G40.40|)난치성 뇌전증을 동반하지 않은 레녹스-가스토증후군|Lennox-Gastaut syndrome without intractable epilepsy\
+    |(?#G40.40|)난치성 뇌전증을 동반하지 않은 웨스트증후군|West’s syndrome without intractable epilepsy\
+    |(?#G41.0|)대발작 뇌전증지속상태|Grand mal status epilepticus\
+    |(?#G41.0|)긴장-간대성 뇌전증지속상태|Tonic-clonic status epilepticus\
+    |(?#G41.1|)소발작뇌전증지속상태|Petit mal status epilepticus\
+    |(?#G41.1|)뇌전증 압상스지속상태|Epileptic absence status\
+    |(?#G41.2|)복합부분뇌전증지속상태|Complex partial status epilepticus\
+    |(?#G41.8|)기타 뇌전증지속상태|Other status epilepticus\
+    |(?#G41.9|)상세불명의 뇌전증지속상태|Status epilepticus, unspecified\
+    |(?#G47.31|)하다드 증후군|Haddad syndrome\
+    |(?#G47.4|)발작수면 및 허탈발작|Narcolepsy and cataplexy\
+    |(?#G51.2|)멜커슨증후군|Melkersson’s syndrome\
+    |(?#G51.2|)멜케르손-로젠탈증후군|Melkersson-Rosenthal syndrome\
+    |(?#G51.8|)파리-롬버르그증후군|Parry-Romberg syndrome\
+    |(?#G60.0|)유전성 운동 및 감각 신경병증|Hereditary motor and sensory neuropathy\
+    |(?#G60.0|)샤르코-마리-투스질환|Charcot-Marie-Tooth disease\
+    |(?#G60.0|)데제린-소타스병|Déjerine-Sottas disease\
+    |(?#G60.0|)유전성 운동 및 감각 신경병증 I-IV형|Hereditary motor and sensory neuropathy, types I-IV\
+    |(?#G60.0|)영아기의 비대성 신경병증|Hypertrophic neuropathy of infancy\
+    |(?#G60.0|)비골근위축\\(축삭형, 비대형\\)|Peroneal muscular atrophy\\(axonal type, hypertrophic type\\)\
+    |(?#G60.0|)루시-레비증후군|Roussy-Lévy syndrome\
+    |(?#G61.0|)길랭-바레증후군|Guillain-Barré syndrome\
+    |(?#G61.0|)밀러휘셔증후군|Miller Fisher Syndrome\
+    |(?#G61.8|)다초점 운동신경병증|Multifocal Motor Neuropathy\
+    |(?#G61.8|)만성 염증성 탈수초성 다발신경병증|Chronic inflammatory demyelinating polyneuropathy\
+    |(?#G70.0|)중증근무력증|Myasthenia gravis\
+    |(?#G70.2|)선천성 및 발달성 근무력증|Congenital and developmental myasthenia\
+    |(?#G71.0|)근디스트로피|Muscular dystrophy\
+    |(?#G71.0|)뒤쉔 또는 베커와 유사한 보통염색체열성, 소아형 근디스트로피|Autosomal recessive, childhood type, resembling Duchenne or Becker muscular dystrophy\
+    |(?#G71.0|)양성\\[베커\\] 근디스트로피|Benign \\[Becker\\] muscular dystrophy\
+    |(?#G71.0|)조기수축을 동반하는 양성 어깨종아리\\[에머리-드라이프스\\] 근디스트로피|Benign scapuloperoneal with early contractures \\[Emery-Dreifuss\\] muscular dystrophy\
+    |(?#G71.0|)원위성 근디스트로피|Distal muscular dystrophy\
+    |(?#G71.0|)얼굴어깨팔 근디스트로피|Facioscapulohumeral muscular dystrophy\
+    |(?#G71.0|)지대 근디스트로피|Limb-girdle muscular dystrophy\
+    |(?#G71.0|)눈 근디스트로피|Ocular muscular dystrophy\
+    |(?#G71.0|)눈인두성 근디스트로피|Oculopharyngeal muscular dystrophy\
+    |(?#G71.0|)어깨종아리 근디스트로피|Scapuloperoneal muscular dystrophy\
+    |(?#G71.0|)중증\\[뒤쉔\\] 근디스트로피|Severe\\[Duchenne\\] muscular dystrophy\
+    |(?#G71.1|)근긴장장애|Myotonic disorders\
+    |(?#G71.1|)근긴장디스트로피\\[스타이너트\\]|Dystrophia myotonica\\[Steinert\\]\
+    |(?#G71.1|)연골형성장애성 근긴장증|Chondrodystrophic myotonia\
+    |(?#G71.1|)증상성 근긴장증|Symptomatic myotonia\
+    |(?#G71.1|)선천성 근긴장증 NOS|Myotonia congenita NOS\
+    |(?#G71.1|)우성\\[톰슨\\] 선천성 근긴장증|Dominant\\[Thomsen\\] myotonia congenita \
+    |(?#G71.1|)열성\\[베커\\] 선천성 근긴장증|Recessive\\[Becker\\] myotonia congenita\
+    |(?#G71.1|)신경근육긴장\\[아이작스\\]|Neuromyotonia\\[Isaacs\\]\
+    |(?#G71.1|)선천성 이상근긴장증|Paramyotonia congenita\
+    |(?#G71.1|)거짓근긴장증|Pseudomyotonia\
+    |(?#G71.2|)선천성 근병증|Congenital myopathies\
+    |(?#G71.2|)선천성 근디스트로피 NOS|Congenital muscular dystrophy NOS\
+    |(?#G71.2|)근섬유의 특정 형태이상을 동반한 선천성 근디스트로피\\(G71\\.2\\)|Congenital muscular dystrophy with specific morphological abnormalities of the muscle fibre\\(G71\\.2\\)\
+    |(?#G71.2|)중심핵 병|Central core disease\
+    |(?#G71.2|)미세심 병|Minicore disease\
+    |(?#G71.2|)다발심 병|Multicore disease\
+    |(?#G71.2|)근섬유형 불균형|Fibre-type disproportion\
+    |(?#G71.2|)근세관성 \\(중심핵성\\) 근병증|Myotubular \\(centronuclear\\) myopathy\
+    |(?#G71.2|)네말린근병증|Nemaline myopathy\
+    |(?#G71.2|)워커-워버그 증후군|Walker-Warburg syndrome\
+    |(?#G71.3|)달리 분류되지 않은 미토콘드리아근병증|Mitochondrial myopathy, NEC\
+    |(?#G71.3|)멜라스증후군|Melas syndrome\
+    |(?#G71.9|)유전성 근병증 NOS|Hereditary myopathy NOS\
+    |(?#G72.3|)주기마비\\(가족성\\) 저칼륨혈성|Hypokalaemic periodic paralysis \\(familial\\)\
+    |(?#G72.4|)봉입체 근염|Inclusion body myositis \\(IBM\\)\
+    |(?#G73.1|)람베르트-이튼증후군\\(C00-D48†\\)|Lambert-Eaton syndrome\\(C00-D48†\\)\
+    |(?#G90.5|)복합부위통증증후군 I형|Complex regional pain syndrome type I\
+    |(?#G90.6|)복합부위통증증후군 II형|Complex regional pain syndrome type II\
+    |(?#G93.4|)포도당 수송자 1 결핍증|Glucose transporter type1, GLUT1 deficiency\
+    |(?#G95.0|)척수공동증 및 연수공동증|Syringomyelia and syringobulbia\
+    |(?#H16.3|)코오간증후군|Cogan’s syndrome\
+    |(?#H18.5|)아벨리노 각막디스트로피 \\(동형접합\\) |Avellino corneal dystrophy \\(homozygous\\)\
+    |(?#H18.6|)원추각막|Keratoconus\
+    |(?#H31.2|)맥락막결손|Choroideremia\
+    |(?#H35.0|)코츠망막병증 |Coats retinopathy\
+    |(?#H35.0|)일스 병|Eales´ disease\
+    |(?#H35.51|)색소망막염|Retinitis pigmentosa\
+    |(?#H35.52|)베스트 병\\[노른자모양황반변성\\]|Best’s disease\\[Best vitelliform maculardystrophy\\]\
+    |(?#H35.58|)스타르가르트병|Stargardt’s disease\
+    |(?#H35.59|)상세불명의 유전성 망막디스트로피|Unspecified hereditary retinal dystrophy\
+    |(?#H35.59|)레베르 선천성 흑암시|Leber’s congenital amaurosis\
+    |(?#H49.4|)만성 진행성 외안근마비|Chronic progressive external ophthalmoplegia\
+    |(?#H49.8|)컨스-세이어증후군|Kearns-Sayre syndrome\
+    |(?#H51.8|)동안실행증\\(失行症\\), 코간형|Ocular motor apraxia, Cogan type\
+    |(?#I27.0|)원발성 폐동맥고혈압|Primary pulmonary hypertension\
+    |(?#I27.8|)아이젠멘거복합|Eisenmenger’s complex\
+    |(?#I27.8|)아이젠멘거증후군|Eisenmenger’s syndrome\
+    |(?#I42.0|)비가역적 확장성 심근병증|Irreversible dilated cardiomyopathy\
+    |(?#I42.1|)폐색성 비대성 심근병증|Obstructive hypertrophic cardiomyopathy\
+    |(?#I42.1|)비대성 대동맥판하협착|Hypertrophic subaortic stenosis\
+    |(?#I42.20|)비폐색성 비대성 심근병증|Nonobstructive hypertrophic cardiomyopathy\
+    |(?#I42.3|)심내막심근\\(호산구성\\)병|Endomyocardial\\(eosinophilic\\) disease\
+    |(?#I42.3|)심내막심근\\(열대성\\)섬유증|Endomyocardial\\(tropical\\) fibrosis\
+    |(?#I42.3|)뢰플러심내막염|Loffler’s endocarditis\
+    |(?#I42.4|)심내막탄력섬유증|Endocardial fibroelastosis\
+    |(?#I42.4|)선천성 심근병증|Congenital cardiomyopathy\
+    |(?#I42.80|)부정맥유발성 우심실 형성이상|Arrhythmogenic right ventricular dysplasia\
+    |(?#I47.2|)카테콜라민 다형성 심실성 빈맥|Catecholaminergic polymorphic ventricular tachycardia\
+    |(?#I49.82|)긴QT증후군|Long QT syndrome\
+    |(?#I67.5|)모야모야병|Moyamoya disease\
+    |(?#I73.1|)폐색혈전혈관염\\[버거병\\]|Thromboangiitis obliterans\\[Buerger\\]\
+    |(?#I78.0|)유전성 출혈성 모세혈관확장증|Hereditary haemorrhagic telangiectasia\
+    |(?#I78.0|)랑뒤-오슬러-웨버병|Rendu-Osler-Weber disease\
+    |(?#I82.0|)버드-키아리증후군|Budd-Chiari syndrome\
+    |(?#J39.8|)섬모체, 원발성 이상운동증|ciliary, primary Dyskinesia\
+    |(?#J84.0|)폐포단백질증|Alveolar proteinosis\
+    |(?#J84.1|)특발성 폐섬유증|Idiopathic pulmonary fibrosis\
+    |(?#K00.51|)불완전상아질형성|Dentinogenesis imperfecta\
+    |(?#K50.0|)소장의 크론병|Crohn’s disease of small intestine\
+    |(?#K50.1|)대장의 크론병|Crohn’s disease of large intestine\
+    |(?#K50.8|)소장 및 대장 모두의 크론병|Crohn’s disease of both small and large intestine\
+    |(?#K74.3|)원발성 담즙성 경변증|Primary biliary cirrhosis\
+    |(?#K75.4|)자가면역성 간염|Autoimmune hepatitis\
+    |(?#K83.0|)원발성 담관염|Primary cholangitis\
+    |(?#K83.0|)경화성 담관염|Sclerosing cholangitis\
+    |(?#L10.0|)보통천포창|Pemphigus vulgaris\
+    |(?#L10.2|)낙엽천포창|Pemphigus foliaceus\
+    |(?#L12.0|)수포성 유사천포창|Bullous pemphigoid\
+    |(?#L12.1|)흉터유사천포창|Cicatricial pemphigoid\
+    |(?#L12.1|)양성 점막유사천포창|Benign mucous membrane pemphigoid\
+    |(?#L12.3|)후천성 수포성 표피박리증|Acquired epidermolysis bullosa\
+    |(?#L73.22|)중증 화농성 한선염|Hidradenitis suppurativa, severe\
+    |(?#M06.1|)성인발병 스틸병|Adult-onset Still’s disease\
+    |(?#M08.0|)연소성 류마티스관절염|Juvenile rheumatoid arthritis\
+    |(?#M08.0|)류마티스인자가 있거나 없는 연소성 류마티스관절염|Juvenile rheumatoid arthritis with or without rheumatoid factor\
+    |(?#M08.00|)연소성 류마티스관절염, 여러 부위|Juvenile rheumatoid arthritis, multiple sites\
+    |(?#M08.00|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 여러 부위|Juvenile rheumatoid arthritis with or without rheumatoid factor, multiple sites\
+    |(?#M08.01|)연소성 류마티스관절염, 어깨부분|Juvenile rheumatoid arthritis, shoulder region\
+    |(?#M08.01|)연소성 류마티스관절염, 쇄골|Juvenile rheumatoid arthritis, clavicle\
+    |(?#M08.01|)연소성 류마티스관절염, 견갑골|Juvenile rheumatoid arthritis, scapula\
+    |(?#M08.01|)연소성 류마티스관절염, 견쇄관절|Juvenile rheumatoid arthritis, acromioclavicular joints\
+    |(?#M08.01|)연소성 류마티스관절염, 어깨관절|Juvenile rheumatoid arthritis, glenohumeral joints\
+    |(?#M08.01|)연소성 류마티스관절염, 흉쇄관절|Juvenile rheumatoid arthritis, sternoclavicular joints\
+    |(?#M08.01|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 어깨부분|Juvenile rheumatoid arthritis with or without rheumatoid factor, shoulder region\
+    |(?#M08.01|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 쇄골|Juvenile rheumatoid arthritis with or without rheumatoid factor, clavicle\
+    |(?#M08.01|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 견갑골|Juvenile rheumatoid arthritis with or without rheumatoid factor, scapula\
+    |(?#M08.01|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 견쇄관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, acromioclavicular joints\
+    |(?#M08.01|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 어깨관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, glenohumeral joints\
+    |(?#M08.01|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 흉쇄관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, sternoclavicular joints\
+    |(?#M08.02|)연소성 류마티스관절염, 위팔|Juvenile rheumatoid arthritis, upper arm\
+    |(?#M08.02|)연소성 류마티스관절염, 상완골|Juvenile rheumatoid arthritis, humerus\
+    |(?#M08.02|)연소성 류마티스관절염, 팔꿈치관절|Juvenile rheumatoid arthritis, elbow joints\
+    |(?#M08.02|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 위팔|Juvenile rheumatoid arthritis with or without rheumatoid factor, upper arm\
+    |(?#M08.02|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 상완골|Juvenile rheumatoid arthritis with or without rheumatoid factor, humerus\
+    |(?#M08.02|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 팔꿈치관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, elbow joints\
+    |(?#M08.03|)연소성 류마티스관절염, 아래팔|Juvenile rheumatoid arthritis, forearm\
+    |(?#M08.03|)연소성 류마티스관절염, 요골|Juvenile rheumatoid arthritis, radius\
+    |(?#M08.03|)연소성 류마티스관절염, 척골|Juvenile rheumatoid arthritis, ulna\
+    |(?#M08.03|)연소성 류마티스관절염, 손목관절|Juvenile rheumatoid arthritis, wrist joints\
+    |(?#M08.03|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 아래팔|Juvenile rheumatoid arthritis with or without rheumatoid factor, forearm\
+    |(?#M08.03|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 요골|Juvenile rheumatoid arthritis with or without rheumatoid factor, radius\
+    |(?#M08.03|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 척골|Juvenile rheumatoid arthritis with or without rheumatoid factor, ulna\
+    |(?#M08.03|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 손목관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, wrist joints\
+    |(?#M08.04|)연소성 류마티스관절염, 손|Juvenile rheumatoid arthritis, hand\
+    |(?#M08.04|)연소성 류마티스관절염, 수근골|Juvenile rheumatoid arthritis, carpus\
+    |(?#M08.04|)연소성 류마티스관절염, 손가락|Juvenile rheumatoid arthritis, fingers\
+    |(?#M08.04|)연소성 류마티스관절염, 중수골|Juvenile rheumatoid arthritis, metacarpus\
+    |(?#M08.04|)연소성 류마티스관절염, 이들 뼈간의 관절|Juvenile rheumatoid arthritis, joints between these bones\
+    |(?#M08.04|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 손|Juvenile rheumatoid arthritis with or without rheumatoid factor, hand\
+    |(?#M08.04|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 수근골|Juvenile rheumatoid arthritis with or without rheumatoid factor, carpus\
+    |(?#M08.04|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 손가락|Juvenile rheumatoid arthritis with or without rheumatoid factor, fingers\
+    |(?#M08.04|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 중수골|Juvenile rheumatoid arthritis with or without rheumatoid factor, metacarpus\
+    |(?#M08.04|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 이들 뼈간의 관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, joints between these bones\
+    |(?#M08.05|)연소성 류마티스관절염, 골반 부분 및 대퇴|Juvenile rheumatoid arthritis, pelvic region and thigh\
+    |(?#M08.05|)연소성 류마티스관절염, 둔부|Juvenile rheumatoid arthritis, buttock\
+    |(?#M08.05|)연소성 류마티스관절염, 대퇴골|Juvenile rheumatoid arthritis, femur\
+    |(?#M08.05|)연소성 류마티스관절염, 골반|Juvenile rheumatoid arthritis, pelvis\
+    |(?#M08.05|)연소성 류마티스관절염, 고관절|Juvenile rheumatoid arthritis, hip \\(joint\\)\
+    |(?#M08.05|)연소성 류마티스관절염, 천장관절|Juvenile rheumatoid arthritis, sacroiliac joint\
+    |(?#M08.05|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 골반 부분 및 대퇴|Juvenile rheumatoid arthritis with or without rheumatoid factor, pelvic region and thigh\
+    |(?#M08.05|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 둔부|Juvenile rheumatoid arthritis with or without rheumatoid factor, buttock\
+    |(?#M08.05|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 대퇴골|Juvenile rheumatoid arthritis with or without rheumatoid factor, femur\
+    |(?#M08.05|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 골반|Juvenile rheumatoid arthritis with or without rheumatoid factor, pelvis\
+    |(?#M08.05|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 고관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, hip \\(joint\\)\
+    |(?#M08.05|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 천장관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, sacroiliac joint\
+    |(?#M08.06|)연소성 류마티스관절염, 아래다리|Juvenile rheumatoid arthritis, lower leg\
+    |(?#M08.06|)연소성 류마티스관절염, 비골|Juvenile rheumatoid arthritis, fibula\
+    |(?#M08.06|)연소성 류마티스관절염, 무릎관절|Juvenile rheumatoid arthritis, knee joint\
+    |(?#M08.06|)연소성 류마티스관절염, 경골|Juvenile rheumatoid arthritis, tibia\
+    |(?#M08.06|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 아래다리|Juvenile rheumatoid arthritis with or without rheumatoid factor, lower leg\
+    |(?#M08.06|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 비골|Juvenile rheumatoid arthritis with or without rheumatoid factor, fibula\
+    |(?#M08.06|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 무릎관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, knee joint\
+    |(?#M08.06|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 경골|Juvenile rheumatoid arthritis with or without rheumatoid factor, tibia\
+    |(?#M08.07|)연소성 류마티스관절염, 발목 및 발|Juvenile rheumatoid arthritis, ankle and foot\
+    |(?#M08.07|)연소성 류마티스관절염, 중족골|Juvenile rheumatoid arthritis, metatarsus\
+    |(?#M08.07|)연소성 류마티스관절염, 족근골|Juvenile rheumatoid arthritis, tarsus\
+    |(?#M08.07|)연소성 류마티스관절염, 발가락|Juvenile rheumatoid arthritis, toes\
+    |(?#M08.07|)연소성 류마티스관절염, 발목관절|Juvenile rheumatoid arthritis, ankle joint\
+    |(?#M08.07|)연소성 류마티스관절염, 발의 기타 관절|Juvenile rheumatoid arthritis, other joints in foot\
+    |(?#M08.07|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 발목 및 발|Juvenile rheumatoid arthritis with or without rheumatoid factor, ankle and foot\
+    |(?#M08.07|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 중족골|Juvenile rheumatoid arthritis with or without rheumatoid factor, metatarsus\
+    |(?#M08.07|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 족근골|Juvenile rheumatoid arthritis with or without rheumatoid factor, tarsus\
+    |(?#M08.07|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 발가락|Juvenile rheumatoid arthritis with or without rheumatoid factor, toes\
+    |(?#M08.07|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 발목관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, ankle joint\
+    |(?#M08.07|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 발의 기타 관절|Juvenile rheumatoid arthritis with or without rheumatoid factor, other joints in foot\
+    |(?#M08.08|)연소성 류마티스관절염, 기타 부분|Juvenile rheumatoid arthritis, other\
+    |(?#M08.08|)연소성 류마티스관절염, 머리|Juvenile rheumatoid arthritis, head\
+    |(?#M08.08|)연소성 류마티스관절염, 목|Juvenile rheumatoid arthritis, neck\
+    |(?#M08.08|)연소성 류마티스관절염, 늑골|Juvenile rheumatoid arthritis, ribs\
+    |(?#M08.08|)연소성 류마티스관절염, 두개골|Juvenile rheumatoid arthritis, skull\
+    |(?#M08.08|)연소성 류마티스관절염, 몸통|Juvenile rheumatoid arthritis, trunk\
+    |(?#M08.08|)연소성 류마티스관절염, 척주|Juvenile rheumatoid arthritis, vertebral column\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 기타 부분|Juvenile rheumatoid arthritis with or without rheumatoid factor, other\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 머리|Juvenile rheumatoid arthritis with or without rheumatoid factor, head\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 목|Juvenile rheumatoid arthritis with or without rheumatoid factor, neck\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 늑골|Juvenile rheumatoid arthritis with or without rheumatoid factor, ribs\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 두개골|Juvenile rheumatoid arthritis with or without rheumatoid factor, skull\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 몸통|Juvenile rheumatoid arthritis with or without rheumatoid factor, trunk\
+    |(?#M08.08|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 척주|Juvenile rheumatoid arthritis with or without rheumatoid factor, vertebral column\
+    |(?#M08.09|)연소성 류마티스관절염, 상세불명 부분|Juvenile rheumatoid arthritis, site unspecified\
+    |(?#M08.09|)류마티스인자가 있거나 없는 연소성 류마티스관절염, 상세불명 부분|Juvenile rheumatoid arthritis with or without rheumatoid factor, site unspecified\
+    |(?#M08.1|)연소성 강직척추염|Juvenile ankylosing spondylitis\
+    |(?#M08.10|)연소성 강직척추염, 여러 부위|Juvenile ankylosing spondylitis, multiple sites\
+    |(?#M08.18|)연소성 강직척추염, 기타 부분|Juvenile ankylosing spondylitis, other\
+    |(?#M08.18|)연소성 강직척추염, 머리|Juvenile ankylosing spondylitis, head\
+    |(?#M08.18|)연소성 강직척추염, 목|Juvenile ankylosing spondylitis, neck\
+    |(?#M08.18|)연소성 강직척추염, 늑골|Juvenile ankylosing spondylitis, ribs\
+    |(?#M08.18|)연소성 강직척추염, 두개골|Juvenile ankylosing spondylitis, skull\
+    |(?#M08.18|)연소성 강직척추염, 몸통|Juvenile ankylosing spondylitis, trunk\
+    |(?#M08.18|)연소성 강직척추염, 척주|Juvenile ankylosing spondylitis, vertebral column\
+    |(?#M08.19|)연소성 강직척추염, 상세불명 부분|Juvenile ankylosing spondylitis, site unspecified\
+    |(?#M08.2|)전신적으로 발병된 연소성 관절염|Juvenile arthritis with systemic onset\
+    |(?#M08.20|)전신적으로 발병된 연소성 관절염, 여러 부위|Juvenile arthritis with systemic onset, multiple sites\
+    |(?#M08.21|)전신적으로 발병된 연소성 관절염, 어깨부분|Juvenile arthritis with systemic onset, shoulder region\
+    |(?#M08.21|)전신적으로 발병된 연소성 관절염, 쇄골|Juvenile arthritis with systemic onset, clavicle\
+    |(?#M08.21|)전신적으로 발병된 연소성 관절염, 견갑골|Juvenile arthritis with systemic onset, scapula\
+    |(?#M08.21|)전신적으로 발병된 연소성 관절염, 견쇄관절|Juvenile arthritis with systemic onset, acromioclavicular joints\
+    |(?#M08.21|)전신적으로 발병된 연소성 관절염, 어깨관절|Juvenile arthritis with systemic onset, glenohumeral joints\
+    |(?#M08.21|)전신적으로 발병된 연소성 관절염, 흉쇄관절|Juvenile arthritis with systemic onset, sternoclavicular joints\
+    |(?#M08.22|)전신적으로 발병된 연소성 관절염, 위팔|Juvenile arthritis with systemic onset, upper arm\
+    |(?#M08.22|)전신적으로 발병된 연소성 관절염, 상완골|Juvenile arthritis with systemic onset, humerus\
+    |(?#M08.22|)전신적으로 발병된 연소성 관절염, 팔꿈치관절|Juvenile arthritis with systemic onset, elbow joints\
+    |(?#M08.23|)전신적으로 발병된 연소성 관절염, 아래팔|Juvenile arthritis with systemic onset, forearm\
+    |(?#M08.23|)전신적으로 발병된 연소성 관절염, 요골|Juvenile arthritis with systemic onset, radius\
+    |(?#M08.23|)전신적으로 발병된 연소성 관절염, 척골|Juvenile arthritis with systemic onset, ulna\
+    |(?#M08.23|)전신적으로 발병된 연소성 관절염, 손목관절|Juvenile arthritis with systemic onset, wrist joints\
+    |(?#M08.24|)전신적으로 발병된 연소성 관절염, 손|Juvenile arthritis with systemic onset, hand\
+    |(?#M08.24|)전신적으로 발병된 연소성 관절염, 수근골|Juvenile arthritis with systemic onset, carpus\
+    |(?#M08.24|)전신적으로 발병된 연소성 관절염, 손가락|Juvenile arthritis with systemic onset, fingers\
+    |(?#M08.24|)전신적으로 발병된 연소성 관절염, 중수골|Juvenile arthritis with systemic onset, metacarpus\
+    |(?#M08.24|)전신적으로 발병된 연소성 관절염, 이들 뼈간의 관절|Juvenile arthritis with systemic onset, joints between these bones\
+    |(?#M08.25|)전신적으로 발병된 연소성 관절염, 골반 부분 및 대퇴|Juvenile arthritis with systemic onset, pelvic region and thigh\
+    |(?#M08.25|)전신적으로 발병된 연소성 관절염, 둔부|Juvenile arthritis with systemic onset, buttock\
+    |(?#M08.25|)전신적으로 발병된 연소성 관절염, 대퇴골|Juvenile arthritis with systemic onset, femur\
+    |(?#M08.25|)전신적으로 발병된 연소성 관절염, 골반|Juvenile arthritis with systemic onset, pelvis\
+    |(?#M08.25|)전신적으로 발병된 연소성 관절염, 고관절|Juvenile arthritis with systemic onset, hip \\(joint\\)\
+    |(?#M08.25|)전신적으로 발병된 연소성 관절염, 천장관절|Juvenile arthritis with systemic onset, sacroiliac joint\
+    |(?#M08.26|)전신적으로 발병된 연소성 관절염, 아래다리|Juvenile arthritis with systemic onset, lower leg\
+    |(?#M08.26|)전신적으로 발병된 연소성 관절염, 비골|Juvenile arthritis with systemic onset, fibula\
+    |(?#M08.26|)전신적으로 발병된 연소성 관절염, 무릎관절|Juvenile arthritis with systemic onset, knee joint\
+    |(?#M08.26|)전신적으로 발병된 연소성 관절염, 경골|Juvenile arthritis with systemic onset, tibia\
+    |(?#M08.27|)전신적으로 발병된 연소성 관절염, 발목 및 발|Juvenile arthritis with systemic onset, ankle and foot\
+    |(?#M08.27|)전신적으로 발병된 연소성 관절염, 중족골|Juvenile arthritis with systemic onset, metatarsus\
+    |(?#M08.27|)전신적으로 발병된 연소성 관절염, 족근골|Juvenile arthritis with systemic onset, tarsus\
+    |(?#M08.27|)전신적으로 발병된 연소성 관절염, 발가락|Juvenile arthritis with systemic onset, toes\
+    |(?#M08.27|)전신적으로 발병된 연소성 관절염, 발목관절|Juvenile arthritis with systemic onset, ankle joint\
+    |(?#M08.27|)전신적으로 발병된 연소성 관절염, 발의 기타 관절|Juvenile arthritis with systemic onset, other joints in foot\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 기타 부분|Juvenile arthritis with systemic onset, other\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 머리|Juvenile arthritis with systemic onset, head\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 목|Juvenile arthritis with systemic onset, neck\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 늑골|Juvenile arthritis with systemic onset, ribs\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 두개골|Juvenile arthritis with systemic onset, skull\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 몸통|Juvenile arthritis with systemic onset, trunk\
+    |(?#M08.28|)전신적으로 발병된 연소성 관절염, 척주|Juvenile arthritis with systemic onset, vertebral column\
+    |(?#M08.29|)전신적으로 발병된 연소성 관절염, 상세불명 부분|Juvenile arthritis with systemic onset, site unspecified\
+    |(?#M08.3|)\\(혈청검사음성인\\) 연소성 다발관절염|Juvenile polyarthritis \\(seronegative\\)\
+    |(?#M08.3|)만성 연소성 다발관절염|Chronic juvenile polyarthritis\
+    |(?#M30.0|)결절성 다발동맥염|Polyarteritis nodosa\
+    |(?#M30.1|)폐침범을 동반한 다발동맥염\\[처그-스트라우스\\]|Polyarteritis with lung involvement \\[Churg- Strauss\\]\
+    |(?#M30.2|)연소성 다발동맥염|Juvenile polyarteritis\
+    |(?#M31.0|)굿파스쳐증후군|Goodpasture’s syndrome\
+    |(?#M31.1|)혈전성 미세혈관병증|Thrombotic microangiopathy\
+    |(?#M31.1|)혈전성 혈소판감소성 자반|Thrombotic thrombocytopenic purpura\
+    |(?#M31.3|)베게너육아종증|Wegener granulomatosis\
+    |(?#M31.3|)괴사성 호흡기육아종증|Necrotizing respiratory granulomatosis\
+    |(?#M31.4|)대동맥궁증후군\\[다까야수\\]|Aortic arch syndrome \\[Takayasu\\]\
+    |(?#M31.7|)현미경적 다발동맥염|Microscopic polyarteritis\
+    |(?#M32.1|)기관 또는 계통 침범을 동반한 전신홍반루푸스|Systemic lupus erythematosus with organ or system involvement\
+    |(?#M32.1|)리브만-삭스병\\(I39\\.-\\*\\)|Libman-Sacks disease\\(I39\\.-\\*\\)\
+    |(?#M32.1|)루푸스 심장낭염\\(I32\\.8\\*\\)|Lupus pericarditis\\(I32\\.8\\*\\)\
+    |(?#M32.1|)신장침범 동반 전신홍반루푸스\\(N08\\.5\\*, N16\\.4\\*\\)|Systemic lupus erythematosus with kidney involvement\\(N08\\.5\\*, N16\\.4\\*\\)\
+    |(?#M32.1|)폐침범 동반 전신홍반루푸스\\(J99\\.1\\*\\)|Systemic lupus erythematosus with lung involvement\\(J99\\.1\\*\\)\
+    |(?#M32.1|)심내막염 동반 전신홍반루푸스\\(I39\\.8\\*\\)|Systemic lupus erythematosus with endocarditis\\(I39\\.8\\*\\)\
+    |(?#M32.1|)사구체질환 동반 전신홍반루푸스\\(N08\\.5\\*\\)|Systemic lupus erythematosus with glomerular disease\\(N08\\.5\\*\\)\
+    |(?#M32.1|)세뇨관-간질신장병증 동반 전신홍반루푸스\\(N16\\.4\\*\\)|Systemic lupus erythematosus with tubulo-interstitial nephropathy\\(N16\\.4\\*\\)\
+    |(?#M32.1|)전신홍반루푸스에서의 뇌염\\(G05\\.8\\*\\)|Encephalitis in systemic lupus erythematosus\\(G05\\.8\\*\\)\
+    |(?#M32.1|)전신홍반루푸스에서의 근병증\\(G73\\.7\\*\\)|Myopathy in systemic lupus erythematosus\\(G73\\.7\\*\\)\
+    |(?#M32.1|)전신홍반루푸스에서의 대뇌동맥염\\(I68\\.2\\*\\)|Cerebral arteritis in systemic lupus erythematosus\\(I68\\.2\\*\\)\
+    |(?#M33.0|)연소성 피부근염|Juvenile dermatomyositis\
+    |(?#M33.1|)기타 피부근염|Other dermatomyositis\
+    |(?#M33.2|)다발근염|Polymyositis\
+    |(?#M34.0|)진행성 전신경화증|Progressive systemic sclerosis\
+    |(?#M34.1|)크레스트증후군|CR\\(E\\)ST syndrome\
+    |(?#M34.1|)석회증, 레이노현상, 식도기능장애, 경지증\\(硬指症\\), 모세혈관확장의 조합|Combination of calcinosis, Raynaud’s phenomenon, \\(o\\)esophageal dysfunction, sclerodactyly, telangiectasia\
+    |(?#M34.8|)폐침범을 동반한 전신경화증†\\(J99\\.1\\*\\)|Systemic sclerosis with lung involvement\\(J99\\.1\\*\\)\
+    |(?#M34.8|)근병증을 동반한 전신경화증†\\(G73\\.7\\*\\)|Systemic sclerosis with myopathy\\(G73\\.7\\*\\)\
+    |(?#M35.0|)건조증후군\\[쉐그렌\\]|Sicca syndrome\\[Sjögren\\]\
+    |(?#M35.0|)각막결막염을\\(를\\) 동반한 쉐그렌증후군\\(H19\\.3\\*\\)|Sjogren’s syndrome with keratoconjunctivitis\\(H19\\.3\\*\\)\
+    |(?#M35.0|)폐침범을\\(를\\) 동반한 쉐그렌증후군\\(J99\\.1\\*\\)|Sjogren’s syndrome with lung involvement\\(J99\\.1\\*\\)\
+    |(?#M35.0|)근병증을\\(를\\) 동반한 쉐그렌증후군\\(G73\\.7\\*\\)|Sjogren’s syndrome with myopathy\\(G73\\.7\\*\\)\
+    |(?#M35.0|)신세뇨관-간질성 장애을\\(를\\) 동반한 쉐그렌증후군\\(N16\\.4\\*\\)|Sjogren’s syndrome with renal tubulo-interstitial disorder\\(N16\\.4\\*\\)\
+    |(?#M35.1|)혼합결합조직병|Mixed connective tissue disease\
+    |(?#M35.2|)베체트병|Behçet’s disease\
+    |(?#M35.20|)신경증상을 동반한 베체트병|Behçet’s disease with neurological manifestation\
+    |(?#M35.21|)위장증상을 동반한 베체트병|Behçet’s disease with gastrointestinal manifestation\
+    |(?#M35.22|)심혈관증상을 동반한 베체트병|Behçet’s disease with cardiovascular manifestation\
+    |(?#M35.28|)기타 증상을 동반한 베체트병|Behçet’s disease with other manifestation\
+    |(?#M35.29|)상세불명의 베체트병|Behçet’s disease, unspecified\
+    |(?#M35.3|)류마티스성 다발근통|Polymyalgia rheumatica\
+    |(?#M35.4|)미만성\\(호산구성\\) 근막염|Diffuse\\(eosinophilic\\) fasciitis\
+    |(?#M35.5|)다초점 섬유경화증|Multifocal fibrosclerosis\
+    |(?#M35.6|)재발성 지방층염\\[웨버-크리스찬\\]|Relapsing panniculitis\\[Weber-Christian\\]\
+    |(?#M61.1|)진행성 골화섬유형성이상|Fibrodysplasia ossificans progressiva\
+    |(?#M61.10|)진행성 골화섬유형성이상, 여러 부위|Fibrodysplasia ossificans progressiva, multiple sites\
+    |(?#M61.11|)진행성 골화섬유형성이상, 어깨부분|Fibrodysplasia ossificans progressiva, shoulder region\
+    |(?#M61.11|)진행성 골화섬유형성이상, 쇄골|Fibrodysplasia ossificans progressiva, clavicle\
+    |(?#M61.11|)진행성 골화섬유형성이상, 견갑골|Fibrodysplasia ossificans progressiva, scapula\
+    |(?#M61.11|)진행성 골화섬유형성이상, 견쇄관절|Fibrodysplasia ossificans progressiva, acromioclavicular joints\
+    |(?#M61.11|)진행성 골화섬유형성이상, 어깨관절|Fibrodysplasia ossificans progressiva, glenohumeral joints\
+    |(?#M61.11|)진행성 골화섬유형성이상, 흉쇄관절|Fibrodysplasia ossificans progressiva, sternoclavicular joints\
+    |(?#M61.12|)진행성 골화섬유형성이상, 위팔|Fibrodysplasia ossificans progressiva, upper arm\
+    |(?#M61.12|)진행성 골화섬유형성이상, 상완골|Fibrodysplasia ossificans progressiva, humerus\
+    |(?#M61.12|)진행성 골화섬유형성이상, 팔꿈치관절|Fibrodysplasia ossificans progressiva, elbow joints\
+    |(?#M61.13|)진행성 골화섬유형성이상, 아래팔|Fibrodysplasia ossificans progressiva, forearm\
+    |(?#M61.13|)진행성 골화섬유형성이상, 요골|Fibrodysplasia ossificans progressiva, radius\
+    |(?#M61.13|)진행성 골화섬유형성이상, 척골|Fibrodysplasia ossificans progressiva, ulna\
+    |(?#M61.13|)진행성 골화섬유형성이상, 손목관절|Fibrodysplasia ossificans progressiva, wrist joints\
+    |(?#M61.14|)진행성 골화섬유형성이상, 손|Fibrodysplasia ossificans progressiva, hand\
+    |(?#M61.14|)진행성 골화섬유형성이상, 수근골|Fibrodysplasia ossificans progressiva, carpus\
+    |(?#M61.14|)진행성 골화섬유형성이상, 손가락|Fibrodysplasia ossificans progressiva, fingers\
+    |(?#M61.14|)진행성 골화섬유형성이상, 중수골|Fibrodysplasia ossificans progressiva, metacarpus\
+    |(?#M61.14|)진행성 골화섬유형성이상, 이들 뼈간의 관절|Fibrodysplasia ossificans progressiva, joints between these bones\
+    |(?#M61.15|)진행성 골화섬유형성이상, 골반 부분 및 대퇴|Fibrodysplasia ossificans progressiva, pelvic region and thigh\
+    |(?#M61.15|)진행성 골화섬유형성이상, 둔부|Fibrodysplasia ossificans progressiva, buttock\
+    |(?#M61.15|)진행성 골화섬유형성이상, 대퇴골|Fibrodysplasia ossificans progressiva, femur\
+    |(?#M61.15|)진행성 골화섬유형성이상, 골반|Fibrodysplasia ossificans progressiva, pelvis\
+    |(?#M61.15|)진행성 골화섬유형성이상, 고관절|Fibrodysplasia ossificans progressiva, hip \\(joint\\)\
+    |(?#M61.15|)진행성 골화섬유형성이상, 천장관절|Fibrodysplasia ossificans progressiva, sacroiliac joint\
+    |(?#M61.16|)진행성 골화섬유형성이상, 아래다리|Fibrodysplasia ossificans progressiva, lower leg\
+    |(?#M61.16|)진행성 골화섬유형성이상, 비골|Fibrodysplasia ossificans progressiva, fibula\
+    |(?#M61.16|)진행성 골화섬유형성이상, 무릎관절|Fibrodysplasia ossificans progressiva, knee joint\
+    |(?#M61.16|)진행성 골화섬유형성이상, 경골|Fibrodysplasia ossificans progressiva, tibia\
+    |(?#M61.17|)진행성 골화섬유형성이상, 발목 및 발|Fibrodysplasia ossificans progressiva, ankle and foot\
+    |(?#M61.17|)진행성 골화섬유형성이상, 중족골|Fibrodysplasia ossificans progressiva, metatarsus\
+    |(?#M61.17|)진행성 골화섬유형성이상, 족근골|Fibrodysplasia ossificans progressiva, tarsus\
+    |(?#M61.17|)진행성 골화섬유형성이상, 발가락|Fibrodysplasia ossificans progressiva, toes\
+    |(?#M61.17|)진행성 골화섬유형성이상, 발목관절|Fibrodysplasia ossificans progressiva, ankle joint\
+    |(?#M61.17|)진행성 골화섬유형성이상, 발의 기타 관절|Fibrodysplasia ossificans progressiva, other joints in foot\
+    |(?#M61.18|)진행성 골화섬유형성이상, 기타 부분|Fibrodysplasia ossificans progressiva, other\
+    |(?#M61.18|)진행성 골화섬유형성이상, 머리|Fibrodysplasia ossificans progressiva, head\
+    |(?#M61.18|)진행성 골화섬유형성이상, 목|Fibrodysplasia ossificans progressiva, neck\
+    |(?#M61.18|)진행성 골화섬유형성이상, 늑골|Fibrodysplasia ossificans progressiva, ribs\
+    |(?#M61.18|)진행성 골화섬유형성이상, 두개골|Fibrodysplasia ossificans progressiva, skull\
+    |(?#M61.18|)진행성 골화섬유형성이상, 몸통|Fibrodysplasia ossificans progressiva, trunk\
+    |(?#M61.18|)진행성 골화섬유형성이상, 척주|Fibrodysplasia ossificans progressiva, vertebral column\
+    |(?#M61.19|)진행성 골화섬유형성이상, 상세불명 부분|Fibrodysplasia ossificans progressiva, site unspecified\
+    |(?#M88.0|)두개골의 파젯병|Paget’s disease of skull\
+    |(?#M88.8|)기타 뼈의 파젯병|Paget’s disease of other bones\
+    |(?#M88.80|)기타 뼈의 파젯병, 여러 부위|Paget’s disease of other bones, multiple sites\
+    |(?#M88.81|)기타 뼈의 파젯병, 어깨부분|Paget’s disease of other bones, shoulder region\
+    |(?#M88.81|)기타 뼈의 파젯병, 쇄골|Paget’s disease of other bones, clavicle\
+    |(?#M88.81|)기타 뼈의 파젯병, 견갑골|Paget’s disease of other bones, scapula\
+    |(?#M88.81|)기타 뼈의 파젯병, 견쇄관절|Paget’s disease of other bones, acromioclavicular joints\
+    |(?#M88.81|)기타 뼈의 파젯병, 어깨관절|Paget’s disease of other bones, glenohumeral joints\
+    |(?#M88.81|)기타 뼈의 파젯병, 흉쇄관절|Paget’s disease of other bones, sternoclavicular joints\
+    |(?#M88.82|)기타 뼈의 파젯병, 위팔|Paget’s disease of other bones, upper arm\
+    |(?#M88.82|)기타 뼈의 파젯병, 상완골|Paget’s disease of other bones, humerus\
+    |(?#M88.82|)기타 뼈의 파젯병, 팔꿈치관절|Paget’s disease of other bones, elbow joints\
+    |(?#M88.83|)기타 뼈의 파젯병, 아래팔|Paget’s disease of other bones, forearm\
+    |(?#M88.83|)기타 뼈의 파젯병, 요골|Paget’s disease of other bones, radius\
+    |(?#M88.83|)기타 뼈의 파젯병, 척골|Paget’s disease of other bones, ulna\
+    |(?#M88.83|)기타 뼈의 파젯병, 손목관절|Paget’s disease of other bones, wrist joints\
+    |(?#M88.84|)기타 뼈의 파젯병, 손|Paget’s disease of other bones, hand\
+    |(?#M88.84|)기타 뼈의 파젯병, 수근골|Paget’s disease of other bones, carpus\
+    |(?#M88.84|)기타 뼈의 파젯병, 손가락|Paget’s disease of other bones, fingers\
+    |(?#M88.84|)기타 뼈의 파젯병, 중수골|Paget’s disease of other bones, metacarpus\
+    |(?#M88.84|)기타 뼈의 파젯병, 이들 뼈간의 관절|Paget’s disease of other bones, joints between these bones\
+    |(?#M88.85|)기타 뼈의 파젯병, 골반 부분 및 대퇴|Paget’s disease of other bones, pelvic region and thigh\
+    |(?#M88.85|)기타 뼈의 파젯병, 둔부|Paget’s disease of other bones, buttock\
+    |(?#M88.85|)기타 뼈의 파젯병, 대퇴골|Paget’s disease of other bones, femur\
+    |(?#M88.85|)기타 뼈의 파젯병, 골반|Paget’s disease of other bones, pelvis\
+    |(?#M88.85|)기타 뼈의 파젯병, 고관절|Paget’s disease of other bones, hip \\(joint\\)\
+    |(?#M88.85|)기타 뼈의 파젯병, 천장관절|Paget’s disease of other bones, sacroiliac joint\
+    |(?#M88.86|)기타 뼈의 파젯병, 아래다리|Paget’s disease of other bones, lower leg\
+    |(?#M88.86|)기타 뼈의 파젯병, 비골|Paget’s disease of other bones, fibula\
+    |(?#M88.86|)기타 뼈의 파젯병, 무릎관절|Paget’s disease of other bones, knee joint\
+    |(?#M88.86|)기타 뼈의 파젯병, 경골|Paget’s disease of other bones, tibia\
+    |(?#M88.87|)기타 뼈의 파젯병, 발목 및 발|Paget’s disease of other bones, ankle and foot\
+    |(?#M88.87|)기타 뼈의 파젯병, 중족골|Paget’s disease of other bones, metatarsus\
+    |(?#M88.87|)기타 뼈의 파젯병, 족근골|Paget’s disease of other bones, tarsus\
+    |(?#M88.87|)기타 뼈의 파젯병, 발가락|Paget’s disease of other bones, toes\
+    |(?#M88.87|)기타 뼈의 파젯병, 발목관절|Paget’s disease of other bones, ankle joint\
+    |(?#M88.87|)기타 뼈의 파젯병, 발의 기타 관절|Paget’s disease of other bones, other joints in foot\
+    |(?#M88.88|)기타 뼈의 파젯병, 기타 부분|Paget’s disease of other bones, other\
+    |(?#M88.88|)기타 뼈의 파젯병, 머리|Paget’s disease of other bones, head\
+    |(?#M88.88|)기타 뼈의 파젯병, 목|Paget’s disease of other bones, neck\
+    |(?#M88.88|)기타 뼈의 파젯병, 늑골|Paget’s disease of other bones, ribs\
+    |(?#M88.88|)기타 뼈의 파젯병, 두개골|Paget’s disease of other bones, skull\
+    |(?#M88.88|)기타 뼈의 파젯병, 몸통|Paget’s disease of other bones, trunk\
+    |(?#M88.88|)기타 뼈의 파젯병, 척주|Paget’s disease of other bones, vertebral column\
+    |(?#M88.89|)기타 뼈의 파젯병, 상세불명 부분|Paget’s disease of other bones, site unspecified\
+    |(?#M88.9|)상세불명의 뼈의 파젯병|Paget’s disease of bone, unspecified\
+    |(?#M88.90|)상세불명의 뼈의 파젯병, 여러 부위|Paget’s disease of bone, unspecified, multiple sites\
+    |(?#M88.91|)상세불명의 뼈의 파젯병, 어깨부분|Paget’s disease of bone, unspecified, shoulder region\
+    |(?#M88.91|)상세불명의 뼈의 파젯병, 쇄골|Paget’s disease of bone, unspecified, clavicle\
+    |(?#M88.91|)상세불명의 뼈의 파젯병, 견갑골|Paget’s disease of bone, unspecified, scapula\
+    |(?#M88.91|)상세불명의 뼈의 파젯병, 견쇄관절|Paget’s disease of bone, unspecified, acromioclavicular joints\
+    |(?#M88.91|)상세불명의 뼈의 파젯병, 어깨관절|Paget’s disease of bone, unspecified, glenohumeral joints\
+    |(?#M88.91|)상세불명의 뼈의 파젯병, 흉쇄관절|Paget’s disease of bone, unspecified, sternoclavicular joints\
+    |(?#M88.92|)상세불명의 뼈의 파젯병, 위팔|Paget’s disease of bone, unspecified, upper arm\
+    |(?#M88.92|)상세불명의 뼈의 파젯병, 상완골|Paget’s disease of bone, unspecified, humerus\
+    |(?#M88.92|)상세불명의 뼈의 파젯병, 팔꿈치관절|Paget’s disease of bone, unspecified, elbow joints\
+    |(?#M88.93|)상세불명의 뼈의 파젯병, 아래팔|Paget’s disease of bone, unspecified, forearm\
+    |(?#M88.93|)상세불명의 뼈의 파젯병, 요골|Paget’s disease of bone, unspecified, radius\
+    |(?#M88.93|)상세불명의 뼈의 파젯병, 척골|Paget’s disease of bone, unspecified, ulna\
+    |(?#M88.93|)상세불명의 뼈의 파젯병, 손목관절|Paget’s disease of bone, unspecified, wrist joints\
+    |(?#M88.94|)상세불명의 뼈의 파젯병, 손|Paget’s disease of bone, unspecified, hand\
+    |(?#M88.94|)상세불명의 뼈의 파젯병, 수근골|Paget’s disease of bone, unspecified, carpus\
+    |(?#M88.94|)상세불명의 뼈의 파젯병, 손가락|Paget’s disease of bone, unspecified, fingers\
+    |(?#M88.94|)상세불명의 뼈의 파젯병, 중수골|Paget’s disease of bone, unspecified, metacarpus\
+    |(?#M88.94|)상세불명의 뼈의 파젯병, 이들 뼈간의 관절|Paget’s disease of bone, unspecified, joints between these bones\
+    |(?#M88.95|)상세불명의 뼈의 파젯병, 골반 부분 및 대퇴|Paget’s disease of bone, unspecified, pelvic region and thigh\
+    |(?#M88.95|)상세불명의 뼈의 파젯병, 둔부|Paget’s disease of bone, unspecified, buttock\
+    |(?#M88.95|)상세불명의 뼈의 파젯병, 대퇴골|Paget’s disease of bone, unspecified, femur\
+    |(?#M88.95|)상세불명의 뼈의 파젯병, 골반|Paget’s disease of bone, unspecified, pelvis\
+    |(?#M88.95|)상세불명의 뼈의 파젯병, 고관절|Paget’s disease of bone, unspecified, hip \\(joint\\)\
+    |(?#M88.95|)상세불명의 뼈의 파젯병, 천장관절|Paget’s disease of bone, unspecified, sacroiliac joint\
+    |(?#M88.96|)상세불명의 뼈의 파젯병, 아래다리|Paget’s disease of bone, unspecified, lower leg\
+    |(?#M88.96|)상세불명의 뼈의 파젯병, 비골|Paget’s disease of bone, unspecified, fibula\
+    |(?#M88.96|)상세불명의 뼈의 파젯병, 무릎관절|Paget’s disease of bone, unspecified, knee joint\
+    |(?#M88.96|)상세불명의 뼈의 파젯병, 경골|Paget’s disease of bone, unspecified, tibia\
+    |(?#M88.97|)상세불명의 뼈의 파젯병, 발목 및 발|Paget’s disease of bone, unspecified, ankle and foot\
+    |(?#M88.97|)상세불명의 뼈의 파젯병, 중족골|Paget’s disease of bone, unspecified, metatarsus\
+    |(?#M88.97|)상세불명의 뼈의 파젯병, 족근골|Paget’s disease of bone, unspecified, tarsus\
+    |(?#M88.97|)상세불명의 뼈의 파젯병, 발가락|Paget’s disease of bone, unspecified, toes\
+    |(?#M88.97|)상세불명의 뼈의 파젯병, 발목관절|Paget’s disease of bone, unspecified, ankle joint\
+    |(?#M88.97|)상세불명의 뼈의 파젯병, 발의 기타 관절|Paget’s disease of bone, unspecified, other joints in foot\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 기타 부분|Paget’s disease of bone, unspecified, other\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 머리|Paget’s disease of bone, unspecified, head\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 목|Paget’s disease of bone, unspecified, neck\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 늑골|Paget’s disease of bone, unspecified, ribs\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 두개골|Paget’s disease of bone, unspecified, skull\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 몸통|Paget’s disease of bone, unspecified, trunk\
+    |(?#M88.98|)상세불명의 뼈의 파젯병, 척주|Paget’s disease of bone, unspecified, vertebral column\
+    |(?#M88.99|)상세불명의 뼈의 파젯병, 상세불명 부분|Paget’s disease of bone, unspecified, site unspecified\
+    |(?#M92.2|)수근반달뼈의 골연골증\\(연소성\\)\\[킨뵉\\]|Osteochondrosis \\(juvenile\\) of carpal lunate \\[Kienbock\\]\
+    |(?#M93.1|)성인의 킨뵉병|Kienböck’s disease of adults\
+    |(?#M94.1|)재발성 다발연골염|Relapsing polychondritis\
+    |(?#N04.0|)소사구체이상을 동반한 신증후군|Nephrotic syndrome with minor glomerular abnormality\
+    |(?#N04.0|)최소변화병변을 동반한 신증후군|Nephrotic syndrome with minimal change lesion\
+    |(?#N04.1|)초점성 및 분절성 사구체병변을 동반한 신증후군|Nephrotic syndrome with focal and segmental glomerular lesions\
+    |(?#N04.1|)초점성 및 분절성 유리질증을 동반한 신증후군|Nephrotic syndrome with focal and segmental hyalinosis\
+    |(?#N04.1|)초점성 및 분절성 경화증을 동반한 신증후군|Nephrotic syndrome with focal and segmental sclerosis\
+    |(?#N04.1|)초점성 사구체신염을 동반한 신증후군|Nephrotic syndrome with focal glomerulonephritis\
+    |(?#N04.2|)미만성 막성 사구체신염을 동반한 신증후군|Nephrotic syndrome with diffuse membranous glomerulonephritis\
+    |(?#N04.3|)미만성 메산지음 증식성 사구체신염을 동반한 신증후군|Nephrotic syndrome with diffuse mesangial proliferative glomerulonephritis\
+    |(?#N04.4|)미만성 모세혈관내 증식성 사구체신염을 동반한 신증후군|Nephrotic syndrome with diffuse endocapillary proliferative glomerulonephritis\
+    |(?#N04.5|)미만성 메산지음 모세혈관성 사구체신염을 동반한 신증후군|Nephrotic syndrome with diffuse mesangiocapillary glomerulonephritis\
+    |(?#N04.5|)막증식성 사구체신염, 1형, 3형 또는 NOS를 동반한 신증후군|Nephrotic syndrome with membranoproliferative glomerulonephritis, types 1 and 3, or NOS\
+    |(?#N04.6|)고밀도침착병을 동반한 신증후군|Nephrotic syndrome with dense deposit disease\
+    |(?#N04.6|)막증식성 사구체신염, 2형을 동반한 신증후군|Nephrotic syndrome with membranoproliferative glomerulonephritis, type 2\
+    |(?#N04.7|)미만성 반월형 사구체신염을 동반한 신증후군|Nephrotic syndrome with diffuse crescentic glomerulonephritis\
+    |(?#N04.7|)모세혈관외 사구체신염을 동반한 신증후군|Nephrotic syndrome with extracapillary glomerulonephritis\
+    |(?#N25.1|)신장성 요붕증|Nephrogenic diabetes insipidus\
+    |(?#P35.0|)선천성 풍진증후군|Congenital rubella syndrome\
+    |(?#P35.4|)선천성 지카 바이러스 질환|Congenital Zika virus disease\
+    |(?#Q03.1|)댄디-워커증후군|Dandy-Walker syndrome\
+    |(?#Q04.2|)전전뇌증\\(全前腦症\\)|Holoprosencephaly\
+    |(?#Q04.3|)무뇌이랑증|Agyria of brain\
+    |(?#Q04.3|)무뇌수두증|Hydranencephaly\
+    |(?#Q04.3|)활택뇌증|Lissencephaly\
+    |(?#Q04.3|)큰뇌이랑증|Pachygyria\
+    |(?#Q04.3|)소뇌무발생|Cerebellar agenesis\
+    |(?#Q04.3|)주버트 증후군|Joubert syndrome\
+    |(?#Q04.3|)다발미세이랑증|Polymicrogyria\
+    |(?#Q04.3|)밀러-디커 증후군|Miller-Dieker syndrome\
+    |(?#Q04.6|)분열뇌증|Schizencephaly\
+    |(?#Q05.0|)수두증을 동반한 이분경추|Cervical spina bifida with hydrocephalus\
+    |(?#Q05.1|)수두증을 동반한 이분흉추|Thoracic spina bifida with hydrocephalus\
+    |(?#Q05.1|)수두증을 동반한 이분척추|Dorsal spina bifida with hydrocephalus\
+    |(?#Q05.1|)수두증을 동반한 이분흉요추|Thoracolumbar spina bifida with hydrocephalus\
+    |(?#Q05.2|)수두증을 동반한 이분요추|Lumbar spina bifida with hydrocephalus\
+    |(?#Q05.2|)수두증을 동반한 이분요천추|Lumbosacral spina bifida with hydrocephalus\
+    |(?#Q05.3|)수두증을 동반한 이분천추|Sacral spina bifida with hydrocephalus\
+    |(?#Q05.4|)수두증을 동반한 상세불명의 이분척추|Unspecified spina bifida with hydrocephalus\
+    |(?#Q05.5|)수두증이 없는 이분경추|Cervical spina bifida without hydrocephalus\
+    |(?#Q05.6|)수두증이 없는 이분흉추|Thoracic spina bifida without hydrocephalus\
+    |(?#Q05.6|)이분척추 NOS|Dorsal spina bifida NOS\
+    |(?#Q05.6|)이분흉요추 NOS|Thoracolumbar spina bifida NOS\
+    |(?#Q05.7|)수두증이 없는 이분요추|Lumbar spina bifida without hydrocephalus\
+    |(?#Q05.7|)이분요천추 NOS|Lumbosacral spina bifida NOS\
+    |(?#Q05.8|)수두증이 없는 이분천골|Sacral spina bifida without hydrocephalus\
+    |(?#Q05.9|)상세불명의 이분척추|Spina bifida, unspecified\
+    |(?#Q06.2|)척수이개증|Diastematomyelia\
+    |(?#Q07.0|)아놀드-키아리증후군|Arnold-Chiari syndrome\
+    |(?#Q11.2|)렌즈소안구증후군|Lenz microphthalmia syndrome\
+    |(?#Q13.1|)무홍채증|Aniridia\
+    |(?#Q13.8|)악센펠트-리이거 증후군|Axenfeld-Rieger syndrome\
+    |(?#Q14.1|)X-연관 연소성 망막분리|X-linked juvenile retinoschisis\
+    |(?#Q14.2|)나팔꽃 증후군|Morning glory syndrome\
+    |(?#Q16.1|)\\(외\\)이도의 선천성 결여, 폐쇄, 협착|Congenital absence, atresia and stricture of auditory canal\\(external\\)\
+    |(?#Q17.2|)소이증\\(小耳症\\)|Microtia\
+    |(?#Q20.0|)총동맥간|Common arterial trunk\
+    |(?#Q20.0|)동맥간존속|Persistent truncus arteriosus\
+    |(?#Q20.1|)이중출구우심실|Double outlet right ventricle\
+    |(?#Q20.1|)타우시그-빙증후군|Taussig-Bing syndrome\
+    |(?#Q20.2|)이중출구좌심실|Double outlet left ventricle\
+    |(?#Q20.3|)심실대혈관연결불일치|Discordant ventriculoarterial connection\
+    |(?#Q20.3|)대동맥의 우측전위|Dextrotransposition of aorta\
+    |(?#Q20.3|)대혈관의 \\(완전\\)전위|Transposition of great vessels \\(complete\\)\
+    |(?#Q20.4|)단일심실|Single ventricle\
+    |(?#Q20.5|)방실연결불일치|Discordant atrioventricular connection\
+    |(?#Q20.5|)수정혈관전위|Corrected transposition\
+    |(?#Q20.5|)좌측전위|Laevotransposition\
+    |(?#Q20.5|)심실내번|Ventricular inversion\
+    |(?#Q20.6|)심방부속물의 이성질현상|Isomerism of atrial appendages\
+    |(?#Q20.6|)무비증 또는 다비증을 동반한 심방 부속물의 이성질현상|Isomerism of atrial appendages with asplenia or polysplenia\
+    |(?#Q21.2|)방실중격결손|Atrioventricular septal defect\
+    |(?#Q21.2|)총방실관|Common atrioventricular canal\
+    |(?#Q21.2|)심내막융기결손|Endocardial cushion defect\
+    |(?#Q21.2|)제1공심방중격결손\\(Ⅰ형\\)|Ostium primum atrial septal defect \\(type Ⅰ\\)\
+    |(?#Q21.3|)팔로네징후|Tetralogy of Fallot\
+    |(?#Q21.3|)폐동맥 협착 또는 폐쇄, 대동맥의 우측위치 및 우심실비대를 동반한 심실중격결손|Ventricular septal defect with pulmonary stenosis or atresia, dextroposition of aorta and hypertrophy of right ventricle\
+    |(?#Q21.4|)대동맥폐동맥중격결손|Aortopulmonary septal defect\
+    |(?#Q21.4|)대동맥중격결손|Aortic septal defect\
+    |(?#Q21.4|)대동맥폐동맥창|Aortopulmonary window\
+    |(?#Q21.8|)아이젠멘거결손|Eisenmenger’s defect\
+    |(?#Q22.0|)폐동맥판폐쇄|Pulmonary valve atresia\
+    |(?#Q22.4|)삼첨판폐쇄|Tricuspid atresia\
+    |(?#Q22.5|)에브스타인이상|Ebstein anomaly\
+    |(?#Q22.6|)형성저하성 우심증후군|Hypoplastic right heart syndrome\
+    |(?#Q23.0|)대동맥판의 선천협착|Congenital stenosis of aortic valve\
+    |(?#Q23.0|)선천성 대동맥판폐쇄|Congenital aortic atresia\
+    |(?#Q23.0|)선천성 대동맥판협착|Congenital aortic stenosis\
+    |(?#Q23.1|)대동맥판의 선천성 기능부전|Congenital insufficiency of aortic valve\
+    |(?#Q23.1|)이첨대동맥판막|Bicuspid aortic valve\
+    |(?#Q23.1|)선천성 대동맥판기능부전|Congenital aortic insufficiency\
+    |(?#Q23.1|)선천성 대동맥판역류|Congenital aortic regurgitation\
+    |(?#Q23.2|)선천성 승모판협착|Congenital mitral stenosis\
+    |(?#Q23.2|)선천성 승모판폐쇄|Congenital mitral atresia\
+    |(?#Q23.3|)선천성 승모판기능부전|Congenital mitral insufficiency\
+    |(?#Q23.4|)형성저하성 좌심증후군|Hypoplastic left heart syndrome\
+    |(?#Q23.4|)\\(승모판 협착 또는 폐쇄와 함께\\) 상행대동맥의 형성저하와 좌심실의 결손발육을 동반하는 대동맥구멍 및 판막의 폐쇄 또는 현저한 발육부전|Atresia, or marked hypoplasia of aortic orifice or valve, with hypoplasia of ascending aorta and defective development of left ventricle \\(with mitral valve stenosis or atresia\\)\
+    |(?#Q23.8|)대동맥판 및 승모판의 기타 선천기형|Other congenital malformations of aortic and mitral valves\
+    |(?#Q23.9|)대동맥판 및 승모판의 상세불명의 선천기형|Congenital malformation of aortic and mitral valves, unspecified\
+    |(?#Q24.4|)선천성 대동맥판하협착|Congenital subaortic stenosis\
+    |(?#Q24.5|)관상동맥혈관의 기형|Malformation of coronary vessels\
+    |(?#Q24.5|)선천성 관상동맥류|Congenital coronary\\(artery\\) aneurysm\
+    |(?#Q24.6|)선천성 심장차단|Congenital heart block\
+    |(?#Q25.1|)대동맥의 축착|Coarctation of aorta\
+    |(?#Q25.1|)대동맥의 축착\\(관전, 관후\\)|Coarctation of aorta \\(preductal, postductal\\)\
+    |(?#Q25.2|)대동맥의 폐쇄|Atresia of aorta\
+    |(?#Q25.3|)대동맥의 협착|Stenosis of aorta\
+    |(?#Q25.3|)판막상부 대동맥협착|Supravalvular aortic stenosis\
+    |(?#Q25.5|)폐동맥의 폐쇄|Atresia of pulmonary artery\
+    |(?#Q26.0|)대정맥의 선천성 협착|Congenital stenosis of vena cava\
+    |(?#Q26.0|)\\(하\\)\\(상\\)대정맥의 선천성 협착|Congenital stenosis of vena cava \\(inferior\\)\\(superior\\)\
+    |(?#Q26.1|)좌상대정맥존속|Persistent left superior vena cava\
+    |(?#Q26.2|)전폐정맥결합이상|Total anomalous pulmonary venous connection\
+    |(?#Q26.3|)부분폐정맥결합이상|Partial anomalous pulmonary venous connection\
+    |(?#Q26.4|)상세불명의 폐정맥결합이상|Anomalous pulmonary venous connection, unspecified\
+    |(?#Q26.5|)문맥결합이상|Anomalous portal venous connection\
+    |(?#Q26.6|)문맥-간동맥루|Portal vein-hepatic artery fistula\
+    |(?#Q28.2|)와이번메이슨증후군|Wyburn Mason syndrome\
+    |(?#Q38.3|)무설증\\(無舌症\\)|Aglossia\
+    |(?#Q43.8|)선천성단장증후군|Congenital Short Bowel Syndrome\
+    |(?#Q44.2|)담관의 폐쇄|Atresia of bile ducts\
+    |(?#Q44.6|)선천성 간 섬유증|Congenital liver Fibrosis\\[fibrotic\\]\
+    |(?#Q44.7|)알라질증후군|Alagille’s syndrome\
+    |(?#Q61.1|)다낭성 신장, 보통염색체열성|Polycystic kidney, autosomal recessive\
+    |(?#Q61.1|)다낭성 신장, 영아형|Polycystic kidney, infantile type\
+    |(?#Q61.9|)메켈증후군|Meckel syndrome\
+    |(?#Q64.1|)방광외반|Exstrophy of urinary bladder\
+    |(?#Q64.1|)방광이소증|Ectopia vesicae\
+    |(?#Q64.1|)방광외번|Extroversion of bladder\
+    |(?#Q74.0|)쇄골두개골이골증|Cleidocranial dysostosis\
+    |(?#Q74.3|)선천성 다발관절만곡증|Arthrogryposis multiplex congenita\
+    |(?#Q74.8|)라르센 증후군|Larsen’s syndrome\
+    |(?#Q75.0|)두개골유합|Craniosynostosis\
+    |(?#Q75.0|)뾰족머리증|Acrocephaly\
+    |(?#Q75.0|)두개골의 불완전유합|Imperfect fusion of skull\
+    |(?#Q75.0|)뾰족머리증|Oxycephaly\
+    |(?#Q75.0|)삼각머리증|Trigonocephaly\
+    |(?#Q75.1|)두개안면골이골증|Craniofacial dysostosis\
+    |(?#Q75.1|)크루존병|Crouzon’s disease\
+    |(?#Q75.4|)하악안면골이골증|Mandibulofacial dysostosis\
+    |(?#Q75.4|)프란체스쉐티 증후군|Franceschetti syndrome\
+    |(?#Q75.4|)트레처-콜린스 증후군|Treacher Collins syndrome\
+    |(?#Q76.1|)클리펠-파일증후군|Klippel-Feil syndrome\
+    |(?#Q77.0|)연골무발생증|Achondrogenesis\
+    |(?#Q77.0|)연골발생저하증|Hypochondrogenesis\
+    |(?#Q77.1|)치사성 단신|Thanatophoric short stature\
+    |(?#Q77.2|)짧은늑골증후군|Short rib syndrome\
+    |(?#Q77.2|)질식성 흉부형성이상\\[쥐느\\]|Asphyxiating thoracic dysplasia\\[Jeune\\]\
+    |(?#Q77.3|)점상 연골형성이상|Chondrodysplasia punctata\
+    |(?#Q77.3|)어깨고관절 점상 연골형성이상\\(1형-3형\\)|Rhizomelic chondrodysplasia punctata\\(type 1-3\\)\
+    |(?#Q77.3|)X-연관 우성 연골형성이상|X-linked dominant chondrodysplasia\
+    |(?#Q77.3|)다발성 골단 형성이상|Multiple epiphyseal dysplasia\
+    |(?#Q77.4|)연골무형성증|Achondroplasia\
+    |(?#Q77.4|)연골형성저하증|Hypochondroplasia\
+    |(?#Q77.4|)선천성 골경화증|Osteosclerosis congenita\
+    |(?#Q77.5|)디스트로피성 형성이상|Dystrophic dysplasia\
+    |(?#Q77.6|)연골외배엽형성이상|Chondroectodermal dysplasia\
+    |(?#Q77.6|)엘리스-반크레벨트증후군|Ellis-van Creveld syndrome\
+    |(?#Q77.7|)척추골단형성이상|Spondyloepiphyseal dysplasia\
+    |(?#Q77.7|)만발성 척추골단형성이상|Spondyloepiphyseal dysplasia tarda\
+    |(?#Q77.8|)관상골 및 척추의 성장결손을 동반한 기타 골연골형성이상|Other osteochondrodysplasia with defects of growth of tubular bones and spine\
+    |(?#Q77.8|)말단왜소 형성이상|Acromicric dysplasia\
+    |(?#Q77.8|)레리-웨일 증후군|Leri-Weill syndrome\
+    |(?#Q77.9|)관상골 및 척추의 성장결손을 동반한 상세불명의 골연골형성이상|Osteochondrodysplasia with defects of growth of tubular bones and spine, unspecified\
+    |(?#Q78.0|)불완전골형성|Osteogenesis imperfecta\
+    |(?#Q78.0|)골취약증|Fragilitas ossium\
+    |(?#Q78.0|)골취약증|Osteopsathyrosis\
+    |(?#Q78.1|)다골성 섬유성 형성이상|Polyostotic fibrous dysplasia\
+    |(?#Q78.1|)얼브라이트\\(-맥쿤\\)\\(-스턴버그\\)증후군|Albright\\(-McCune\\)\\(-Sternberg\\) syndrome\
+    |(?#Q78.2|)골화석증|Osteopetrosis\
+    |(?#Q78.2|)알베르스-쇤베르그증후군|Albers-Schönberg syndrome\
+    |(?#Q78.3|)카무라티-엥겔만증후군|Camurati-Engelmann syndrome\
+    |(?#Q78.4|)내연골종증|Enchondromatosis\
+    |(?#Q78.4|)마푸치증후군|Maffucci’s syndrome\
+    |(?#Q78.4|)올리에르병|Ollier’s disease\
+    |(?#Q78.5|)골간단연골형성이상, 슈미드형|Metaphyseal chondrodysplasia, Schmid type\
+    |(?#Q78.5|)필레증후군|Pyle’s syndrome\
+    |(?#Q78.6|)다발선천외골증|Multiple congenital exostoses\
+    |(?#Q78.6|)유전성 다발외골증|Hereditary multiple exostoses\
+    |(?#Q78.6|)골간병적조직연결|Diaphyseal aclasis\
+    |(?#Q78.9|)가성 연골무형성 형성이상|Pseudoachondroplastic dysplasia\
+    |(?#Q79.0|)선천성 횡격막탈장|Congenital diaphragmatic hernia\
+    |(?#Q79.1|)횡격막의 기타 선천기형|Other congenital malformations of diaphragm\
+    |(?#Q79.1|)횡격막결여|Absence of diaphragm\
+    |(?#Q79.1|)횡격막의 선천기형 NOS|Congenital malformation of diaphragm NOS\
+    |(?#Q79.1|)횡격막 탈출|Eventration of diaphragm\
+    |(?#Q79.2|)배꼽내장탈장|Exomphalos\
+    |(?#Q79.2|)선천복벽탈장|Omphalocele\
+    |(?#Q79.3|)복벽파열증|Gastroschisis\
+    |(?#Q79.4|)말린자두배증후군|Prune belly syndrome\
+    |(?#Q79.5|)복벽의 기타 선천기형|Other congenital malformations of abdominal wall\
+    |(?#Q79.6|)엘러스-단로스증후군|Ehlers-Danlos syndrome\
+    |(?#Q79.8|)근골격계통의 기타 선천기형|Other congenital malformations of musculoskeletal system\
+    |(?#Q79.8|)근육의 결여|Absence of muscle\
+    |(?#Q79.8|)힘줄의 결여|Absence of tendon\
+    |(?#Q79.8|)부근|Accessory muscle\
+    |(?#Q79.8|)선천성 근위축|Amyotrophia congenita\
+    |(?#Q79.8|)선천성 협착띠|Congenital constricting bands\
+    |(?#Q79.8|)선천성 짧은힘줄|Congenital shortening of tendon\
+    |(?#Q79.8|)폴란드증후군|Poland’s syndrome\
+    |(?#Q79.9|)근골격계통의 상세불명의 선천기형|Congenital malformation of musculoskeletal system, unspecified\
+    |(?#Q79.9|)근골격계통의 선천이상 NOS|Congenital anomaly of musculoskeletal system NOS\
+    |(?#Q79.9|)근골격계통의 선천변형 NOS|Congenital deformity of musculoskeletal system NOS\
+    |(?#Q80.1|)X-연관비늘증|X-linked ichthyosis\
+    |(?#Q80.1|)X-연관비늘증; 스테로이드설파타제결핍|X-linked ichthyosis; steroid sulfatase deficiency\
+    |(?#Q80.2|)층판비늘증|Lamellar ichthyosis\
+    |(?#Q80.3|)선천성 수포성 비늘모양홍색피부증|Congenital bullous ichthyosiform erythroderma\
+    |(?#Q80.4|)할리퀸태아|Harlequin fetus\
+    |(?#Q81.0|)단순 수포성 표피박리증|Epidermolysis bullosa simplex\
+    |(?#Q81.1|)치사성 수포성 표피박리증|Epidermolysis bullosa letalis\
+    |(?#Q81.1|)헤를리츠증후군|Herlitz’ syndrome\
+    |(?#Q81.2|)디스트로피성 수포성 표피박리증|Epidermolysis bullosa dystrophica\
+    |(?#Q82.0|)유전성 림프부종|Hereditary lymphoedema\
+    |(?#Q82.3|)색소실조증|Incontinentia pigmenti\
+    |(?#Q82.4|)\\(무한성\\) 외배엽형성이상|Ectodermal dysplasia \\(anhidrotic\\)\
+    |(?#Q82.4|)헤이-웰스증후군 \\(안검유착-외배엽 결손\\)|Hay-Wells syndrome \\(Ankyloblepharon-ectodermal defects\\)\
+    |(?#Q82.8|)로트문드\\(-톰슨\\) 증후군|Rothmund\\(-Thomson\\) syndrome\
+    |(?#Q85.0|)신경섬유종증\\(비악성\\)|Neurofibromatosis \\(nonmalignant\\)\
+    |(?#Q85.0|)신경섬유종증\\(비악성\\) 1형, 2형|Neurofibromatosis\\(nonmalignant\\) type 1, type 2\
+    |(?#Q85.0|)폰렉클링하우젠병|Von Recklinghausen’s disease\
+    |(?#Q85.1|)결절성 경화증|Tuberous sclerosis\
+    |(?#Q85.1|)부르느뷰병|Bourneville’s disease\
+    |(?#Q85.1|)에필로이아|Epiloia\
+    |(?#Q85.8|)포이츠-제거스 증후군|Peutz-Jeghers syndrome\
+    |(?#Q85.8|)스터지-베버\\(-디미트리\\) 증후군|Sturge-Weber\\(-Dimitri\\) syndrome\
+    |(?#Q85.8|)폰 히펠-린다우 증후군|Von Hippel-Lindau syndrome\
+    |(?#Q86.0|)\\(이상형태성\\) 태아알코올증후군|Fetal alcohol syndrome \\(dysmorphic\\)\
+    |(?#Q87.0|)주로 얼굴형태에 영향을 주는 선천기형증후군|Congenital malformation syndromes predominantly affecting facial appearance\
+    |(?#Q87.0|)첨두다지유합증|Acrocephalopolysyndactyly\
+    |(?#Q87.0|)첨두유합지증|Acrocephalosyndactyly\\(Apert\\)\
+    |(?#Q87.0|)잠복안구증후군|Cryptophthalmos syndrome\
+    |(?#Q87.0|)단안증|Cyclopia\
+    |(?#Q87.0|)골덴하 증후군|Goldenhar syndrome\
+    |(?#Q87.0|)고린-샤우드리-모스 증후군|Gorlin-Chaudhry-Moss syndrome\
+    |(?#Q87.0|)뫼비우스 증후군|Moebius syndrome\
+    |(?#Q87.0|)입-얼굴-손발 증후군|Oro-facial-digital syndrome\
+    |(?#Q87.0|)로빈 증후군|Robin syndrome\
+    |(?#Q87.0|)휘파람부는 얼굴|Whistling face\
+    |(?#Q87.0|)카펜터 증후군|Carpenter´s syndrome\
+    |(?#Q87.0|)프레이저 증후군|Fraser´s syndrome\
+    |(?#Q87.0|)가부키 증후군|Kabuki syndrome\
+    |(?#Q87.0|)야콥센 증후군\\(11장완 말단부 결손 증후군\\)|Jacobsen syndrome\\(11q distal deletion syndrome\\)\
+    |(?#Q87.0|)마르케사니-바일 증후군 \\[바일-마르케사니 증후군\\]|Marchesani-weill-syndrome \\[Weill-marchesani syndrome\\]\
+    |(?#Q87.1|)주로 단신과 관련된 선천기형증후군|Congenital malformation syndromes predominantly associated with short stature\
+    |(?#Q87.1|)아르스코그 증후군|Aarskog syndrome\
+    |(?#Q87.1|)코케인 증후군|Cockayne syndrome\
+    |(?#Q87.1|)드 랑즈 증후군|De Lange syndrome\
+    |(?#Q87.1|)두보위츠 증후군|Dubowitz syndrome\
+    |(?#Q87.1|)누난 증후군|Noonan syndrome\
+    |(?#Q87.1|)프라더-윌리 증후군|Prader-Willi syndrome\
+    |(?#Q87.1|)로비노-실버만-스미스 증후군|Robinow-Silverman-Smith syndrome\
+    |(?#Q87.1|)러셀-실버 증후군|Russel-Silver syndrome\
+    |(?#Q87.1|)시클 증후군|Seckel syndrome\
+    |(?#Q87.1|)스미스-렘리-오피츠 증후군|Smith-Lemli-Opitz syndrome\
+    |(?#Q87.1|)굴지 형성이상|Campomelic dysplasia\
+    |(?#Q87.1|)쉐그렌-라손 증후군|Sjogren-Larsson syndrome\
+    |(?#Q87.2|)홀트-오람 증후군|Holt-Oram syndrome\
+    |(?#Q87.2|)클리펠-트레노우네이-베버 증후군|Klippel-Trénaunay-Weber syndrome\
+    |(?#Q87.2|)손발톱무릎뼈 증후군|Nail patella syndrome\
+    |(?#Q87.2|)루빈스타인-테이비 증후군|Rubinstein-Taybi syndrome\
+    |(?#Q87.2|)바테르 증후군|VATER syndrome\
+    |(?#Q87.3|)베크위트-비데만 증후군|Beckwith-Wiedemann syndrome\
+    |(?#Q87.3|)소토스 증후군|Sotos syndrome\
+    |(?#Q87.3|)위버 증후군|Weaver syndrome\
+    |(?#Q87.4|)마르팡증후군|Marfan’s syndrome\
+    |(?#Q87.5|)코핀-로우리 증후군|Coffin-Lowry syndrome\
+    |(?#Q87.8|)알포트 증후군|Alport syndrome\
+    |(?#Q87.8|)로렌스-문\\(-바르데\\)-비들 증후군|Laurence-Moon\\(-Bardet\\)-Biedl syndrome\
+    |(?#Q87.8|)젤웨거 증후군|Zellweger syndrome\
+    |(?#Q87.8|)촤지 증후군|CHARGE syndrome\
+    |(?#Q87.8|)ADNP 증후군\\(헬스무르텔-반데르아 증후군\\)|ADNP syndrome\\(Helsmoortel-VanDerAa Syndrome\\)\
+    |(?#Q87.8|)펠란-맥더미드 증후군\\(22장완 13\\.3 결손 증후군\\)|Phelan-McDermid syndrome\\(22q13\\.3 deletion syndrome\\)\
+    |(?#Q87.8|)알스트롬 증후군|Alstrom syndrome\
+    |(?#Q87.8|)아가미-귀-신장 증후군|Branchiootorenal syndrome\
+    |(?#Q90.0|)21삼염색체증, 감수분열비분리|Trisomy 21, meiotic nondisjunction\
+    |(?#Q90.1|)21삼염색체증, 섞임증형\\(유사분열비분리\\)|Trisomy 21, mosaicism \\(mitotic nondisjunction\\)\
+    |(?#Q90.2|)21삼염색체증, 전위|Trisomy 21, translocation\
+    |(?#Q90.9|)21삼염색체증 NOS|Trisomy 21 NOS\
+    |(?#Q91.0|)18삼염색체증, 감수분열비분리|Trisomy 18, meiotic nondisjunction\
+    |(?#Q91.1|)18삼염색체증, 섞임증형\\(유사분열비분리\\)|Trisomy 18, mosaicism \\(mitotic nondisjunction\\)\
+    |(?#Q91.2|)18삼염색체증, 전위|Trisomy 18, translocation\
+    |(?#Q91.4|)13삼염색체증, 감수분열비분리|Trisomy 13, meiotic nondisjunction\
+    |(?#Q91.5|)13삼염색체증, 섞임증형\\(유사분열비분리\\)|Trisomy 13, mosaicism \\(mitotic nondisjunction\\)\
+    |(?#Q91.6|)13삼염색체증, 전위|Trisomy 13, translocation\
+    |(?#Q91.7|)13삼염색체증후군|Trisomy 13 Syndrome\
+    |(?#Q92.2|)10단완삼염색체증|Trisomy 10p\
+    |(?#Q92.3|)7장완11\\.23 미세중복 증후군|7q11\\.23 microduplication syndrome\
+    |(?#Q92.3|)15장완11-13 미세중복 증후군|15q11q13 microduplication syndrome\
+    |(?#Q92.3|)포토키-룹스키 증후군|Potocki-Lupski syndrome\
+    |(?#Q92.8|)20번 염색체 단완의 삼염색체증|Trisomy 20p\
+    |(?#Q93.2|)15장완 사염색체\\(증\\)\\(쌍중심절 15번 염색체 증후군\\)|Tetrasomy 15q \\(isodicentric 15 chromosome syndrome\\)\
+    |(?#Q93.3|)월프-허쉬호른증후군|Wolff-Hirschorn syndrome\
+    |(?#Q93.3|)4 단완 염색체 부분 결손|Partial deletion of the short arm of chromosome 4\
+    |(?#Q93.4|)5번 염색체 단완의 결손|Deletion of short arm of chromosome 5\
+    |(?#Q93.4|)고양이울음증후군|Cri-du-chat syndrome\
+    |(?#Q93.5|)엔젤만증후군|Angelman syndrome\
+    |(?#Q93.5|)캐취22증후군|CATCH22 syndrome\
+    |(?#Q93.5|)18장완단일염색체증|18q monosomy\
+    |(?#Q93.5|)1단완36 미세결손증후군|1p36 Microdeletion Syndrome\
+    |(?#Q93.5|)2장완37 미세결손 증후군|2q37 microdeletion syndrome\
+    |(?#Q93.5|)윌리엄스 증후군|William's Syndrome\
+    |(?#Q93.5|)3 장완29 미세결손 증후군|3q29 microdeletion syndrome\
+    |(?#Q93.5|)스미스-마제니스 증후군|Smith-Magenis syndrome\
+    |(?#Q93.5|)18 단완 염색체 결손|18 short arm chromosome Deletion\
+    |(?#Q93.5|)18장완 말단부 결손 증후군|18q distal deletion syndrome\
+    |(?#Q93.5|)15 장완13\\.3 미세결손 증후군|15q13\\.3 microdeletion syndrome\
+    |(?#Q96.0|)핵형45, X|Karyotype 45, X\
+    |(?#Q96.1|)핵형46, X동인자\\(Xq\\)|Karyotype 46, X iso\\(Xq\\)\
+    |(?#Q96.2|)동인자\\(Xq\\)를 제외한 이상 성염색체를 가진 핵형46, X|Karyotype 46, X with abnormal sex chromosome, except iso\\(Xq\\)\
+    |(?#Q96.3|)섞임증, 45, X/46, XX 또는 XY|Mosaicism, 45, X/46, XX or XY\
+    |(?#Q96.4|)섞임증, 이상성염색체를 가진 45, X/기타 세포열|Mosaicism, 45, X/other cell line\\(s\\) with abnormal sex chromosome\
+    |(?#Q98.0|)클라인펠터증후군, 핵형 47, XXY|Klinefelter’s syndrome karyotype 47, XXY\
+    |(?#Q98.1|)클라인펠터증후군, 두 개 이상의 X염색체를 가진 남성|Klinefelter’s syndrome, male with more than two X chromosomes\
+    |(?#Q98.2|)클라인펠터증후군, 핵형 46, XX를 가진 남성|Klinefelter’s syndrome, male with 46,XX karyotype\
+    |(?#Q99.2|)취약X증후군|Fragile X syndrome\
+    |(?#Q99.8|)팰리스터-킬리언 증후군|Pallister-Killian syndrome\
+    )"
